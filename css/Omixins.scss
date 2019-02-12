@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500,700');
+
+$header : 2em;
+$info : 0.9em;
+
+@mixin header {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 900;
+	font-size: $header;
+	letter-spacing: 0em;
+	line-height: 0em;
+}
+
+@mixin info {
+	font-family: 'Roboto', sans-serif;
+	font-size: $info;
+	letter-spacing: 0px;
+	font-weight: 400;
+	line-height: 0em;
+}
+
+@mixin flexCenter($direction) {
+	display: flex;
+	align-items:center;
+	justify-content:center;
+
+	@if $direction == 'column' {
+		flex-direction: column;
+	} @elseif $direction == 'row' {
+		flex-direction: row;
+	}
+}
+
+@mixin toc {
+	transform:translateX(-50%) translateY(-50%);
+}
+
+@mixin sudo($height, $width) {
+	position: absolute;
+	content:'';
+	top:0;
+	left:0;
+	height:$height;
+	width:$width;
+}
+
+@mixin bg($imgPath) {
+	background-image: url($imgPath);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}

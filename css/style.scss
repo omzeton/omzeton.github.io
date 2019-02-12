@@ -1,0 +1,50 @@
+//----------------------
+// Colors
+$black : #171717;
+$red : #ee021c;
+$blue : #1866bc;
+$gray : #5a636c;
+$white : #f7f7f7;
+
+//----------------------
+// Imports
+@import "./Omixins.scss";
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,900');
+
+//----------------------
+// Styles
+html {
+	box-sizing:border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+	margin: 0;
+	padding:0;
+	height:100%;
+	width:100%;
+	overflow-x: hidden;
+	position: absolute;
+	background:$black;
+}
+
+//----------------------
+// Media Queries 
+
+/* Landscape phones and down */
+@media (max-width: 480px) {  }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {  }
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {  }
+
+/* Large desktop */
+@media (min-width: 1200px) {  }
+
+//----------------------
