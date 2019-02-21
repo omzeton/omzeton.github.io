@@ -2,64 +2,13 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,500,700");
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,700,900");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,900");
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\000032}}
-.section-info .info__git { position: fixed; top: 0; right: 25px; height: 60px; z-index: 100; line-height: 60px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\000039}}
-.section-info .info__git a { position: relative; color: #f7f7f7; text-decoration: none; font-family: 'Roboto', sans-serif; font-size: 0.9em; letter-spacing: 0px; font-weight: 400; line-height: 0em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\0000314}}
-.section-info .info__git a:before { position: absolute; content: ''; top: 49%; transform: translateY(-50%); left: -30px; height: 20px; width: 20px; background-image: url("../img/github@.png"); background-position: center; background-size: cover; background-repeat: no-repeat; right: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\0000325}}
-.section-info .info__git a:after { content: ""; position: absolute; z-index: -1; right: 0; width: 0; bottom: -5px; background: #f7f7f7; height: 0.08em; transition-property: width; transition-duration: 0.3s; transition-timing-function: ease-out; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\0000338}}
-.section-info .info__git a:hover:after, .section-info .info__git a:focus:after, .section-info .info__git a:active:after { left: 0; right: auto; width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\0000347}}
-.section-info .info__name { position: fixed; bottom: 10px; height: 60px; padding-left: 55px; left: 15px; display: flex; align-items: center; justify-content: center; flex-direction: column; z-index: 100; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\0000355}}
-.section-info .info__name .info__name--link { position: relative; color: #f7f7f7; text-decoration: none; font-family: 'Roboto', sans-serif; font-size: 0.9em; letter-spacing: 0px; font-weight: 400; line-height: 0em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\0000360}}
-.section-info .info__name .info__name--link:before { position: absolute; content: ''; top: 49%; transform: translateY(-50%); left: -45px; height: 35px; width: 35px; border-radius: 50%; overflow: hidden; background-image: url("../img/browser-logo.png"); background-position: center; background-size: cover; background-repeat: no-repeat; right: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\0000373}}
-.section-info .info__name .info__name--link:after { content: ""; position: absolute; z-index: -1; right: 0; width: 0; bottom: -15px; background: #f7f7f7; height: 0.08em; transition-property: width; transition-duration: 0.3s; transition-timing-function: ease-out; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\0000386}}
-.section-info .info__name .info__name--link:hover:after, .section-info .info__name .info__name--link:focus:after, .section-info .info__name .info__name--link:active:after { left: 0; right: auto; width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\0000395}}
-.section-info .info__menu { position: fixed; top: 10px; height: 40px; width: 40px; left: 15px; display: flex; align-items: center; justify-content: center; flex-direction: column; cursor: pointer; transition: 1s; z-index: 200; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003106}}
-.section-info .info__menu:hover .info__menu--burger:before, .section-info .info__menu:hover .info__menu--burger:after { width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003110}}
-.section-info .info__menu .info__menu--burger { position: relative; width: 80%; height: 2px; background: #f7f7f7; transition: 1s; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003116}}
-.section-info .info__menu .info__menu--burger:before { position: absolute; content: ''; top: 0; left: 0; height: 2px; width: 50%; top: 350%; background: #f7f7f7; transition-duration: 0.3s; transition-timing-function: ease-out; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003123}}
-.section-info .info__menu .info__menu--burger:after { position: absolute; content: ''; top: 0; left: 0; height: 2px; width: 50%; top: -350%; background: #f7f7f7; transition-duration: 0.3s; transition-timing-function: ease-out; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003131}}
-.section-info .info__menu .burger--active { transform: rotate(45deg); }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003133}}
-.section-info .info__menu .burger--active:before { opacity: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003136}}
-.section-info .info__menu .burger--active:after { width: 100%; transform: rotate(-90deg) translateX(-25%); }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003142}}
-.section-info .info__menu__hidden { opacity: 0; z-index: -10; position: fixed; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(3, 3, 3, 0.5) 0%, rgba(238, 2, 28, 0.9) 49%, #ee021c 99%); display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden; transition: 1s; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003152}}
-.section-info .info__menu__hidden .hidden__title { font-family: 'Roboto', sans-serif; font-size: 0.9em; letter-spacing: 0px; font-weight: 400; line-height: 0em; font-weight: 700; font-size: 3em; color: #f7f7f7; left: 50%; padding-bottom: 1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003160}}
-.section-info .info__menu__hidden .hidden__btns { font-family: 'Roboto', sans-serif; font-size: 0.9em; letter-spacing: 0px; font-weight: 400; line-height: 0em; font-weight: 500; font-size: 1.4em; cursor: pointer; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003165}}
-.section-info .info__menu__hidden .hidden__btns .hidden__btn { width: 15em; height: 3em; margin: 1em 0; display: flex; align-items: center; justify-content: center; flex-direction: column; opacity: 0.8; transition: 0.3s; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003172}}
-.section-info .info__menu__hidden .hidden__btns .hidden__btn a { text-decoration: none; color: #f7f7f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003176}}
-.section-info .info__menu__hidden .hidden__btns .hidden__btn:hover { opacity: 1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/menu\.scss}line{font-family:\00003182}}
-.section-info .hidden__menu--active { opacity: 1 !important; z-index: 100 !important; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/style\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000317}}
 html { box-sizing: border-box; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/style\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000320}}
 *, *:before, *:after { box-sizing: inherit; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/WD\%20Template\/css\/style\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000325}}
 body { margin: 0; padding: 0; height: 100%; width: 100%; overflow-x: hidden; position: absolute; background: #171717; }
 
 /* Landscape phones and down */
