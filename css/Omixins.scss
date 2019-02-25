@@ -8,16 +8,12 @@ $info : 0.9em;
 	font-family: 'Oswald', sans-serif;
 	font-weight: 900;
 	font-size: $header;
-	letter-spacing: 0em;
-	line-height: 0em;
 }
 
 @mixin info {
 	font-family: 'Roboto', sans-serif;
 	font-size: $info;
-	letter-spacing: 0px;
 	font-weight: 400;
-	line-height: 0em;
 }
 
 @mixin flexCenter($direction) {

@@ -2,14 +2,128 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,500,700");
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,700,900");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,900");
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000319}}
+::selection { background-color: #E01E21; color: #fff; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000324}}
+::-webkit-scrollbar { height: 0.7em; width: 0.7em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000328}}
+::-webkit-scrollbar-track { background: #f3f3f3; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000331}}
+::-webkit-scrollbar-thumb { background: #E01E21; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000334}}
+::-webkit-scrollbar-thumb:hover { background: red; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000339}}
 html { box-sizing: border-box; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000342}}
 *, *:before, *:after { box-sizing: inherit; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000325}}
-body { margin: 0; padding: 0; height: 100%; width: 100%; overflow-x: hidden; position: absolute; background: #171717; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000347}}
+body { margin: 0; padding: 0; height: 100%; width: 100%; overflow-x: hidden; position: absolute; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000356}}
+.section { position: relative; width: 100%; height: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000362}}
+.landing { display: flex; justify-content: center; align-items: center; flex-direction: column; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000367}}
+.landing h2 { font-family: 'Oswald', sans-serif; font-weight: 900; font-size: 2em; font-weight: 900; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000371}}
+.landing h3 { font-family: 'Roboto', sans-serif; font-size: 0.9em; font-weight: 400; font-weight: 700; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000374}}
+.landing h3 span { color: #E01E21; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000378}}
+.landing h4 { font-family: 'Roboto', sans-serif; font-size: 0.9em; font-weight: 400; cursor: pointer; transition: .3s linear; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000382}}
+.landing h4:hover { color: #E01E21; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000386}}
+.landing .git { margin-top: 2em; width: 3em; height: 3em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000390}}
+.landing .git svg { position: relative; top: 25%; left: 25%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000394}}
+.landing .git svg #github { transition: .3s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\0000398}}
+.landing .git svg:hover #github { fill: #E01E21; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003106}}
+.about { display: flex; justify-content: center; align-items: center; flex-direction: column; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003111}}
+.about h2 { font-family: 'Oswald', sans-serif; font-weight: 900; font-size: 2em; font-weight: 900; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003115}}
+.about p { width: 50%; line-height: 2em; font-family: 'Roboto', sans-serif; font-size: 0.9em; font-weight: 400; font-weight: 400; text-align: justify; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003124}}
+.skillset { display: flex; justify-content: center; align-items: center; flex-direction: column; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003129}}
+.skillset h2 { font-family: 'Oswald', sans-serif; font-weight: 900; font-size: 2em; font-weight: 900; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003133}}
+.skillset h3 { font-family: 'Oswald', sans-serif; font-weight: 900; font-size: 2em; font-weight: 400; font-size: 1.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003138}}
+.skillset li { font-family: 'Roboto', sans-serif; font-size: 0.9em; font-weight: 400; line-height: 2em; font-weight: 400; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003143}}
+.skillset .skills-container { width: 60%; display: grid; grid-template-rows: 1fr; grid-template-columns: 1fr 1fr 1fr; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003154}}
+.portfolio { display: flex; justify-content: center; align-items: center; flex-direction: column; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003159}}
+.portfolio h2 { font-family: 'Oswald', sans-serif; font-weight: 900; font-size: 2em; font-weight: 900; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003163}}
+.portfolio .portfolio-hoc { display: grid; grid-template-rows: 13em 13em; grid-template-columns: 20em 20em 20em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003167}}
+.portfolio .portfolio-hoc .p-container { margin: 1em; display: grid; grid-template-columns: 2em 1fr; grid-template-rows: 1fr; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003174}}
+.portfolio .portfolio-hoc .p-container:hover .p-content .content-screenshot:after { opacity: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003179}}
+.portfolio .portfolio-hoc .p-container .p-number { display: flex; justify-content: center; align-items: center; flex-direction: column; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003184}}
+.portfolio .portfolio-hoc .p-container .p-number h1 { font-family: 'Oswald', sans-serif; font-weight: 900; font-size: 2em; font-weight: 400; font-size: 1.5em; text-decoration: underline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003191}}
+.portfolio .portfolio-hoc .p-container .p-content { display: grid; grid-template-rows: 2em 1fr; grid-template-columns: 1fr; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003195}}
+.portfolio .portfolio-hoc .p-container .p-content .content-title { display: flex; justify-content: center; align-items: center; flex-direction: column; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003200}}
+.portfolio .portfolio-hoc .p-container .p-content .content-title h2 { font-family: 'Roboto', sans-serif; font-size: 0.9em; font-weight: 400; font-weight: 400; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003205}}
+.portfolio .portfolio-hoc .p-container .p-content .content-screenshot { position: relative; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); width: 90%; height: 90%; cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003213}}
+.portfolio .portfolio-hoc .p-container .p-content .content-screenshot:after { content: ''; position: absolute; width: 100%; height: 100%; background: #000; mix-blend-mode: hue; transition: .3s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003227}}
+.portfolio .portfolio-hoc .p-container:nth-child(1) .p-content .content-screenshot { background-image: url("../img/screencaps/01.png"); background-position: center; background-size: cover; background-repeat: no-repeat; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003234}}
+.portfolio .portfolio-hoc .p-container:nth-child(2) .p-content .content-screenshot { background-image: url("../img/screencaps/02.png"); background-position: center; background-size: cover; background-repeat: no-repeat; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003241}}
+.portfolio .portfolio-hoc .p-container:nth-child(3) .p-content .content-screenshot { background-image: url("../img/screencaps/03.png"); background-position: center; background-size: cover; background-repeat: no-repeat; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003248}}
+.portfolio .portfolio-hoc .p-container:nth-child(4) .p-content .content-screenshot { background-image: url("../img/screencaps/04.png"); background-position: center; background-size: cover; background-repeat: no-repeat; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003255}}
+.portfolio .portfolio-hoc .p-container:nth-child(5) .p-content .content-screenshot { background-image: url("../img/screencaps/05.png"); background-position: center; background-size: cover; background-repeat: no-repeat; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003263}}
+.contact { height: 30em; background-color: #E01E21; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003270}}
+.contact h2 { font-family: 'Roboto', sans-serif; font-size: 0.9em; font-weight: 400; font-weight: 400; font-size: 1em; color: #fff; cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003276}}
+.contact h2 a { text-decoration: none; color: #fff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003280}}
+.contact h2 span { font-family: 'Oswald', sans-serif; font-weight: 900; font-size: 2em; font-size: 1em; opacity: 0.7; font-weight: 400; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003286}}
+.contact h2 .hover { transition: .3s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003288}}
+.contact h2 .hover:hover { color: #e8c547; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003295}}
+.menu-container { position: fixed; width: 100%; height: 3em; background-color: #fff; display: grid; grid-template-rows: 1fr; grid-template-columns: 1fr repeat(5, 4em) 1fr; z-index: 9999; -webkit-box-shadow: 0px 0px 80px -6px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 0px 80px -6px rgba(0, 0, 0, 0.75); box-shadow: 0px 0px 80px -20px rgba(0, 0, 0, 0.75); }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003307}}
+.menu-container .menu-button { display: flex; align-items: center; justify-content: center; flex-direction: column; cursor: pointer; transition: .3s linear; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003315}}
+.menu-container .menu-button:hover h2 { color: #E01E21; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/Adam\/Desktop\/Strony\/\@Git\/portfolio-1\/css\/style\.scss}line{font-family:\00003319}}
+.menu-container .menu-button h2 { transition: .3s linear; font-family: 'Roboto', sans-serif; font-size: 0.9em; font-weight: 400; }
 
 /* Landscape phones and down */
 /* Landscape phone to portrait tablet */
