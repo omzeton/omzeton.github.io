@@ -1,0 +1,16 @@
+main {
+  position: relative;
+  width: 100vw;
+  background-color: #f9f5f1;
+  height: 500vw; }
+
+::-webkit-scrollbar {
+  width: 0; }
+
+#progressBar {
+  top: 0;
+  right: 0;
+  width: .3em;
+  position: fixed;
+  background: red;
+  transition: height .5s ease-out; }
