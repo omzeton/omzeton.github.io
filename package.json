@@ -1,0 +1,27 @@
+{
+  "name": "portfo",
+  "version": "1.0.0",
+  "description": "simple portfolio website",
+  "main": "index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/omzeton/portfo.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "omzeton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omzeton/portfo/issues"
+  },
+  "homepage": "https://github.com/omzeton/portfo#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  }
+}
