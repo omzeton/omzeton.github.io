@@ -7,14 +7,15 @@
   background-color: #000000;
   color: #f9f5f1; }
 
+::-webkit-scrollbar {
+  width: 0; }
+
 main {
   position: relative;
   width: 100vw;
   background-color: #f9f5f1;
-  height: 400vw; }
-
-::-webkit-scrollbar {
-  width: 0; }
+  height: 400vw;
+  overflow-x: hidden; }
 
 #progressBar {
   top: 0;
@@ -22,7 +23,8 @@ main {
   width: 0.3em;
   position: fixed;
   background: #000;
-  transition: height 0.5s ease-out; }
+  transition: height 0.5s ease-out;
+  z-index: 999; }
 
 section {
   position: absolute;
@@ -51,16 +53,36 @@ nav {
     line-height: 0;
     font-size: 1.1rem;
     letter-spacing: -1px; }
-  nav .menu span {
-    display: block;
-    width: 35px;
-    height: 2px;
-    margin-bottom: 4px;
-    position: relative;
-    background: #000000;
-    z-index: 1;
-    transform-origin: 4px 0px;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
+  nav .menu {
+    cursor: pointer; }
+    nav .menu:hover span:before {
+      transform: translateX(100%); }
+    nav .menu span {
+      display: block;
+      width: 35px;
+      height: 2px;
+      margin-bottom: 4px;
+      position: relative;
+      background: #000000;
+      z-index: 1;
+      overflow: hidden; }
+      nav .menu span:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #f9f5f1;
+        transform: translateX(-100%);
+        transition-duration: 0.6s;
+        transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+      nav .menu span:nth-child(1):before {
+        transition-delay: 0s; }
+      nav .menu span:nth-child(2):before {
+        transition-delay: 0.05s; }
+      nav .menu span:nth-child(3):before {
+        transition-delay: 0.10s; }
 
 .Intro .Intro__Heading {
   position: relative;
@@ -88,3 +110,22 @@ nav {
     font-family: "Lato", sans-serif;
     font-weight: 300;
     font-size: 1rem; }
+
+.cursor {
+  display: block; }
+  .cursor .cursor__inner {
+    z-index: 9999;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    border-radius: 50%; }
+  .cursor .cursor__inner--dot {
+    width: 8px;
+    height: 8px;
+    background: #fff; }
+  .cursor .cursor__inner--circle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff; }

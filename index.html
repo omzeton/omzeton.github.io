@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-	<meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />	
-	<title>Adam Rolczyk | Aspiring developer</title>
-	<meta name="description" content="A portfolio website of a polish web-developer." />
-	<meta name="keywords" content="portfolio, omzeton, rolczyk, adam, javascript, webgl" />
-	<meta name="author" content="Adam Rolczyk" />
-	<link rel="icon" href="img/browser-logo.png" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css" />
-	<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />	
+		<title>Adam Rolczyk | Aspiring developer</title>
+		<meta name="description" content="A portfolio website of a polish web-developer." />
+		<meta name="keywords" content="portfolio, omzeton, rolczyk, adam, javascript, webgl" />
+		<meta name="author" content="Adam Rolczyk" />
+		<link rel="icon" href="img/browser-logo.png" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+	</head>
   <body>
-	  <!-- 
+    <!-- 
 		  Layout:
 			  Tylko 4 sekcje (mogą być nawet 3)
 			  1:= Intro screen + Intro speech
@@ -23,33 +23,48 @@
 			  4:= Contact
 			  Tyle!
 	   -->
-	   <nav>
-		   <div class="button logo">
-			   <h2>Omzeton.</h2>
-		   </div>
-		   <div></div>
-		   <div class="button menu">
-			<span></span>
-			<span></span>
-			<span></span>
-		   </div>
-	   </nav>
-	  <main>
-		  <section class="Intro">
-			  <div class="Intro__Heading">
-				  <h2><span class="Heading--Stagger">Home grown.</span></h2>
-				  <p><span class="Heading--Stagger">Hi I'm Adam, a wanna-be fullstack developer and a total nerd</span><span class="Heading--Stagger"> based in Warsaw. 
-					  I'm really passionate about creating digital</span><span class="Heading--Stagger"> projects and great design.
-					  Let's get to know each other.</span></p>
-			  </div>
-		  </section>
-		  <section class="Works"></section>
-		  <section class="Skills"></section>
-		  <section class="Contact"></section>
-		  <div id="progressBar"></div>
-	  </main>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-	  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineMax.min.js"></script> -->
-	  <script src="js/main.js"></script>
+    <nav>
+      <div class="button logo">
+        <h2>Omzeton.</h2>
+      </div>
+      <div></div>
+      <div class="button menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <main>
+      <section class="Intro">
+        <div class="Intro__Heading">
+          <h2><span class="Heading--Stagger">Home grown.</span></h2>
+          <p>
+            <span class="Heading--Stagger"
+              >Hi I'm Adam, a wanna-be fullstack developer and a total
+              nerd</span
+            ><span class="Heading--Stagger">
+              based in Warsaw. I'm really passionate about creating
+              digital</span
+            ><span class="Heading--Stagger">
+              projects and great design. Let's get to know each other.</span
+            >
+          </p>
+        </div>
+      </section>
+      <section class="Works"></section>
+      <section class="Skills"></section>
+      <section class="Contact"></section>
+      <div id="progressBar"></div>
+      <div class="cursor">
+        <div class="cursor__inner cursor__inner--circle"></div>
+        <div class="cursor__inner cursor__inner--dot"></div>
+      </div>
+      <div class="content" id="app">
+        <!-- sticky background -->
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="js/Cursor.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
