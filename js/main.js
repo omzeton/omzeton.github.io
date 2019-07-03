@@ -1,6 +1,9 @@
 const body = document.body,
   html = document.documentElement,
-  progress = document.getElementById("progressBar");
+  progress = document.getElementById("progressBar"),
+  spans = document.getElementsByClassName("Heading--Stagger");
+
+// Progress Bar on the right of the screen
 
 function progressBar() {
   let scrollTop = window.pageYOffset,
@@ -22,6 +25,22 @@ function progressBar() {
 
 window.addEventListener("scroll", () => progressBar());
 window.addEventListener("resize", () => progressBar());
+
+// TweenMax Letter Animations
+
+let tl = new TimelineMax();
+
+tl.staggerTo(
+  spans,
+  1.5,
+  {
+    opacity: 1,
+    y: 0,
+    delay: 0.5,
+    ease: Circ.easeOut
+  },
+  0.2
+);
 
 document.addEventListener("load", () => {
   progressBar();

@@ -1,8 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:700&display=swap");
+@font-face {
+  font-family: "gorditabold";
+  src: url("http://localhost:3000/fonts/gordita-bold-webfont.woff") format("woff"), url("http://localhost:3000/fonts/gordita-bold-webfont.otf") format("opentype"); }
+
+::selection {
+  background-color: #000000;
+  color: #f9f5f1; }
+
 main {
   position: relative;
   width: 100vw;
   background-color: #f9f5f1;
-  height: 500vw; }
+  height: 400vw; }
 
 ::-webkit-scrollbar {
   width: 0; }
@@ -10,7 +19,72 @@ main {
 #progressBar {
   top: 0;
   right: 0;
-  width: .3em;
+  width: 0.3em;
   position: fixed;
-  background: red;
-  transition: height .5s ease-out; }
+  background: #000;
+  transition: height 0.5s ease-out; }
+
+section {
+  position: absolute;
+  width: 100vw;
+  height: 100vh; }
+
+nav {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  width: calc(100vw - 2em);
+  height: 3em;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 7em 1fr 5em;
+  z-index: 9999; }
+  nav .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+  nav .logo h2 {
+    font-family: "gorditabold", Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 0;
+    font-size: 1.1rem;
+    letter-spacing: -1px; }
+  nav .menu span {
+    display: block;
+    width: 35px;
+    height: 2px;
+    margin-bottom: 4px;
+    position: relative;
+    background: #000000;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
+
+.Intro .Intro__Heading {
+  position: relative;
+  top: 50%;
+  left: 3em;
+  transform: translateY(-50%);
+  width: 30em;
+  z-index: 999; }
+  .Intro .Intro__Heading .Heading--Stagger {
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px); }
+  .Intro .Intro__Heading h2 {
+    font-family: "gorditabold", Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 5rem;
+    letter-spacing: -5.5px; }
+  .Intro .Intro__Heading p {
+    margin-left: 0.4em;
+    width: 85%;
+    letter-spacing: -0.5px;
+    margin-top: 1.3em;
+    line-height: 1.8rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 1rem; }
