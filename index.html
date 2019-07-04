@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />	
-		<title>Adam Rolczyk | Aspiring developer</title>
-		<meta name="description" content="A portfolio website of a polish web-developer." />
-		<meta name="keywords" content="portfolio, omzeton, rolczyk, adam, javascript, webgl" />
-		<meta name="author" content="Adam Rolczyk" />
-		<link rel="icon" href="img/browser-logo.png" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/reset.css">
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
-		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Adam Rolczyk | Aspiring developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A portfolio website of a polish web-developer."
+    />
+    <meta
+      name="keywords"
+      content="portfolio, omzeton, rolczyk, adam, javascript, webgl"
+    />
+    <meta name="author" content="Adam Rolczyk" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
   <body>
     <!-- 
 		  Layout:
@@ -25,7 +29,7 @@
 	   -->
     <nav>
       <div class="button logo">
-        <h2>Omzeton.</h2>
+        <h2>adam rolczyk.</h2>
       </div>
       <div></div>
       <div class="button menu">
@@ -36,70 +40,147 @@
       </div>
     </nav>
     <div id="nav--selector"></div>
+    <div class="Bottom__Left__Corners">
+      <div></div>
+      <div></div>
+    </div>
     <main>
       <section class="Intro content-wrap">
         <div class="Intro__Heading">
           <h2><span class="Heading--Stagger">Home grown dev.</span></h2>
           <p>
             <span class="Heading--Stagger"
-              >Hi I'm Adam, a wanna-be fullstack developer and a total
-              nerd</span
+              >Hi I'm Adam, a wanna-be fullstack developer and a total nerd
+              based</span
             ><span class="Heading--Stagger">
-              based in Warsaw. I'm really passionate about creating
-              digital</span
-            ><span class="Heading--Stagger">
-              projects and great design.</span
-            >
+              in Warsaw. I'm really passionate about creating digital</span
+            ><span class="Heading--Stagger"> projects and great design.</span>
           </p>
           <div class="Heading--Underline"></div>
         </div>
       </section>
       <section class="Works content-wrap">
+        <div class="Works__Heading">
+          <h2>Selected work.</h2>
+        </div>
         <div class="Works__Display__Container">
-          <div class="Display Display--Right">
-            <h2>notnik</h2>
-            <div class="Technologies">
-              <p>JavaScript</p>
-              <p>React</p>
-              <p>REST API</p>
-              <p>Nodejs</p>
-              <p>Mongodb</p>
-              <p>Webtokens</p>
+          <div class="Display" data-fx="1">
+            <a
+              class="block__title"
+              href="http://notnik.herokuapp.com/"
+              data-img="img/shots/1.png"
+              >Notnik</a
+            >
+            <div class="Display__Info">
+              <div class="About">
+                <p>
+                  An extremly user-friendly journal app for writing down one's
+                  thoughts.
+                </p>
+              </div>
+              <div class="Technologies">
+                <p>JavaScript</p>
+                <p>React</p>
+                <p>Rest API</p>
+                <p>Nodejs</p>
+                <p>Mongodb</p>
+                <p>Secure webtokens</p>
+              </div>
             </div>
           </div>
-          <div class="Display Display--Left">
-            <h2>chatto</h2>
-            <div class="Technologies">
-              <p>JavaScript</p>
-              <p>React</p>
-              <p>GraphQl</p>
-              <p>Websockets</p>
-              <p>Nodejs</p>
-              <p>Nosql</p>
-              <p>Mongodb</p>
+          <div class="Display" data-fx="1">
+            <a
+              href="https://chatto--react.herokuapp.com/"
+              class="block__title"
+              data-img="img/shots/2.png"
+              >Chatto</a
+            >
+            <div class="Display__Info">
+              <div class="About">
+                <p>
+                  Chat application built in React and Node for quick and easy
+                  message exchange.
+                </p>
+              </div>
+              <div class="Technologies">
+                <p>JavaScript</p>
+                <p>React</p>
+                <p>GraphQl</p>
+                <p>Websockets</p>
+                <p>Nodejs</p>
+                <p>Nosql</p>
+                <p>Mongodb</p>
+              </div>
             </div>
           </div>
-          <div class="Display Display--Right">
-            <h2>dorion estates</h2>
-            <div class="Technologies">
-              <p>JavaScript</p>
-              <p>React</p>
-              <p>Firebase</p>
-              <p>Redux</p>
-              <p>RWD</p>
-              <p>React Router</p>
+          <div class="Display" data-fx="1">
+            <a
+              href="https://real-estate-d9a1e.firebaseapp.com/"
+              class="block__title"
+              data-img="img/shots/3.png"
+              >Dorion Estates</a
+            >
+            <div class="Display__Info">
+              <div class="About">
+                <p>
+                  Simple real estate app for sharing adverts and renting
+                  properties.
+                </p>
+              </div>
+              <div class="Technologies">
+                <p>JavaScript</p>
+                <p>React</p>
+                <p>Firebase</p>
+                <p>Redux</p>
+                <p>RWD</p>
+                <p>React Router</p>
+              </div>
             </div>
           </div>
-          <div class="Display Display--Left">
-            <h2>amarynix</h2>
-            <div class="Technologies">
-              <p>JavaScript</p>
-              <p>SCSS</p>
-              <p>Greensock</p>
-              <p>Animejs</p>
-              <p>Algorithms</p>
-              <p>Books</p>
-              <p>My computer</p>
+          <div class="Display" data-fx="1">
+            <a
+              href="https://amarynix.herokuapp.com/index.html"
+              class="block__title"
+              data-img="img/shots/4.png"
+              >Amarynix</a
+            >
+            <div class="Display__Info">
+              <div class="About">
+                <p>
+                  First ever online conjugator for amharic verb system on the
+                  internet.
+                </p>
+              </div>
+              <div class="Technologies">
+                <p>JavaScript</p>
+                <p>SCSS</p>
+                <p>Greensock</p>
+                <p>Animejs</p>
+                <p>Algorithms</p>
+                <p>Books</p>
+                <p>My computer</p>
+              </div>
+            </div>
+          </div>
+          <div class="Display" data-fx="1">
+            <a
+              href="http://localhost:3001"
+              class="block__title"
+              data-img="img/shots/4.png"
+              >Portfolio</a
+            >
+            <div class="Display__Info">
+              <div class="About">
+                <p>No way!?</p>
+              </div>
+              <div class="Technologies">
+                <p>JavaScript</p>
+                <p>Animejs</p>
+                <p>GSAP</p>
+                <p>WebGL</p>
+                <p>Parallax</p>
+                <p>Smooth scrolling</p>
+              </div>
             </div>
           </div>
         </div>
@@ -115,11 +196,12 @@
       </div>
 
       <div class="morph-wrap">
-				<svg class="morph" width="1400" height="770" viewBox="0 0 1400 770">
-					<path d="M 262.9,252.2 C 210.1,338.2 212.6,487.6 288.8,553.9 372.2,626.5 511.2,517.8 620.3,536.3 750.6,558.4 860.3,723 987.3,686.5 1089,657.3 1168,534.7 1173,429.2 1178,313.7 1096,189.1 995.1,130.7 852.1,47.07 658.8,78.95 498.1,119.2 410.7,141.1 322.6,154.8 262.9,252.2 Z"/>
-				</svg>
+        <svg class="morph" width="1400" height="770" viewBox="0 0 1400 770">
+          <path
+            d="M 262.9,252.2 C 210.1,338.2 212.6,487.6 288.8,553.9 372.2,626.5 511.2,517.8 620.3,536.3 750.6,558.4 860.3,723 987.3,686.5 1089,657.3 1168,534.7 1173,429.2 1178,313.7 1096,189.1 995.1,130.7 852.1,47.07 658.8,78.95 498.1,119.2 410.7,141.1 322.6,154.8 262.9,252.2 Z"
+          />
+        </svg>
       </div>
-      
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
