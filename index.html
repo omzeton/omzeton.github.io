@@ -29,15 +29,17 @@
       </div>
       <div></div>
       <div class="button menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <div class="menu__button"><p>Intro</p></div>
+        <div class="menu__button"><p>Projects</p></div>
+        <div class="menu__button"><p>Skills</p></div>
+        <div class="menu__button"><p>Contact</p></div>
       </div>
     </nav>
+    <div id="nav--selector"></div>
     <main>
-      <section class="Intro">
+      <section class="Intro content-wrap">
         <div class="Intro__Heading">
-          <h2><span class="Heading--Stagger">Home grown.</span></h2>
+          <h2><span class="Heading--Stagger">Home grown dev.</span></h2>
           <p>
             <span class="Heading--Stagger"
               >Hi I'm Adam, a wanna-be fullstack developer and a total
@@ -46,24 +48,83 @@
               based in Warsaw. I'm really passionate about creating
               digital</span
             ><span class="Heading--Stagger">
-              projects and great design. Let's get to know each other.</span
+              projects and great design.</span
             >
           </p>
+          <div class="Heading--Underline"></div>
         </div>
       </section>
-      <section class="Works"></section>
-      <section class="Skills"></section>
-      <section class="Contact"></section>
+      <section class="Works content-wrap">
+        <div class="Works__Display__Container">
+          <div class="Display Display--Right">
+            <h2>notnik</h2>
+            <div class="Technologies">
+              <p>JavaScript</p>
+              <p>React</p>
+              <p>REST API</p>
+              <p>Nodejs</p>
+              <p>Mongodb</p>
+              <p>Webtokens</p>
+            </div>
+          </div>
+          <div class="Display Display--Left">
+            <h2>chatto</h2>
+            <div class="Technologies">
+              <p>JavaScript</p>
+              <p>React</p>
+              <p>GraphQl</p>
+              <p>Websockets</p>
+              <p>Nodejs</p>
+              <p>Nosql</p>
+              <p>Mongodb</p>
+            </div>
+          </div>
+          <div class="Display Display--Right">
+            <h2>dorion estates</h2>
+            <div class="Technologies">
+              <p>JavaScript</p>
+              <p>React</p>
+              <p>Firebase</p>
+              <p>Redux</p>
+              <p>RWD</p>
+              <p>React Router</p>
+            </div>
+          </div>
+          <div class="Display Display--Left">
+            <h2>amarynix</h2>
+            <div class="Technologies">
+              <p>JavaScript</p>
+              <p>SCSS</p>
+              <p>Greensock</p>
+              <p>Animejs</p>
+              <p>Algorithms</p>
+              <p>Books</p>
+              <p>My computer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="Skills content-wrap"></section>
+      <section class="Contact content--related"></section>
+
       <div id="progressBar"></div>
+
       <div class="cursor">
         <div class="cursor__inner cursor__inner--circle"></div>
         <div class="cursor__inner cursor__inner--dot"></div>
       </div>
-      <div class="content" id="app">
-        <!-- sticky background -->
+
+      <div class="morph-wrap">
+				<svg class="morph" width="1400" height="770" viewBox="0 0 1400 770">
+					<path d="M 262.9,252.2 C 210.1,338.2 212.6,487.6 288.8,553.9 372.2,626.5 511.2,517.8 620.3,536.3 750.6,558.4 860.3,723 987.3,686.5 1089,657.3 1168,534.7 1173,429.2 1178,313.7 1096,189.1 995.1,130.7 852.1,47.07 658.8,78.95 498.1,119.2 410.7,141.1 322.6,154.8 262.9,252.2 Z"/>
+				</svg>
       </div>
+      
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="js/scrollMonitor.js"></script>
+    <script src="js/anime.min.js"></script>
     <script src="js/Cursor.js"></script>
     <script src="js/main.js"></script>
   </body>
