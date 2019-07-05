@@ -32,14 +32,8 @@
         <h2>adam rolczyk.</h2>
       </div>
       <div></div>
-      <div class="button menu">
-        <div class="menu__button"><p>Intro</p></div>
-        <div class="menu__button"><p>Projects</p></div>
-        <div class="menu__button"><p>Skills</p></div>
-        <div class="menu__button"><p>Contact</p></div>
-      </div>
+      <div class="button menu"></div>
     </nav>
-    <div id="nav--selector"></div>
     <div class="Bottom__Left__Corners">
       <div></div>
       <div></div>
@@ -64,13 +58,8 @@
           <h2>Selected work.</h2>
         </div>
         <div class="Works__Display__Container">
-          <div class="Display" data-fx="1">
-            <a
-              class="block__title"
-              href="http://notnik.herokuapp.com/"
-              data-img="img/shots/1.png"
-              >Notnik</a
-            >
+          <div class="Display">
+            <a href="http://notnik.herokuapp.com/">Notnik</a>
             <div class="Display__Info">
               <div class="About">
                 <p>
@@ -88,17 +77,12 @@
               </div>
             </div>
           </div>
-          <div class="Display" data-fx="1">
-            <a
-              href="https://chatto--react.herokuapp.com/"
-              class="block__title"
-              data-img="img/shots/2.png"
-              >Chatto</a
-            >
+          <div class="Display">
+            <a href="https://chatto--react.herokuapp.com/">Chatto</a>
             <div class="Display__Info">
               <div class="About">
                 <p>
-                  Chat application built in React and Node for quick and easy
+                  Chat application built in React and Nodejs for quick and easy
                   message exchange.
                 </p>
               </div>
@@ -113,11 +97,8 @@
               </div>
             </div>
           </div>
-          <div class="Display" data-fx="1">
-            <a
-              href="https://real-estate-d9a1e.firebaseapp.com/"
-              class="block__title"
-              data-img="img/shots/3.png"
+          <div class="Display">
+            <a href="https://real-estate-d9a1e.firebaseapp.com/"
               >Dorion Estates</a
             >
             <div class="Display__Info">
@@ -137,13 +118,8 @@
               </div>
             </div>
           </div>
-          <div class="Display" data-fx="1">
-            <a
-              href="https://amarynix.herokuapp.com/index.html"
-              class="block__title"
-              data-img="img/shots/4.png"
-              >Amarynix</a
-            >
+          <div class="Display">
+            <a href="https://amarynix.herokuapp.com/index.html">Amarynix</a>
             <div class="Display__Info">
               <div class="About">
                 <p>
@@ -157,21 +133,15 @@
                 <p>Greensock</p>
                 <p>Animejs</p>
                 <p>Algorithms</p>
-                <p>Books</p>
-                <p>My computer</p>
+                <p>A paper book</p>
               </div>
             </div>
           </div>
-          <div class="Display" data-fx="1">
-            <a
-              href="http://localhost:3001"
-              class="block__title"
-              data-img="img/shots/4.png"
-              >Portfolio</a
-            >
+          <div class="Display">
+            <a href="http://localhost:3001">Portfolio</a>
             <div class="Display__Info">
               <div class="About">
-                <p>No way!?</p>
+                <p>No way, really!?</p>
               </div>
               <div class="Technologies">
                 <p>JavaScript</p>
@@ -185,8 +155,49 @@
           </div>
         </div>
       </section>
-      <section class="Skills content-wrap"></section>
-      <section class="Contact content--related"></section>
+      <section class="Skills content-wrap">
+        <div class="Skills__Heading">
+          <h2>Owned skills.</h2>
+          <p>
+            I have a solid understanding of how the web works<br />and the
+            process of building applications. <br />If I don't know something I
+            try to understand it quickly.<br />
+            I'm familiar with technologies listed in my portfolio<br />and under
+            this paragraph.
+          </p>
+        </div>
+        <div class="Skills__List">
+          <div class="Skills__List__Line"><h2>Javascript ES6 <span>-</span> SCSS <span>-</span> Gulp</h2></div>
+          <div class="Skills__List__Line"><h2>React <span>+</span> Redux <span>-</span> React Router <span>-</span> Hooks</h2></div>
+          <div class="Skills__List__Line"><h2>REST APIs</h2></div>
+          <div class="Skills__List__Line"><h2>GraphQL APIs</h2></div>
+          <div class="Skills__List__Line"><h2>Nodejs <span>-</span> Express <span>+</span> MVC <span>-</span> EJS</h2></div>
+        </div>
+      </section>
+      <section class="Contact content--related">
+        <div class="Contact__Container">
+          <div class="Contact__Left">
+            <h2>Want to work together?<br>Feel free to send me <span>an email</span></h2>
+          </div>
+          <div class="Contact__Right">
+            <a href="https://github.com/omzeton">Github</a>
+            <a href="https://www.linkedin.com/in/adam-rolczyk-a513a118a/">LinkedIn</a>
+            <a href="https://dribbble.com/omzeton">Dribble</a>
+            <a href="https://www.facebook.com/profile.php?id=100007092697135">Facebook</a>
+          </div>
+        </div>
+        <div class="Footer">
+          <div class="Copy">
+            <p>Website &copy; 2019</p>
+          </div>
+          <div class="Credit">
+            <p>Created by Adam Rolczyk - Gordita font is owned by Type Atelier</p>
+          </div>
+          <div class="Imprint">
+            <p>Imprint.</p>
+          </div>
+        </div>
+      </section>
 
       <div id="progressBar"></div>
 
@@ -207,7 +218,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="js/scrollMonitor.js"></script>
     <script src="js/anime.min.js"></script>
-    <script src="js/Cursor.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

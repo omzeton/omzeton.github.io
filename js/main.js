@@ -5,13 +5,14 @@ const spans = document.getElementsByClassName("Heading--Stagger");
 const underline = document.querySelector(".Heading--Underline");
 const navSelector = document.getElementById("nav--selector");
 const navBtns = Array.from(document.querySelectorAll(".menu__button"));
+const navMenu = document.getElementById("nav--menu");
 const DOM = {};
 DOM.svg = document.querySelector(".morph");
 DOM.shapeEl = DOM.svg.querySelector("path");
 DOM.contentElems = Array.from(document.querySelectorAll(".content-wrap"));
 DOM.footer = document.querySelector(".content--related");
 const contentElemsTotal = DOM.contentElems.length;
-const colors = ["#ff3434", "#ffd034", "#5934ff", "#34ff82"];
+const colors = ["#ff3434", "#ffd034", "#674ae9", "#34ff82"];
 
 // Progress Bar on the right of the screen
 function progressBar() {
@@ -53,15 +54,6 @@ TweenMax.fromTo(
   { width: "0px" },
   { width: "150px", ease: Expo.easeOut, delay: 2 }
 );
-
-// Cursor
-//*{
-// Plugin taken from Codrops tutorial on Sticky Image Effect
-// https://tympanus.net/Tutorials/StickyImageEffect/
-//}*
-
-const cursor = new Cursor(document.querySelector(".cursor"));
-
 // Morphing SVG in background
 //*{
 // Plugin taken from Codrops tutorial on Morphing Background Shapes
@@ -302,145 +294,11 @@ const init = function() {
 
 init();
 
-// Nav selector
-function getNavSelectorPos() {
-  navSelector.style.opacity = 1;
-  if (window.pageYOffset <= DOM.contentElems[1].offsetTop) {
-    navSelector.style.transform = "translateY(0em)";
-  }
-  if (
-    window.pageYOffset >= DOM.contentElems[1].offsetTop &&
-    window.pageYOffset <= DOM.contentElems[2].offsetTop
-  ) {
-    navSelector.style.transform = "translateY(2em)";
-  }
-  if (
-    window.pageYOffset >= DOM.contentElems[2].offsetTop &&
-    window.pageYOffset <= DOM.footer.offsetTop
-  ) {
-    navSelector.style.transform = "translateY(4em)";
-  }
-  if (
-    window.pageYOffset >= DOM.footer.offsetTop ||
-    window.pageYOffset == DOM.footer.offsetTop
-  ) {
-    navSelector.style.transform = "translateY(6em)";
-  }
-}
-
-for (let i = 0; i < navBtns.length - 1; i++) {
-  navBtns[i].addEventListener("click", () =>
-    TweenMax.to(window, 1, {
-      ease: Power4.easeInOut,
-      scrollTo: DOM.contentElems[i].offsetTop
-    })
-  );
-}
-
-navBtns[3].addEventListener("click", () =>
-    TweenMax.to(window, 1, {
-      ease: Power4.easeInOut,
-      scrollTo: DOM.footer.offsetTop
-    })
-  );
-
-getNavSelectorPos();
 progressBar();
 
 window.addEventListener("scroll", () => {
-  getNavSelectorPos();
   progressBar();
 });
 window.addEventListener("resize", () => {
-  getNavSelectorPos();
   progressBar();
 });
-
-    // Effect 1
-    class HoverImgFx1 {
-      constructor(el) {
-          this.DOM = {el: el};
-          this.DOM.reveal = document.createElement('div');
-          this.DOM.reveal.className = 'hover-reveal';
-          this.DOM.reveal.innerHTML = `<div class="hover-reveal__inner"><div class="hover-reveal__img" style="background-image:url(${this.DOM.el.dataset.img})"></div></div>`;
-          this.DOM.el.appendChild(this.DOM.reveal);
-          this.DOM.revealInner = this.DOM.reveal.querySelector('.hover-reveal__inner');
-          this.DOM.revealInner.style.overflow = 'hidden';
-          this.DOM.revealImg = this.DOM.revealInner.querySelector('.hover-reveal__img');
-
-          this.initEvents();
-      }
-      initEvents() {
-          this.positionElement = (ev) => {
-              const mousePos = getMousePos(ev);
-              const docScrolls = {
-                  left : document.body.scrollLeft + document.documentElement.scrollLeft, 
-                  top : document.body.scrollTop + document.documentElement.scrollTop
-              };
-              this.DOM.reveal.style.top = `${mousePos.y+20-docScrolls.top}px`;
-              this.DOM.reveal.style.left = `${mousePos.x+20-docScrolls.left}px`;
-          };
-          this.mouseenterFn = (ev) => {
-              this.positionElement(ev);
-              this.showImage();
-          };
-          this.mousemoveFn = ev => requestAnimationFrame(() => {
-              this.positionElement(ev);
-          });
-          this.mouseleaveFn = () => {
-              this.hideImage();
-          };
-          
-          this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
-          this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
-          this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
-      }
-      showImage() {
-          TweenMax.killTweensOf(this.DOM.revealInner);
-          TweenMax.killTweensOf(this.DOM.revealImg);
-
-          this.tl = new TimelineMax({
-              onStart: () => {
-                  this.DOM.reveal.style.opacity = 1;
-                  TweenMax.set(this.DOM.el, {zIndex: 1000});
-              }
-          })
-          .add('begin')
-          .add(new TweenMax(this.DOM.revealInner, 0.2, {
-              ease: Sine.easeOut,
-              startAt: {x: '-100%'},
-              x: '0%'
-          }), 'begin')
-          .add(new TweenMax(this.DOM.revealImg, 0.2, {
-              ease: Sine.easeOut,
-              startAt: {x: '100%'},
-              x: '0%'
-          }), 'begin');
-      }
-      hideImage() {
-          TweenMax.killTweensOf(this.DOM.revealInner);
-          TweenMax.killTweensOf(this.DOM.revealImg);
-
-          this.tl = new TimelineMax({
-              onStart: () => {
-                  TweenMax.set(this.DOM.el, {zIndex: 999});
-              },
-              onComplete: () => {
-                  TweenMax.set(this.DOM.el, {zIndex: ''});
-                  TweenMax.set(this.DOM.reveal, {opacity: 0});
-              }
-          })
-          .add('begin')
-          .add(new TweenMax(this.DOM.revealInner, 0.2, {
-              ease: Sine.easeOut,
-              x: '100%'
-          }), 'begin')
-          
-          .add(new TweenMax(this.DOM.revealImg, 0.2, {
-              ease: Sine.easeOut,
-              x: '-100%'
-          }), 'begin');
-      }
-  }
-
-[...document.querySelectorAll('[data-fx="1"] > a, a[data-fx="1"]')].forEach(link => new HoverImgFx1(link));

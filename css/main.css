@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:700&display=swap");
 @font-face {
   font-family: "gorditabold";
-  src: url("http://localhost:3001/fonts/gordita-bold-webfont.woff") format("woff"), url("http://localhost:3001/fonts/gordita-bold-webfont.otf") format("opentype"); }
+  src: url("http://localhost:3000/fonts/gordita-bold-webfont.woff") format("woff"), url("http://localhost:3000/fonts/gordita-bold-webfont.otf") format("opentype"); }
 
 ::selection {
   background-color: #000000;
@@ -46,27 +46,42 @@ nav {
     align-items: center;
     justify-content: center;
     flex-direction: column; }
-  nav .logo h2 {
-    font-family: "gorditabold", Arial, sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 0;
-    font-size: 1.1rem;
-    letter-spacing: -1.5px;
-    color: #000000;
-    white-space: nowrap; }
+  nav .logo {
+    height: 3em; }
+    nav .logo h2 {
+      font-family: "gorditabold", Arial, sans-serif;
+      font-weight: normal;
+      font-style: normal;
+      line-height: 0;
+      font-size: 1.1rem;
+      letter-spacing: -1.5px;
+      color: #000000;
+      white-space: nowrap; }
   nav .menu {
     position: relative;
-    top: 1em;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    height: 200%; }
+    height: 8em;
+    overflow: hidden;
+    transition: height 0.5s; }
     nav .menu .menu__button {
+      display: block;
       width: 100%;
-      position: relative;
+      height: 2em;
+      right: 2px;
+      position: absolute;
       cursor: pointer; }
+      nav .menu .menu__button:nth-child(1) {
+        top: 0em; }
+      nav .menu .menu__button:nth-child(2) {
+        top: 2em; }
+      nav .menu .menu__button:nth-child(3) {
+        top: 4em; }
+      nav .menu .menu__button:nth-child(4) {
+        top: 6em; }
       nav .menu .menu__button p {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 0;
         text-align: right;
         font-family: "gorditabold", Arial, sans-serif;
         font-weight: normal;
@@ -78,10 +93,10 @@ nav {
   background-color: #000000;
   width: 0.2em;
   right: 3.2em;
-  top: 3.5em;
+  top: 2.5em;
   height: 1.1em;
   z-index: 99;
-  opacity: 0;
+  opacity: 1;
   transition: transform 0.3s ease-in-out, opacity 1s ease-in-out; }
 
 .Intro {
@@ -122,100 +137,195 @@ nav {
       top: 1.5em;
       left: 0.4em; }
 
-.Works .Works__Heading {
-  position: absolute;
-  right: 9em;
-  top: 6em; }
-  .Works .Works__Heading h2 {
-    position: relative;
-    font-family: "gorditabold", Arial, sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 2rem;
-    letter-spacing: -3px;
-    color: #000000;
-    white-space: nowrap; }
-    .Works .Works__Heading h2:before {
-      content: "";
-      position: absolute;
-      top: -5px;
-      right: 0;
-      width: 120%;
-      height: 2px;
-      background-color: #000000; }
-
-.Works .Works__Display__Container {
-  position: absolute;
-  top: 10em;
-  right: 9em;
-  width: calc(100% - 18em); }
-  .Works .Works__Display__Container .Display {
-    position: relative;
-    height: 6em;
-    margin-bottom: 1em;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #000000;
-    transition: background-color 0.4s; }
-    .Works .Works__Display__Container .Display a {
+.Works {
+  height: 48em; }
+  .Works .Works__Heading {
+    position: absolute;
+    right: 9em;
+    top: 6em; }
+    .Works .Works__Heading h2 {
       position: relative;
       font-family: "gorditabold", Arial, sans-serif;
       font-weight: normal;
       font-style: normal;
-      text-decoration: none;
+      font-size: 2rem;
+      letter-spacing: -3px;
+      color: #000000;
+      white-space: nowrap; }
+      .Works .Works__Heading h2:before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        right: 0;
+        width: 120%;
+        height: 2px;
+        background-color: #000000; }
+  .Works .Works__Display__Container {
+    position: absolute;
+    top: 10em;
+    right: 9em;
+    width: calc(100% - 18em); }
+    .Works .Works__Display__Container .Display {
+      position: relative;
+      height: 6em;
+      margin-bottom: 1em;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #000000;
+      transition: background-color 0.4s; }
+      .Works .Works__Display__Container .Display a {
+        position: relative;
+        font-family: "gorditabold", Arial, sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        text-decoration: none;
+        font-size: 3rem;
+        letter-spacing: -3.2px;
+        color: #000000;
+        white-space: nowrap;
+        transition: right 0.4s; }
+      .Works .Works__Display__Container .Display .Display__Info {
+        margin-left: 1em; }
+        .Works .Works__Display__Container .Display .Display__Info .About {
+          position: relative;
+          display: flex;
+          margin-bottom: 0.5em; }
+          .Works .Works__Display__Container .Display .Display__Info .About p {
+            font-family: "Lato", sans-serif;
+            font-size: 0.8rem;
+            margin-right: 0.5em;
+            font-weight: normal;
+            font-style: normal; }
+        .Works .Works__Display__Container .Display .Display__Info .Technologies {
+          position: relative;
+          display: flex; }
+          .Works .Works__Display__Container .Display .Display__Info .Technologies p {
+            font-family: "Lato", sans-serif;
+            font-size: 0.8rem;
+            margin-right: 0.5em;
+            font-weight: normal;
+            font-style: normal; }
+      .Works .Works__Display__Container .Display:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 75%;
+        right: 0;
+        width: 0.2em;
+        background-color: #000000; }
+
+.Skills {
+  height: 50em; }
+  .Skills .Skills__Heading {
+    position: relative;
+    top: 8em;
+    left: 9em;
+    width: calc(100% - 18em);
+    z-index: 999; }
+    .Skills .Skills__Heading h2 {
+      position: relative;
+      font-family: "gorditabold", Arial, sans-serif;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 2rem;
+      letter-spacing: -3px;
+      color: #000000;
+      white-space: nowrap; }
+      .Skills .Skills__Heading h2:before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 0;
+        width: 7em;
+        height: 2px;
+        background-color: #000000; }
+    .Skills .Skills__Heading p {
+      position: relative;
+      top: 2em;
+      width: 26em;
+      margin-top: 0em;
+      line-height: 2rem;
+      font-family: "Lato", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      text-align: right;
+      color: #000000; }
+  .Skills .Skills__List {
+    position: absolute;
+    width: calc(100% - 18em);
+    right: 9em;
+    top: 29em;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr); }
+    .Skills .Skills__List .Skills__List__Line {
+      height: 4em; }
+      .Skills .Skills__List .Skills__List__Line h2 {
+        font-family: "gorditabold", Arial, sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 2.2rem;
+        text-align: right;
+        letter-spacing: -3px; }
+        .Skills .Skills__List .Skills__List__Line h2 span {
+          opacity: 0.5; }
+
+.Contact {
+  height: 50em; }
+  .Contact .Contact__Container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 3em;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr; }
+    .Contact .Contact__Container .Contact__Left h2 {
+      font-family: "gorditabold", Arial, sans-serif;
+      font-weight: normal;
+      font-style: normal;
       font-size: 3rem;
-      letter-spacing: -3.2px;
+      letter-spacing: -4px;
       color: #000000;
       white-space: nowrap;
-      transition: right 0.4s; }
-    .Works .Works__Display__Container .Display .Display__Info {
-      margin-left: 1em; }
-      .Works .Works__Display__Container .Display .Display__Info .About {
+      line-height: 4rem; }
+      .Contact .Contact__Container .Contact__Left h2 span {
+        text-decoration: underline; }
+    .Contact .Contact__Container .Contact__Right {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-left: 2em;
+      margin-top: 4em; }
+      .Contact .Contact__Container .Contact__Right a {
         position: relative;
-        display: flex;
-        margin-bottom: 0.5em; }
-        .Works .Works__Display__Container .Display .Display__Info .About p {
-          font-family: "Lato", sans-serif;
-          font-size: 0.8rem;
-          margin-right: 0.5em;
-          font-weight: normal;
-          font-style: normal; }
-      .Works .Works__Display__Container .Display .Display__Info .Technologies {
-        position: relative;
-        display: flex; }
-        .Works .Works__Display__Container .Display .Display__Info .Technologies p {
-          font-family: "Lato", sans-serif;
-          font-size: 0.8rem;
-          margin-right: 0.5em;
-          font-weight: normal;
-          font-style: normal; }
-    .Works .Works__Display__Container .Display:after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 75%;
-      right: 0;
-      width: 0.2em;
-      background-color: #000000; }
-
-.cursor {
-  display: none; }
-  .cursor .cursor__inner {
-    z-index: 9999;
-    pointer-events: none;
+        line-height: 2rem;
+        font-family: "Lato", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: #000000;
+        text-decoration: none; }
+  .Contact .Footer {
+    left: 2em;
     position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 50%; }
-  .cursor .cursor__inner--dot {
-    width: 8px;
-    height: 8px;
-    background: #000000; }
-  .cursor .cursor__inner--circle {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #000000; }
+    width: calc(100vw - 6em);
+    height: 2.5em;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 7em 1fr 2em; }
+    .Contact .Footer > div {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .Contact .Footer > div p {
+        font-family: "Lato", sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 0.65rem;
+        text-align: center; }
 
 .morph-wrap {
   position: fixed;
