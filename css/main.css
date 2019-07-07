@@ -292,7 +292,11 @@ nav {
       white-space: nowrap;
       line-height: 4rem; }
       .Contact .Contact__Container .Contact__Left h2 span {
-        text-decoration: underline; }
+        text-decoration: underline;
+        cursor: pointer;
+        transition: text-decoration-color 0.3s; }
+        .Contact .Contact__Container .Contact__Left h2 span:hover {
+          text-decoration-color: #f9f5f1; }
     .Contact .Contact__Container .Contact__Right {
       display: flex;
       justify-content: center;
@@ -366,6 +370,79 @@ nav {
     width: 0.1em;
     background-color: #000000; }
 
-@media (max-width: 900px) {
-  .Intro__Heading h2 {
-    color: blue; } }
+@media (max-width: 1000px) {
+  .Bottom__Left__Corners {
+    display: none; }
+  .Works .Works__Heading {
+    right: 3em; }
+  .Works .Works__Display__Container {
+    left: 3em;
+    width: calc(100% - 6em); }
+  .Works .Works__Display__Container .Display__Info .About p {
+    font-size: 1em; }
+  .Works .Works__Display__Container .Display__Info .Technologies p {
+    font-size: 1em; }
+  .Works .Works__Display__Container .Display a {
+    font-size: 2.3rem; } }
+
+@media (max-width: 815px) {
+  .Intro .Intro__Heading h2 {
+    font-size: 9.9vw;
+    letter-spacing: -0.8vw; }
+  .Intro .Intro__Heading p {
+    margin-top: 2em;
+    font-size: 2vw;
+    line-height: 3.7vw;
+    letter-spacing: -.1vw; }
+  .Works {
+    height: calc(100vw + 7em); }
+  .Works .Display {
+    height: 10vw !important; }
+  .Works .Works__Display__Container .Display__Info {
+    margin-left: .4em !important; }
+  .Works .Works__Display__Container .Display__Info .About p {
+    font-size: 1.7vw !important; }
+  .Works .Works__Display__Container .Display__Info .Technologies p {
+    font-size: 1.7vw !important; }
+  .Works .Works__Display__Container .Display a {
+    font-size: 4.8vw;
+    letter-spacing: -.5vw; }
+  .Skills {
+    height: 90vw; }
+  .Skills .Skills__Heading {
+    top: 0;
+    left: 3em;
+    width: calc(100% - 6em); }
+  .Skills .Skills__Heading p {
+    position: absolute;
+    top: 4em;
+    line-height: 4.5vw;
+    right: 0;
+    font-size: 3vw !important; }
+  .Skills .Skills__List {
+    top: 45vw;
+    right: 3em;
+    width: calc(100% - 6em); }
+  .Skills .Skills__List .Skills__List__Line {
+    height: 8vw; }
+  .Skills .Skills__List .Skills__List__Line h2 {
+    font-size: 5vw; }
+  .Contact {
+    height: 100vw; }
+  .Contact .Contact__Container {
+    grid-template-columns: 1fr; }
+  .Contact .Contact__Container .Contact__Left h2 {
+    font-size: 6vw;
+    letter-spacing: -.3vw;
+    line-height: 9vw; }
+  .Contact .Contact__Container .Contact__Right {
+    padding-left: 0; }
+  .Contact .Contact__Container .Contact__Right a {
+    font-size: 1rem; }
+  .Contact .Footer {
+    left: 0;
+    width: calc(100vw - 2em); }
+  .Contact .Footer p {
+    font-size: 2vw !important; }
+  .Contact .Footer .Credit p span {
+    display: none; } }

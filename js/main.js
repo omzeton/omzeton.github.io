@@ -3,9 +3,11 @@ const html = document.documentElement;
 const progress = document.getElementById("progressBar");
 const spans = document.getElementsByClassName("Heading--Stagger");
 const underline = document.querySelector(".Heading--Underline");
+const copyYear = document.getElementById("copyrightYear");
 const navSelector = document.getElementById("nav--selector");
 const navBtns = Array.from(document.querySelectorAll(".menu__button"));
 const navMenu = document.getElementById("nav--menu");
+const tl = new TimelineMax();
 const DOM = {};
 DOM.svg = document.querySelector(".morph");
 DOM.shapeEl = DOM.svg.querySelector("path");
@@ -14,7 +16,12 @@ DOM.footer = document.querySelector(".content--related");
 const contentElemsTotal = DOM.contentElems.length;
 const colors = ["#ff3434", "#ffd034", "#674ae9", "#34ff82"];
 
-// Progress Bar on the right of the screen
+// Copyright year
+
+const date = new Date();
+copyYear.innerHTML = date.getFullYear();
+
+// Progress Bar to the right of the screen
 function progressBar() {
   let scrollTop = window.pageYOffset,
     pageHeight =
@@ -33,9 +40,7 @@ function progressBar() {
   return percentage;
 }
 
-// TweenMax Letter Animations
-let tl = new TimelineMax();
-
+// TweenMax h2 Animations
 tl.staggerTo(
   spans,
   1.5,
@@ -52,8 +57,9 @@ TweenMax.fromTo(
   underline,
   4,
   { width: "0px" },
-  { width: "150px", ease: Expo.easeOut, delay: 2 }
+  { width: "20%", ease: Expo.easeOut, delay: 2 }
 );
+
 // Morphing SVG in background
 //*{
 // Plugin taken from Codrops tutorial on Morphing Background Shapes
