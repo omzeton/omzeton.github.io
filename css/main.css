@@ -426,7 +426,8 @@ nav {
   .Skills .Skills__List .Skills__List__Line {
     height: 8vw; }
   .Skills .Skills__List .Skills__List__Line h2 {
-    font-size: 5vw; }
+    font-size: 5vw;
+    letter-spacing: -.4vw; }
   .Contact {
     height: 100vw; }
   .Contact .Contact__Container {
