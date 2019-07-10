@@ -14,7 +14,7 @@ DOM.shapeEl = DOM.svg.querySelector("path");
 DOM.contentElems = Array.from(document.querySelectorAll(".content-wrap"));
 DOM.footer = document.querySelector(".content--related");
 const contentElemsTotal = DOM.contentElems.length;
-const colors = ["#ff3434", "#ffd034", "#674ae9", "#34ff82"];
+const colors = ["#ff3434", "#ffd034", "#8067ee", "#34ff82"];
 
 // Copyright year
 
