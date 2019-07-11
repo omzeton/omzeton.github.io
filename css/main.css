@@ -319,7 +319,7 @@ nav {
     bottom: 0;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 7em 1fr 2em; }
+    grid-template-columns: 7em 1fr 21em; }
     .Contact .Footer > div {
       display: flex;
       align-items: center;
@@ -442,7 +442,8 @@ nav {
     font-size: 1rem; }
   .Contact .Footer {
     left: 0;
-    width: calc(100vw - 2em); }
+    width: 100vw;
+    grid-template-columns: 7em 1fr 35vw; }
   .Contact .Footer p {
     font-size: 2vw !important; }
   .Contact .Footer .Credit p span {
