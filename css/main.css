@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:700&display=swap");
 @font-face {
   font-family: "gorditabold";
-  src: url("https://omzeton.github.io/portfo/fonts/gordita-bold-webfont.woff") format("woff"), url("https://omzeton.github.io/portfo/fonts/gordita-bold-webfont.otf") format("opentype"); }
+  src: url("https://omzeton.github.io/fonts/gordita-bold-webfont.woff") format("woff"), url("https://omzeton.github.io/fonts/gordita-bold-webfont.otf") format("opentype"); }
 
 ::selection {
   background-color: #000000;
