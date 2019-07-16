@@ -268,6 +268,7 @@ nav {
         font-style: normal;
         font-size: 2.2rem;
         text-align: right;
+        white-space:nowrap;
         letter-spacing: -3px; }
         .Skills .Skills__List .Skills__List__Line h2 span {
           opacity: 0.5; }
