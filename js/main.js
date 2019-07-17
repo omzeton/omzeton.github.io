@@ -4,6 +4,7 @@ const progress = document.getElementById("progressBar");
 const spans = document.getElementsByClassName("Heading--Stagger");
 const underline = document.querySelector(".Heading--Underline");
 const copyYear = document.getElementById("copyrightYear");
+const nav = document.querySelector("nav");
 const navSelector = document.getElementById("nav--selector");
 const navBtns = Array.from(document.querySelectorAll(".menu__button"));
 const navMenu = document.getElementById("nav--menu");
@@ -20,6 +21,11 @@ const colors = ["#ff3434", "#ffd034", "#8067ee", "#34ff82"];
 
 const date = new Date();
 copyYear.innerHTML = date.getFullYear();
+
+// Disappeasing navbar on mobile
+function hideNavOnScrollMobile() {
+  nav.style.top = window.pageYOffset > 200 ? "-6em" : "2em";
+}
 
 // Progress Bar to the right of the screen
 function progressBar() {
@@ -303,6 +309,9 @@ init();
 progressBar();
 
 window.addEventListener("scroll", () => {
+  if (html.clientWidth < 1000) {
+    hideNavOnScrollMobile();
+  }
   progressBar();
 });
 window.addEventListener("resize", () => {

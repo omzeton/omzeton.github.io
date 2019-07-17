@@ -40,6 +40,7 @@ nav {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 7em 1fr 9em;
+  transition:top .5s;
   z-index: 9999; }
   nav .button {
     display: flex;
@@ -130,6 +131,9 @@ nav {
       font-weight: 300;
       font-size: 1rem;
       color: #000000; }
+    .Intro .Intro__Heading p span {
+      white-space: nowrap;
+    }
     .Intro .Intro__Heading .Heading--Underline {
       position: relative;
       background-color: #000000;
@@ -392,7 +396,7 @@ nav {
     letter-spacing: -0.8vw; }
   .Intro .Intro__Heading p {
     margin-top: 2em;
-    font-size: 2vw;
+    font-size: 2.5vw;
     line-height: 3.7vw;
     letter-spacing: -.1vw; }
   .Works {
