@@ -1,0 +1,12 @@
+{
+  "name": "3_marching_squares",
+  "main": "index.js",
+  "scripts": {
+    "serve": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "dependencies": {
+    "@snowpack/plugin-sass": "^1.4.0",
+    "snowpack": "^3.2.2"
+  }
+}

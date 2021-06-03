@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.splash {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    &__header {
+        line-height: 0;
+        &--underline:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $green;
+            animation: line 1s forwards ease-out 0.5s;
+        }
+        @keyframes line {
+            from { width: 0;    }
+            to   { width: 100%; }
+        }
+    }
+    &__subheader {
+        position: absolute;
+        line-height: 0;
+        margin-top: -24px;
+        transform: rotate(90deg);
+        left: -80px;
+        top: 130px;
+    }
+}

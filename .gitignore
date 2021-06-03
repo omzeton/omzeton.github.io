@@ -3,3 +3,4 @@ gulpfile.js
 sass
 layout.txt
 dist
+/_rfctr/node_modules

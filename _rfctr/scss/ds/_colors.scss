@@ -1,0 +1,20 @@
+$white: #FCFCFC;
+$black: #282828;
+$red-100: #A53F2B;
+$red-200: #BC4749;
+$red-300: #ff3434;
+$orange-100: #EEA242;
+$orange-200: #F3A738;
+$green: #59A96A;
+
+$color-names: 'white', 'black', 'red-100', 'red-200', 'red-300', 'orange-100', 'orange-200', 'green';
+$colors: $white, $black, $red-100, $red-200, $red-300, $orange-100, $orange-200, $green;
+
+@for $i from 1 through length($color-names) {
+    .text-#{nth($color-names, $i)} {
+        color: nth($colors, $i);
+    }
+    .bg-#{nth($color-names, $i)} {
+        background-color: nth($colors, $i);
+    }
+}
