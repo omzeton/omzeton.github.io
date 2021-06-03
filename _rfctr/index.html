@@ -11,128 +11,73 @@
     </head>
     <body class="bg-white">
         <nav class="navbar">
-            <p class="bold-18 navbar__logo text-black">adam rolczyk.</p>
+            <p class="bold-18 navbar__logo text-black spacing-1.5">adam rolczyk.</p>
         </nav>
         <main>
             <section class="splash">
                 <div class="splash__text-wrapper ml-64">
-                    <h2 class="bold-96 text-black">Home grown dev.</h2>
-                    <p class="light-16 splash__subtext text-black">
+                    <h2 class="bold-96 text-black spacing-7">Home grown dev.</h2>
+                    <p class="light-16 splash__subtext text-black spacing-0.5">
                         Hi! I'm Adam, frontend developer, wanna-be fullstack<br />and a nerd from Poland. I'm passionate about creating beautiful and functional web solutions.
                     </p>
                 </div>
             </section>
-            <section class="projects"></section>
+            <section class="projects mx-64 my-128">
+                <div class="projects__title">
+                    <h2 class="bold-32 text-black spacing-2">Selected work.</h2>
+                </div>
+                <ul class="projects__list p-0">
+                    <a href="http://notnik.herokuapp.com/" class="projects__item">
+                        <div class="projects__item-title">
+                            <h2 class="bold-48 spacing-3 text-black my-0 ml-16">Tylko</h2>
+                        </div>
+                        <div class="projects__item-description">
+                            <p class="light-12 text-black my-0">E-commerce based on furniture configurator written in Vue.js</p>
+                            <p class="light-12 text-black my-0">JavaScript Vue Three.js SCSS Django</p>
+                        </div>
+                    </a>
+                    <a href="https://chatto--app.herokuapp.com/" class="projects__item">
+                        <div class="projects__item-title">
+                            <h2 class="bold-48 spacing-3 text-black my-0 ml-16">Notnik</h2>
+                        </div>
+                        <div class="projects__item-description">
+                            <p class="light-12 text-black my-0">An extremly user-friendly journal app for writing down one's thoughts.</p>
+                            <p class="light-12 text-black my-0">JavaScript React Rest API Nodejs Mongodb Secure webtokens</p>
+                        </div>
+                    </a>
+                    <a href="https://real-estate-d9a1e.firebaseapp.com/" class="projects__item">
+                        <div class="projects__item-title">
+                            <h2 class="bold-48 spacing-3 text-black my-0 ml-16">Chatto</h2>
+                        </div>
+                        <div class="projects__item-description">
+                            <p class="light-12 text-black my-0">Chat application built in React and Nodejs for quick and easy message exchange.</p>
+                            <p class="light-12 text-black my-0">JavaScript React GraphQl Websockets Nodejs Nosql Mongodb</p>
+                        </div>
+                    </a>
+                    <a href="https://amarynix.herokuapp.com/index.html" class="projects__item">
+                        <div class="projects__item-title">
+                            <h2 class="bold-48 spacing-3 text-black my-0 ml-16">Dorion Estates</h2>
+                        </div>
+                        <div class="projects__item-description">
+                            <p class="light-12 text-black my-0">Simple real estate app for sharing adverts and renting properties.</p>
+                            <p class="light-12 text-black my-0">JavaScript React Firebase Redux RWD React Router</p>
+                        </div>
+                    </a>
+                    <a href="https://tylko.com/" class="projects__item">
+                        <div class="projects__item-title">
+                            <h2 class="bold-48 spacing-3 text-black my-0 ml-16">Amarynix</h2>
+                        </div>
+                        <div class="projects__item-description">
+                            <p class="light-12 text-black my-0">First ever online conjugator for amharic verb system on the internet.</p>
+                            <p class="light-12 text-black my-0">JavaScript SCSS Greensock Algorithms A paper book</p>
+                        </div>
+                    </a>
+                </ul>
+            </section>
         </main>
         <script type="module" src="./main.js"></script>
-        <!-- <nav>
-            <div class="button logo">
-                <h2>adam rolczyk.</h2>
-            </div>
-            <div></div>
-            <div class="button menu"></div>
-        </nav>
-        <div class="Bottom__Left__Corners">
-            <div></div>
-            <div></div>
-        </div>
+        <!--
         <main>
-            <section class="Intro content-wrap">
-                <div class="Intro__Heading">
-                    <h2><span class="Heading--Stagger">Home grown dev.</span></h2>
-                    <p>
-                        <span class="Heading--Stagger">Hi I'm Adam, a wanna-be fullstack developer and a total nerd based</span
-                        ><span class="Heading--Stagger"> in Warsaw. I'm really passionate about creating digital</span><span class="Heading--Stagger"> projects and great design.</span>
-                    </p>
-                    <div class="Heading--Underline"></div>
-                </div>
-            </section>
-            <section class="Works content-wrap">
-                <div class="Works__Heading">
-                    <h2>Selected work.</h2>
-                </div>
-                <div class="Works__Display__Container">
-                    <div class="Display">
-                        <a href="http://notnik.herokuapp.com/">Notnik</a>
-                        <div class="Display__Info">
-                            <div class="About">
-                                <p>An extremly user-friendly journal app for writing down one's thoughts.</p>
-                            </div>
-                            <div class="Technologies">
-                                <p>JavaScript</p>
-                                <p>React</p>
-                                <p>Rest API</p>
-                                <p>Nodejs</p>
-                                <p>Mongodb</p>
-                                <p>Secure webtokens</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="Display">
-                        <a href="https://chatto--app.herokuapp.com/">Chatto</a>
-                        <div class="Display__Info">
-                            <div class="About">
-                                <p>Chat application built in React and Nodejs for quick and easy message exchange.</p>
-                            </div>
-                            <div class="Technologies">
-                                <p>JavaScript</p>
-                                <p>React</p>
-                                <p>GraphQl</p>
-                                <p>Websockets</p>
-                                <p>Nodejs</p>
-                                <p>Nosql</p>
-                                <p>Mongodb</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="Display">
-                        <a href="https://real-estate-d9a1e.firebaseapp.com/">Dorion Estates</a>
-                        <div class="Display__Info">
-                            <div class="About">
-                                <p>Simple real estate app for sharing adverts and renting properties.</p>
-                            </div>
-                            <div class="Technologies">
-                                <p>JavaScript</p>
-                                <p>React</p>
-                                <p>Firebase</p>
-                                <p>Redux</p>
-                                <p>RWD</p>
-                                <p>React Router</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="Display">
-                        <a href="https://amarynix.herokuapp.com/index.html">Amarynix</a>
-                        <div class="Display__Info">
-                            <div class="About">
-                                <p>First ever online conjugator for amharic verb system on the internet.</p>
-                            </div>
-                            <div class="Technologies">
-                                <p>JavaScript</p>
-                                <p>SCSS</p>
-                                <p>Greensock</p>
-                                <p>Algorithms</p>
-                                <p>A paper book</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="Display">
-                        <a href="http://www.omzeton.com/">Portfolio</a>
-                        <div class="Display__Info">
-                            <div class="About">
-                                <p>No way, really!?</p>
-                            </div>
-                            <div class="Technologies">
-                                <p>JavaScript</p>
-                                <p>Animejs</p>
-                                <p>SVG animations</p>
-                                <p>GSAP</p>
-                                <p>RWD</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
             <section class="Skills content-wrap">
                 <div class="Skills__Heading">
                     <h2>Owned skills.</h2>

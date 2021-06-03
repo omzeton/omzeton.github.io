@@ -10,17 +10,26 @@
 $font-sizes: 1, 2, 4, 8, 12, 16, 18, 24, 32, 40, 48, 64, 80, 96, 112, 128;
 $font-types: "bold", "light";
 
+$letter-spacing: 7, 6, 3, 2, 1;
+
 @for $i from 1 through length($font-types) {
     @for $j from 1 through length($font-sizes) {
         .#{nth($font-types, $i)}-#{nth($font-sizes, $j)} {
             font-size: nth($font-sizes, $j) + px;
             @if $i == 1 {
                 font-family: "Gordita", Arial, sans-serif;
-                letter-spacing: -6px;
             } @else {
                 font-family: "Lato", sans-serif;
-                letter-spacing: -0.5px;
             }
         }
+    }
+}
+
+@for $i from 1 through length($letter-spacing) {
+    .spacing-#{nth($letter-spacing, $i)} {
+        letter-spacing: -(nth($letter-spacing, $i)) + px;
+    }
+    .spacing-#{nth($letter-spacing, $i)}\.5 {
+        letter-spacing: -(nth($letter-spacing, $i) - 0.5) + px;
     }
 }
