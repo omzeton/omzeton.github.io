@@ -3,34 +3,44 @@ body {
     padding: 0;
 }
 
-.splash {
+.navbar {
     position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 10%;
-    &__header {
+    top: 64px;
+    left: 64px;
+    box-sizing: border-box;
+    &__logo {
+        letter-spacing: -1.5px;
         line-height: 0;
-        &--underline:after {
-            content: '';
+        position: relative;
+        &:after {
+            content: "";
             position: absolute;
-            top: 100%;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: $green;
-            animation: line 1s forwards ease-out 0.5s;
-        }
-        @keyframes line {
-            from { width: 0;    }
-            to   { width: 100%; }
+            left: calc(100% + 32px);
+            top: 50%;
+            transform: translateY(-50%);
+
+            width: calc(100vw - 197px - 64px);
+            // 197px = width of the paragraph
+            // 64px - margin
+
+            background-color: $black;
+            height: 1px;
         }
     }
-    &__subheader {
-        position: absolute;
-        line-height: 0;
-        margin-top: -24px;
-        transform: rotate(90deg);
-        left: -80px;
-        top: 130px;
+}
+
+main {
+    .splash {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        &__text-wrapper {
+            display: grid;
+            grid-template-rows: 220px 1fr;
+        }
+        &__subtext {
+            line-height: 28px;
+            width: 400px;
+        }
     }
 }

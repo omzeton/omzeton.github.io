@@ -1,261 +1,303 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:700&display=swap");
 @font-face {
-  font-family: "gorditabold";
-  src: url("https://www.omzeton.com/fonts/gordita-bold-webfont.woff") format("woff"), url("https://www.omzeton.com/fonts/gordita-bold-webfont.otf") format("opentype"); }
+    font-family: "gorditabold";
+    src: url("https://www.omzeton.com/fonts/gordita-bold-webfont.woff") format("woff"), url("https://www.omzeton.com/fonts/gordita-bold-webfont.otf") format("opentype");
+}
 
 ::selection {
-  background-color: #000000;
-  color: #f9f5f1; }
+    background-color: #000000;
+    color: #f9f5f1;
+}
 
 ::-webkit-scrollbar {
-  width: 0; }
+    width: 0;
+}
 
 main {
-  position: relative;
-  width: 100vw;
-  background-color: #f9f5f1;
-  overflow-x: hidden; }
+    position: relative;
+    width: 100vw;
+    background-color: #f9f5f1;
+    overflow-x: hidden;
+}
 
 #progressBar {
-  top: 0;
-  right: 0;
-  width: 0.2em;
-  position: fixed;
-  background: #000;
-  transition: height 0.5s ease-out;
-  z-index: 999; }
+    top: 0;
+    right: 0;
+    width: 0.2em;
+    position: fixed;
+    background: #000;
+    transition: height 0.5s ease-out;
+    z-index: 999;
+}
 
 section {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  z-index: 99; }
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+}
 
 nav {
-  position: fixed;
-  top: 2em;
-  left: 2em;
-  width: calc(100vw - 6em);
-  height: 3em;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 7em 1fr 9em;
-  transition:top .5s;
-  z-index: 9999; }
-  nav .button {
+    position: fixed;
+    top: 2em;
+    left: 2em;
+    width: calc(100vw - 6em);
+    height: 3em;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 7em 1fr 9em;
+    transition: top 0.5s;
+    z-index: 9999;
+}
+nav .button {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; }
-  nav .logo {
-    height: 3em; }
-    nav .logo h2 {
-      font-family: "gorditabold", Arial, sans-serif;
-      font-weight: normal;
-      font-style: normal;
-      line-height: 0;
-      font-size: 1.1rem;
-      letter-spacing: -1.5px;
-      color: #000000;
-      white-space: nowrap; }
-  nav .menu {
+    flex-direction: column;
+}
+nav .logo {
+    height: 3em;
+}
+nav .logo h2 {
+    font-family: "gorditabold", Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 0;
+    font-size: 1.1rem;
+    letter-spacing: -1.5px;
+    color: #000000;
+    white-space: nowrap;
+}
+nav .menu {
     position: relative;
     height: 8em;
     overflow: hidden;
-    transition: height 0.5s; }
-    nav .menu .menu__button {
-      display: block;
-      width: 100%;
-      height: 2em;
-      right: 2px;
-      position: absolute;
-      cursor: pointer; }
-      nav .menu .menu__button:nth-child(1) {
-        top: 0em; }
-      nav .menu .menu__button:nth-child(2) {
-        top: 2em; }
-      nav .menu .menu__button:nth-child(3) {
-        top: 4em; }
-      nav .menu .menu__button:nth-child(4) {
-        top: 6em; }
-      nav .menu .menu__button p {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        line-height: 0;
-        text-align: right;
-        font-family: "gorditabold", Arial, sans-serif;
-        font-weight: normal;
-        font-style: normal;
-        letter-spacing: -1px; }
+    transition: height 0.5s;
+}
+nav .menu .menu__button {
+    display: block;
+    width: 100%;
+    height: 2em;
+    right: 2px;
+    position: absolute;
+    cursor: pointer;
+}
+nav .menu .menu__button:nth-child(1) {
+    top: 0em;
+}
+nav .menu .menu__button:nth-child(2) {
+    top: 2em;
+}
+nav .menu .menu__button:nth-child(3) {
+    top: 4em;
+}
+nav .menu .menu__button:nth-child(4) {
+    top: 6em;
+}
+nav .menu .menu__button p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 0;
+    text-align: right;
+    font-family: "gorditabold", Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: -1px;
+}
 
 #nav--selector {
-  position: fixed;
-  background-color: #000000;
-  width: 0.2em;
-  right: 3.2em;
-  top: 2.5em;
-  height: 1.1em;
-  z-index: 99;
-  opacity: 1;
-  transition: transform 0.3s ease-in-out, opacity 1s ease-in-out; }
+    position: fixed;
+    background-color: #000000;
+    width: 0.2em;
+    right: 3.2em;
+    top: 2.5em;
+    height: 1.1em;
+    z-index: 99;
+    opacity: 1;
+    transition: transform 0.3s ease-in-out, opacity 1s ease-in-out;
+}
 
 .Intro {
-  height: 100vh; }
-  .Intro .Intro__Heading {
+    height: 100vh;
+}
+.Intro .Intro__Heading {
     position: relative;
     top: 50%;
     left: 3em;
     transform: translateY(-50%);
     width: 30em;
-    z-index: 999; }
-    .Intro .Intro__Heading .Heading--Stagger {
-      display: block;
-      opacity: 0;
-      transform: translateY(20px); }
-    .Intro .Intro__Heading h2 {
-      font-family: "gorditabold", Arial, sans-serif;
-      font-weight: normal;
-      font-style: normal;
-      font-size: 6rem;
-      letter-spacing: -7px;
-      color: #000000;
-      white-space: nowrap; }
-    .Intro .Intro__Heading p {
-      margin-left: 0.4em;
-      width: 100%;
-      letter-spacing: -0.5px;
-      margin-top: 1.3em;
-      line-height: 1.8rem;
-      font-family: "Lato", sans-serif;
-      font-weight: 300;
-      font-size: 1rem;
-      color: #000000; }
-    .Intro .Intro__Heading p span {
-      white-space: nowrap;
-    }
-    .Intro .Intro__Heading .Heading--Underline {
-      position: relative;
-      background-color: #000000;
-      height: 0.1em;
-      top: 1.5em;
-      left: 0.4em; }
+    z-index: 999;
+}
+.Intro .Intro__Heading .Heading--Stagger {
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.Intro .Intro__Heading h2 {
+    font-family: "gorditabold", Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 6rem;
+    letter-spacing: -7px;
+    color: #000000;
+    white-space: nowrap;
+}
+.Intro .Intro__Heading p {
+    margin-left: 0.4em;
+    width: 100%;
+    letter-spacing: -0.5px;
+    margin-top: 1.3em;
+    line-height: 1.8rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #000000;
+}
+.Intro .Intro__Heading p span {
+    white-space: nowrap;
+}
+.Intro .Intro__Heading .Heading--Underline {
+    position: relative;
+    background-color: #000000;
+    height: 0.1em;
+    top: 1.5em;
+    left: 0.4em;
+}
 
 .Works {
-  height: 48em; }
-  .Works .Works__Heading {
+    height: 48em;
+}
+.Works .Works__Heading {
     position: absolute;
     right: 9em;
-    top: 6em; }
-    .Works .Works__Heading h2 {
-      position: relative;
-      font-family: "gorditabold", Arial, sans-serif;
-      font-weight: normal;
-      font-style: normal;
-      font-size: 2rem;
-      letter-spacing: -3px;
-      color: #000000;
-      white-space: nowrap; }
-      .Works .Works__Heading h2:before {
-        content: "";
-        position: absolute;
-        top: -5px;
-        right: 0;
-        width: 120%;
-        height: 2px;
-        background-color: #000000; }
-  .Works .Works__Display__Container {
+    top: 6em;
+}
+.Works .Works__Heading h2 {
+    position: relative;
+    font-family: "gorditabold", Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2rem;
+    letter-spacing: -3px;
+    color: #000000;
+    white-space: nowrap;
+}
+.Works .Works__Heading h2:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: 0;
+    width: 120%;
+    height: 2px;
+    background-color: #000000;
+}
+.Works .Works__Display__Container {
     position: absolute;
     top: 10em;
     right: 9em;
-    width: calc(100% - 18em); }
-    .Works .Works__Display__Container .Display {
-      position: relative;
-      height: 6em;
-      margin-bottom: 1em;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid #000000;
-      transition: background-color 0.4s; }
-      .Works .Works__Display__Container .Display a {
-        position: relative;
-        font-family: "gorditabold", Arial, sans-serif;
-        font-weight: normal;
-        font-style: normal;
-        text-decoration: none;
-        font-size: 3rem;
-        letter-spacing: -3.2px;
-        color: #000000;
-        white-space: nowrap;
-        transition: right 0.4s; }
-      .Works .Works__Display__Container .Display .Display__Info {
-        margin-left: 1em; }
-        .Works .Works__Display__Container .Display .Display__Info .About {
-          position: relative;
-          display: flex;
-          margin-bottom: 0.5em; }
-          .Works .Works__Display__Container .Display .Display__Info .About p {
-            font-family: "Lato", sans-serif;
-            font-size: 0.8rem;
-            margin-right: 0.5em;
-            font-weight: normal;
-            font-style: normal; }
-        .Works .Works__Display__Container .Display .Display__Info .Technologies {
-          position: relative;
-          display: flex; }
-          .Works .Works__Display__Container .Display .Display__Info .Technologies p {
-            font-family: "Lato", sans-serif;
-            font-size: 0.8rem;
-            margin-right: 0.5em;
-            font-weight: normal;
-            font-style: normal; }
-      .Works .Works__Display__Container .Display:after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 75%;
-        right: 0;
-        width: 0.2em;
-        background-color: #000000; }
+    width: calc(100% - 18em);
+}
+.Works .Works__Display__Container .Display {
+    position: relative;
+    height: 6em;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #000000;
+    transition: background-color 0.4s;
+}
+.Works .Works__Display__Container .Display a {
+    position: relative;
+    font-family: "gorditabold", Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 3rem;
+    letter-spacing: -3.2px;
+    color: #000000;
+    white-space: nowrap;
+    transition: right 0.4s;
+}
+.Works .Works__Display__Container .Display .Display__Info {
+    margin-left: 1em;
+}
+.Works .Works__Display__Container .Display .Display__Info .About {
+    position: relative;
+    display: flex;
+    margin-bottom: 0.5em;
+}
+.Works .Works__Display__Container .Display .Display__Info .About p {
+    font-family: "Lato", sans-serif;
+    font-size: 0.8rem;
+    margin-right: 0.5em;
+    font-weight: normal;
+    font-style: normal;
+}
+.Works .Works__Display__Container .Display .Display__Info .Technologies {
+    position: relative;
+    display: flex;
+}
+.Works .Works__Display__Container .Display .Display__Info .Technologies p {
+    font-family: "Lato", sans-serif;
+    font-size: 0.8rem;
+    margin-right: 0.5em;
+    font-weight: normal;
+    font-style: normal;
+}
+.Works .Works__Display__Container .Display:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 75%;
+    right: 0;
+    width: 0.2em;
+    background-color: #000000;
+}
 
 .Skills {
-  height: 50em; }
-  .Skills .Skills__Heading {
+    height: 50em;
+}
+.Skills .Skills__Heading {
     position: relative;
     top: 8em;
     left: 9em;
     width: calc(100% - 18em);
-    z-index: 999; }
-    .Skills .Skills__Heading h2 {
-      position: relative;
-      font-family: "gorditabold", Arial, sans-serif;
-      font-weight: normal;
-      font-style: normal;
-      font-size: 2rem;
-      letter-spacing: -3px;
-      color: #000000;
-      white-space: nowrap; }
-      .Skills .Skills__Heading h2:before {
-        content: "";
-        position: absolute;
-        top: -5px;
-        left: 0;
-        width: 7em;
-        height: 2px;
-        background-color: #000000; }
-    .Skills .Skills__Heading p {
-      position: relative;
-      top: 2em;
-      width: 26em;
-      margin-top: 0em;
-      line-height: 2rem;
-      font-family: "Lato", sans-serif;
-      font-size: 1.5rem;
-      font-weight: 300;
-      text-align: right;
-      color: #000000; }
-  .Skills .Skills__List {
+    z-index: 999;
+}
+.Skills .Skills__Heading h2 {
+    position: relative;
+    font-family: "gorditabold", Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2rem;
+    letter-spacing: -3px;
+    color: #000000;
+    white-space: nowrap;
+}
+.Skills .Skills__Heading h2:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 7em;
+    height: 2px;
+    background-color: #000000;
+}
+.Skills .Skills__Heading p {
+    position: relative;
+    top: 2em;
+    width: 26em;
+    margin-top: 0em;
+    line-height: 2rem;
+    font-family: "Lato", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: right;
+    color: #000000;
+}
+.Skills .Skills__List {
     position: absolute;
     width: calc(100% - 18em);
     right: 9em;
@@ -263,60 +305,71 @@ nav {
     height: auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 1fr); }
-    .Skills .Skills__List .Skills__List__Line {
-      height: 4em; }
-      .Skills .Skills__List .Skills__List__Line h2 {
-        font-family: "gorditabold", Arial, sans-serif;
-        font-weight: normal;
-        font-style: normal;
-        font-size: 2.2rem;
-        text-align: right;
-        white-space:nowrap;
-        letter-spacing: -3px; }
-        .Skills .Skills__List .Skills__List__Line h2 span {
-          opacity: 0.5; }
+    grid-template-rows: repeat(5, 1fr);
+}
+.Skills .Skills__List .Skills__List__Line {
+    height: 4em;
+}
+.Skills .Skills__List .Skills__List__Line h2 {
+    font-family: "gorditabold", Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2.2rem;
+    text-align: right;
+    white-space: nowrap;
+    letter-spacing: -3px;
+}
+.Skills .Skills__List .Skills__List__Line h2 span {
+    opacity: 0.5;
+}
 
 .Contact {
-  height: 50em; }
-  .Contact .Contact__Container {
+    height: 50em;
+}
+.Contact .Contact__Container {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 3em;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr; }
-    .Contact .Contact__Container .Contact__Left h2 {
-      font-family: "gorditabold", Arial, sans-serif;
-      font-weight: normal;
-      font-style: normal;
-      font-size: 3rem;
-      letter-spacing: -4px;
-      color: #000000;
-      white-space: nowrap;
-      line-height: 4rem; }
-      .Contact .Contact__Container .Contact__Left h2 span {
-        text-decoration: underline;
-        cursor: pointer;
-        transition: text-decoration-color 0.3s; }
-        .Contact .Contact__Container .Contact__Left h2 span:hover {
-          text-decoration-color: #f9f5f1; }
-    .Contact .Contact__Container .Contact__Right {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      padding-left: 2em;
-      margin-top: 4em; }
-      .Contact .Contact__Container .Contact__Right a {
-        position: relative;
-        line-height: 2rem;
-        font-family: "Lato", sans-serif;
-        font-size: 1.5rem;
-        font-weight: 300;
-        color: #000000;
-        text-decoration: none; }
-  .Contact .Footer {
+    grid-template-columns: 1fr 1fr;
+}
+.Contact .Contact__Container .Contact__Left h2 {
+    font-family: "gorditabold", Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 3rem;
+    letter-spacing: -4px;
+    color: #000000;
+    white-space: nowrap;
+    line-height: 4rem;
+}
+.Contact .Contact__Container .Contact__Left h2 span {
+    text-decoration: underline;
+    cursor: pointer;
+    transition: text-decoration-color 0.3s;
+}
+.Contact .Contact__Container .Contact__Left h2 span:hover {
+    text-decoration-color: #f9f5f1;
+}
+.Contact .Contact__Container .Contact__Right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 2em;
+    margin-top: 4em;
+}
+.Contact .Contact__Container .Contact__Right a {
+    position: relative;
+    line-height: 2rem;
+    font-family: "Lato", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #000000;
+    text-decoration: none;
+}
+.Contact .Footer {
     left: 2em;
     position: absolute;
     width: calc(100vw - 6em);
@@ -324,132 +377,170 @@ nav {
     bottom: 0;
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 7em 1fr 21em; }
-    .Contact .Footer > div {
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-      .Contact .Footer > div p {
-        font-family: "Lato", sans-serif;
-        font-weight: normal;
-        font-style: normal;
-        font-size: 0.65rem;
-        text-align: center; }
+    grid-template-columns: 7em 1fr 21em;
+}
+.Contact .Footer > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Contact .Footer > div p {
+    font-family: "Lato", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 0.65rem;
+    text-align: center;
+}
 
 .morph-wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  z-index: 9;
-  opacity: 1; }
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 9;
+    opacity: 1;
+}
 
 .morph {
-  position: relative;
-  height: 100%;
-  fill: #f9f5f1;
-  flex: none; }
+    position: relative;
+    height: 100%;
+    fill: #f9f5f1;
+    flex: none;
+}
 
 .Bottom__Left__Corners {
-  width: 5em;
-  height: 5em;
-  position: fixed;
-  z-index: 99;
-  left: 3em;
-  bottom: 3em; }
-  .Bottom__Left__Corners div:nth-child(1) {
+    width: 5em;
+    height: 5em;
+    position: fixed;
+    z-index: 99;
+    left: 3em;
+    bottom: 3em;
+}
+.Bottom__Left__Corners div:nth-child(1) {
     position: relative;
     width: 100%;
     height: 0.1em;
     top: 100%;
-    background-color: #000000; }
-  .Bottom__Left__Corners div:nth-child(2) {
+    background-color: #000000;
+}
+.Bottom__Left__Corners div:nth-child(2) {
     position: relative;
     height: 100%;
     width: 0.1em;
-    background-color: #000000; }
+    background-color: #000000;
+}
 
 @media (max-width: 1000px) {
-  .Bottom__Left__Corners {
-    display: none; }
-  .Works .Works__Heading {
-    right: 3em; }
-  .Works .Works__Display__Container {
-    left: 3em;
-    width: calc(100% - 6em); }
-  .Works .Works__Display__Container .Display__Info .About p {
-    font-size: 1em; }
-  .Works .Works__Display__Container .Display__Info .Technologies p {
-    font-size: 1em; }
-  .Works .Works__Display__Container .Display a {
-    font-size: 2.3rem; } }
+    .Bottom__Left__Corners {
+        display: none;
+    }
+    .Works .Works__Heading {
+        right: 3em;
+    }
+    .Works .Works__Display__Container {
+        left: 3em;
+        width: calc(100% - 6em);
+    }
+    .Works .Works__Display__Container .Display__Info .About p {
+        font-size: 1em;
+    }
+    .Works .Works__Display__Container .Display__Info .Technologies p {
+        font-size: 1em;
+    }
+    .Works .Works__Display__Container .Display a {
+        font-size: 2.3rem;
+    }
+}
 
 @media (max-width: 815px) {
-  .Intro .Intro__Heading h2 {
-    font-size: 9.9vw;
-    letter-spacing: -0.8vw; }
-  .Intro .Intro__Heading p {
-    margin-top: 2em;
-    font-size: 2.5vw;
-    line-height: 3.7vw;
-    letter-spacing: -.1vw; }
-  .Works {
-    height: calc(100vw + 7em); }
-  .Works .Display {
-    height: 10vw !important; }
-  .Works .Works__Display__Container .Display__Info {
-    margin-left: .4em !important; }
-  .Works .Works__Display__Container .Display__Info .About p {
-    font-size: 1.7vw !important; }
-  .Works .Works__Display__Container .Display__Info .Technologies p {
-    font-size: 1.7vw !important; }
-  .Works .Works__Display__Container .Display a {
-    font-size: 4.8vw;
-    letter-spacing: -.5vw; }
-  .Skills {
-    height: 90vw; }
-  .Skills .Skills__Heading {
-    top: 0;
-    left: 3em;
-    width: calc(100% - 6em); }
-  .Skills .Skills__Heading p {
-    position: absolute;
-    top: 4em;
-    line-height: 4.5vw;
-    right: 0;
-    font-size: 3vw !important; }
-  .Skills .Skills__List {
-    top: 45vw;
-    right: 3em;
-    width: calc(100% - 6em); }
-  .Skills .Skills__List .Skills__List__Line {
-    height: 8vw; }
-  .Skills .Skills__List .Skills__List__Line h2 {
-    font-size: 5vw;
-    letter-spacing: -.4vw; }
-  .Contact {
-    height: 100vw; }
-  .Contact .Contact__Container {
-    grid-template-columns: 1fr; }
-  .Contact .Contact__Container .Contact__Left h2 {
-    font-size: 6vw;
-    letter-spacing: -.3vw;
-    line-height: 9vw; }
-  .Contact .Contact__Container .Contact__Right {
-    padding-left: 0; }
-  .Contact .Contact__Container .Contact__Right a {
-    font-size: 1rem; }
-  .Contact .Footer {
-    left: 0;
-    width: 100vw;
-    grid-template-columns: 7em 1fr 35vw; }
-  .Contact .Footer p {
-    font-size: 2vw !important; }
-  .Contact .Footer .Credit p span {
-    display: none; } }
+    .Intro .Intro__Heading h2 {
+        font-size: 9.9vw;
+        letter-spacing: -0.8vw;
+    }
+    .Intro .Intro__Heading p {
+        margin-top: 2em;
+        font-size: 2.5vw;
+        line-height: 3.7vw;
+        letter-spacing: -0.1vw;
+    }
+    .Works {
+        height: calc(100vw + 7em);
+    }
+    .Works .Display {
+        height: 10vw !important;
+    }
+    .Works .Works__Display__Container .Display__Info {
+        margin-left: 0.4em !important;
+    }
+    .Works .Works__Display__Container .Display__Info .About p {
+        font-size: 1.7vw !important;
+    }
+    .Works .Works__Display__Container .Display__Info .Technologies p {
+        font-size: 1.7vw !important;
+    }
+    .Works .Works__Display__Container .Display a {
+        font-size: 4.8vw;
+        letter-spacing: -0.5vw;
+    }
+    .Skills {
+        height: 90vw;
+    }
+    .Skills .Skills__Heading {
+        top: 0;
+        left: 3em;
+        width: calc(100% - 6em);
+    }
+    .Skills .Skills__Heading p {
+        position: absolute;
+        top: 4em;
+        line-height: 4.5vw;
+        right: 0;
+        font-size: 3vw !important;
+    }
+    .Skills .Skills__List {
+        top: 45vw;
+        right: 3em;
+        width: calc(100% - 6em);
+    }
+    .Skills .Skills__List .Skills__List__Line {
+        height: 8vw;
+    }
+    .Skills .Skills__List .Skills__List__Line h2 {
+        font-size: 5vw;
+        letter-spacing: -0.4vw;
+    }
+    .Contact {
+        height: 100vw;
+    }
+    .Contact .Contact__Container {
+        grid-template-columns: 1fr;
+    }
+    .Contact .Contact__Container .Contact__Left h2 {
+        font-size: 6vw;
+        letter-spacing: -0.3vw;
+        line-height: 9vw;
+    }
+    .Contact .Contact__Container .Contact__Right {
+        padding-left: 0;
+    }
+    .Contact .Contact__Container .Contact__Right a {
+        font-size: 1rem;
+    }
+    .Contact .Footer {
+        left: 0;
+        width: 100vw;
+        grid-template-columns: 7em 1fr 35vw;
+    }
+    .Contact .Footer p {
+        font-size: 2vw !important;
+    }
+    .Contact .Footer .Credit p span {
+        display: none;
+    }
+}
