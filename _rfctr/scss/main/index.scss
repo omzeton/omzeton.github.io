@@ -3,11 +3,16 @@ body {
     padding: 0;
 }
 
+#scroll-container {
+    will-change: transform;
+}
+
 .navbar {
     position: fixed;
     top: 64px;
     left: 64px;
     box-sizing: border-box;
+    z-index: 9;
     &__logo {
         line-height: 0;
         position: relative;
@@ -18,7 +23,7 @@ body {
             top: 50%;
             transform: translateY(-50%);
 
-            width: calc(100vw - 197px - 64px);
+            width: calc(100vw - 197px - 96px);
             // 197px = width of the paragraph
             // 64px - margin
 
@@ -28,41 +33,41 @@ body {
     }
 }
 
-main {
-    .splash {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        &__text-wrapper {
-            display: grid;
-            grid-template-rows: 220px 1fr;
-        }
-        &__subtext {
-            line-height: 28px;
-            width: 400px;
-        }
+.splash {
+    height: 100vh;
+    position: relative;
+    &__text-wrapper {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: grid;
+        grid-template-rows: 220px 1fr;
     }
-    .projects {
-        &__list {
-            list-style: none;
-            display: grid;
-            grid-template-rows: repeat(5, 100px);
-            row-gap: 32px;
+    &__subtext {
+        line-height: 28px;
+        width: 400px;
+    }
+}
+.projects {
+    &__list {
+        list-style: none;
+        display: grid;
+        grid-template-rows: repeat(5, 100px);
+        row-gap: 32px;
+    }
+    &__item {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        border: 1px solid $black;
+        text-decoration: none;
+        &-title {
+            display: flex;
+            align-items: center;
         }
-        &__item {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            border: 1px solid $black;
-            text-decoration: none;
-            &-title {
-                display: flex;
-                align-items: center;
-            }
-            &-description {
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-            }
+        &-description {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
         }
     }
 }
