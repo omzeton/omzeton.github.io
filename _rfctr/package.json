@@ -1,13 +1,17 @@
 {
-  "name": "3_marching_squares",
-  "main": "index.js",
-  "scripts": {
-    "serve": "snowpack dev",
-    "build": "snowpack build"
-  },
-  "dependencies": {
-    "@snowpack/plugin-sass": "^1.4.0",
-    "snowpack": "^3.2.2",
-    "three": "^0.129.0"
-  }
+    "name": "3_marching_squares",
+    "main": "index.js",
+    "scripts": {
+        "start": "snowpack dev",
+        "build": "snowpack build"
+    },
+    "dependencies": {
+        "@snowpack/plugin-sass": "^1.4.0",
+        "animejs": "^3.2.1",
+        "snowpack": "^3.2.2",
+        "three": "^0.129.0"
+    },
+    "devDependencies": {
+        "@types/animejs": "^3.1.3"
+    }
 }
