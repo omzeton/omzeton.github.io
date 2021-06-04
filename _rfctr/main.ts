@@ -6,17 +6,37 @@ class Controller {
     sections: Element[];
     svg: HTMLElement;
     svgPath: HTMLElement;
+    splashHeader: HTMLElement;
     constructor() {
+        this.splashHeader = document.querySelector(".splash__header")!;
         this.sections = [...document.querySelectorAll("section")!];
         this.svg = document.querySelector(".morph__svg")!;
         this.svgPath = this.svg.querySelector(".morph__path")!;
+        this.wordStaggerAnimation();
         this.svgMorphAnimation({ index: 0 });
     }
 
-    private svgMorphAnimation({ index }: { index: number }) {
+    wordStaggerAnimation() {
+        this.splashHeader.innerHTML = this.splashHeader.innerText
+            .split("")
+            .map(letter => `<span>${letter}</span>`)
+            .join("");
+        anime({
+            targets: [...this.splashHeader.querySelectorAll("span")].reverse(),
+            easing: "linear",
+            duration: 200,
+            opacity: 0,
+            translateY: 100,
+            direction: "reverse",
+            delay: anime.stagger(80, { easing: "easeOutQuad" }),
+        });
+    }
+
+    svgMorphAnimation({ index }: { index: number }) {
         anime({
             targets: this.svg,
             duration: 1,
+            easing: "linear",
             scaleX: shapes[0].scaleX,
             scaleY: shapes[0].scaleY,
             translateX: shapes[0].tx + "px",
@@ -26,13 +46,17 @@ class Controller {
         anime({
             targets: this.svgPath,
             easing: "linear",
-            loop: true,
-            fill: shapes[index].fill.color,
-            direction: "alternate",
             d: [
                 { value: shapes[index].pathAlt, duration: 3500 },
                 { value: shapes[index].path, duration: 3500 },
             ],
+            loop: true,
+            fill: {
+                value: shapes[index].fill.color,
+                duration: shapes[index].fill.duration,
+                easing: shapes[index].fill.easing,
+            },
+            direction: "alternate",
         });
     }
 }
