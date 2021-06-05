@@ -12,6 +12,11 @@ body {
     padding: 0;
 }
 
+// .stagger-default {
+//     opacity: 0;
+//     transform: translateY(10px);
+// }
+
 .splash {
     height: 100vh;
     position: relative;
@@ -25,6 +30,20 @@ body {
     &__subtext {
         line-height: 28px;
         width: 400px;
+    }
+    &__span {
+        display: block;
+    }
+    &__header {
+        margin-left: -7px;
+    }
+    &__underline {
+        width: 0px;
+        height: 1px;
+        background-color: $black;
+    }
+    &__underline--active {
+        animation: underline 1s ease-out forwards;
     }
     &__menu {
         position: absolute;
@@ -51,6 +70,16 @@ body {
             height: 1px;
         }
     }
+}
+@keyframes underline {
+    from {
+        width: 0;
+    }
+    to {
+        width: 200px;
+    }
+}
+.experience {
 }
 .projects {
     &__list {

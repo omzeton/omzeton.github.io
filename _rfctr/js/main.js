@@ -1,28 +1,32 @@
+// @ts-ignore
+import gsap from "gsap";
 import anime from "animejs";
 import shapes from "./SVGShapesData";
 import "../scss/index.scss";
+/*
+    - Splash text stagger
+    - Fix SVG animation
+*/
 class Controller {
     constructor() {
-        this.splashHeader = document.querySelector(".splash__header");
         this.sections = [...document.querySelectorAll("section")];
         this.svg = document.querySelector(".morph__svg");
         this.svgPath = this.svg.querySelector(".morph__path");
-        this.wordStaggerAnimation();
+        this.splashAnimations();
         this.svgMorphAnimation({ index: 0 });
     }
-    wordStaggerAnimation() {
-        this.splashHeader.innerHTML = this.splashHeader.innerText
-            .split("")
-            .map(letter => `<span>${letter}</span>`)
-            .join("");
-        anime({
-            targets: [...this.splashHeader.querySelectorAll("span")].reverse(),
-            easing: "linear",
-            duration: 200,
+    splashAnimations() {
+        // @ts-ignore
+        const splitTextTest = new SplitText(document.querySelector(".splash__header"), { type: "chars" });
+        const timeline = gsap.timeline();
+        timeline.from(splitTextTest.chars, { y: 20, opacity: 0, stagger: 0.04 });
+        timeline.from(".splash__span", {
             opacity: 0,
-            translateY: 100,
-            direction: "reverse",
-            delay: anime.stagger(80, { easing: "easeOutQuad" }),
+            y: 10,
+            stagger: 0.1,
+            onComplete: () => {
+                document.querySelector(".splash__underline")?.classList.add("splash__underline--active");
+            },
         });
     }
     svgMorphAnimation({ index }) {
