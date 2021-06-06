@@ -6,10 +6,17 @@ class Controller {
     sections: HTMLElement[];
     constructor() {
         this.sections = [...document.querySelectorAll("section")!];
+        this.updateCopyrightDate();
         this.splashAnimations();
         this.svgMorphAnimation();
         // @ts-ignore
         gsap.registerPlugin(MorphSVGPlugin);
+    }
+
+    updateCopyrightDate() {
+        const date = new Date();
+        const year = date.getFullYear();
+        document.getElementById("copyright-date")!.innerText = `${year}`;
     }
 
     splashAnimations() {

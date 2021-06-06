@@ -12,10 +12,6 @@ body {
     padding: 0;
 }
 
-.hidden {
-    visibility: hidden;
-}
-
 .splash {
     height: 100vh;
     position: relative;
@@ -113,6 +109,12 @@ body {
     }
 }
 
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .morph {
     position: fixed;
     top: 0;
@@ -126,4 +128,7 @@ body {
     pointer-events: none;
     z-index: -10;
     opacity: 1;
+    .hidden {
+        visibility: hidden;
+    }
 }
