@@ -2,12 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Adam Rolczyk | Aspiring web developer</title>
+        <title><%= htmlWebpackPlugin.options.title %></title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="A portfolio website of a polish web-developer." />
         <meta name="keywords" content="portfolio, omzeton, rolczyk, adam, javascript, webgl" />
         <meta name="author" content="Adam Rolczyk" />
-        <link rel="icon" href="./assets/img/icon.png" type="image/x-icon" />
         <script src="https://assets.codepen.io/16327/MorphSVGPlugin3.min.js"></script>
     </head>
     <body class="bg-white">
@@ -108,76 +107,5 @@
                 />
             </svg>
         </div>
-        <script type="module" src="./js/main.js"></script>
-        <!--
-        <main>
-            <section class="Skills content-wrap">
-                <div class="Skills__Heading">
-                    <h2>Owned skills.</h2>
-                    <p>
-                        I have a solid understanding of how the web works<br />and the process of building applications. <br />If I don't know something I try to understand it quickly.<br />
-                        I'm familiar with technologies listed in my portfolio<br />and under this paragraph.
-                    </p>
-                </div>
-                <div class="Skills__List">
-                    <div class="Skills__List__Line">
-                        <h2>Javascript ES6 <span>-</span> SCSS <span>-</span> Gulp</h2>
-                    </div>
-                    <div class="Skills__List__Line">
-                        <h2>React <span>+</span> Redux <span>-</span> React Router <span>-</span> Hooks</h2>
-                    </div>
-                    <div class="Skills__List__Line"><h2>REST APIs</h2></div>
-                    <div class="Skills__List__Line"><h2>GraphQL APIs</h2></div>
-                    <div class="Skills__List__Line">
-                        <h2>Nodejs <span>-</span> Express <span>+</span> MVC <span>-</span> EJS</h2>
-                    </div>
-                </div>
-            </section>
-            <section class="Contact content--related">
-                <div class="Contact__Container">
-                    <div class="Contact__Left">
-                        <h2>
-                            Wanna work together?<br />Feel free to send me
-                            <span onclick="window.location.href = 'mailto:omzeton@gmail.com?subject=Work'">an email</span>
-                        </h2>
-                    </div>
-                    <div class="Contact__Right">
-                        <a href="https://github.com/omzeton">Github</a>
-                        <a href="https://www.linkedin.com/in/adam-rolczyk-a513a118a/">LinkedIn</a>
-                        <a href="https://dribbble.com/omzeton">Dribble</a>
-                        <a href="https://www.facebook.com/profile.php?id=100007092697135">Facebook</a>
-                    </div>
-                </div>
-                <div class="Footer">
-                    <div class="Copy">
-                        <p>Website &copy; <span id="copyrightYear"></span></p>
-                    </div>
-                    <div></div>
-                    <div class="Credit">
-                        <p>Made with &#10084; by Adam Rolczyk<span> - Gordita font is owned by Type Atelier</span></p>
-                    </div>
-                </div>
-            </section>
-
-            <div id="progressBar"></div>
-
-            <div class="cursor">
-                <div class="cursor__inner cursor__inner--circle"></div>
-                <div class="cursor__inner cursor__inner--dot"></div>
-            </div>
-
-            <div class="morph-wrap">
-                <svg class="morph" width="1400" height="770" viewBox="0 0 1400 770">
-                    <path
-                        d="M 262.9,252.2 C 210.1,338.2 212.6,487.6 288.8,553.9 372.2,626.5 511.2,517.8 620.3,536.3 750.6,558.4 860.3,723 987.3,686.5 1089,657.3 1168,534.7 1173,429.2 1178,313.7 1096,189.1 995.1,130.7 852.1,47.07 658.8,78.95 498.1,119.2 410.7,141.1 322.6,154.8 262.9,252.2 Z"
-                    />
-                </svg>
-            </div>
-        </main> -->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/ScrollToPlugin.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-        <script src="js/scrollMonitor.js"></script>
-        <script src="js/anime.min.js"></script>
-        <script src="js/main.js"></script> -->
     </body>
 </html>
