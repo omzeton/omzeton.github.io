@@ -1,6 +1,6 @@
 import { SVGShape } from "./models";
 
-const colors = ["#ff3434", "#ffd034", "#8067ee", "#34ff82"];
+const colors = ["#FFC61A", "#663399", "#ffd034", "#34ff82"];
 
 const shapes: SVGShape[] = [
     {

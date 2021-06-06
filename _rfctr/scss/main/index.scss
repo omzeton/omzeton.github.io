@@ -12,10 +12,9 @@ body {
     padding: 0;
 }
 
-// .stagger-default {
-//     opacity: 0;
-//     transform: translateY(10px);
-// }
+.hidden {
+    visibility: hidden;
+}
 
 .splash {
     height: 100vh;
@@ -43,7 +42,7 @@ body {
         background-color: $black;
     }
     &__underline--active {
-        animation: underline 1s ease-out forwards;
+        animation: underline 1s ease-in-out forwards;
     }
     &__menu {
         position: absolute;
@@ -61,14 +60,13 @@ body {
             left: calc(100% + 32px);
             top: 50%;
             transform: translateY(-50%);
-
-            width: calc(100vw - 197px - 96px);
-            // 197px = width of the paragraph
-            // 64px - margin
-
+            width: 0;
             background-color: $black;
             height: 1px;
         }
+    }
+    &__logo--active:after {
+        animation: logoUnderline 1.2s ease-in-out forwards;
     }
 }
 @keyframes underline {
@@ -77,6 +75,16 @@ body {
     }
     to {
         width: 200px;
+    }
+}
+@keyframes logoUnderline {
+    from {
+        width: 0;
+    }
+    to {
+        width: calc(100vw - 197px - 96px);
+        // 197px = width of the paragraph
+        // 64px - margin
     }
 }
 .experience {

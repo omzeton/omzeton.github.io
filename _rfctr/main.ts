@@ -1,67 +1,48 @@
 // @ts-ignore
 import gsap from "gsap";
-import anime from "animejs";
-import shapes from "./SVGShapesData";
 import "../scss/index.scss";
-
-/*
-    - Splash text stagger
-    - Fix SVG animation
-*/
 
 class Controller {
     sections: HTMLElement[];
-    svg: HTMLElement;
-    svgPath: HTMLElement;
     constructor() {
         this.sections = [...document.querySelectorAll("section")!];
-        this.svg = document.querySelector(".morph__svg")! as HTMLElement;
-        this.svgPath = this.svg.querySelector(".morph__path")! as HTMLElement;
         this.splashAnimations();
-        this.svgMorphAnimation({ index: 0 });
+        this.svgMorphAnimation();
+        // @ts-ignore
+        gsap.registerPlugin(MorphSVGPlugin);
     }
 
     splashAnimations() {
+        const menuTimeline = gsap.timeline();
+        menuTimeline.from(
+            ".splash__logo",
+            {
+                opacity: 0,
+                onComplete: () => {
+                    document.querySelector(".splash__logo")!.classList.add("splash__logo--active");
+                },
+            },
+            "+=1"
+        );
         // @ts-ignore
         const splitTextTest = new SplitText(document.querySelector(".splash__header"), { type: "chars" });
-        const timeline = gsap.timeline();
-        timeline.from(splitTextTest.chars, { y: 20, opacity: 0, stagger: 0.04 });
-        timeline.from(".splash__span", {
+        const titleTimeline = gsap.timeline();
+        titleTimeline.from(".morph__svg", { opacity: 0 });
+        titleTimeline.from(splitTextTest.chars, { y: 20, opacity: 0, rotation: 3, force3D: true, stagger: 0.04 });
+        titleTimeline.from(".splash__span", {
             opacity: 0,
             y: 10,
             stagger: 0.1,
             onComplete: () => {
-                document.querySelector(".splash__underline")?.classList.add("splash__underline--active");
+                document.querySelector(".splash__underline")!.classList.add("splash__underline--active");
             },
         });
     }
 
-    svgMorphAnimation({ index }: { index: number }) {
-        anime({
-            targets: this.svg,
-            duration: 1,
-            easing: "linear",
-            scaleX: shapes[0].scaleX,
-            scaleY: shapes[0].scaleY,
-            translateX: shapes[0].tx + "px",
-            translateY: shapes[0].ty + "px",
-            rotate: shapes[0].rotate + "deg",
-        });
-        anime({
-            targets: this.svgPath,
-            easing: "linear",
-            d: [
-                { value: shapes[index].pathAlt, duration: 3500 },
-                { value: shapes[index].path, duration: 3500 },
-            ],
-            loop: true,
-            fill: {
-                value: shapes[index].fill.color,
-                duration: shapes[index].fill.duration,
-                easing: shapes[index].fill.easing,
-            },
-            direction: "alternate",
-        });
+    svgMorphAnimation() {
+        const morphingTimeline = gsap.timeline({ repeat: -1 });
+        morphingTimeline.to(".morph__path", { morphSVG: "#second", duration: 2, ease: "linear" });
+        morphingTimeline.to(".morph__path", { morphSVG: "#first", duration: 2, ease: "linear" });
     }
 }
 

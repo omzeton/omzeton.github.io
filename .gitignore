@@ -4,3 +4,4 @@ sass
 layout.txt
 dist
 /_rfctr/node_modules
+/_rfctr/build
