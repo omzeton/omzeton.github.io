@@ -1,3 +1,5 @@
+@import "./ds/index.scss";
+
 ::selection {
     background-color: $black;
     color: $white;
@@ -83,8 +85,7 @@ body {
         // 64px - margin
     }
 }
-.experience {
-}
+
 .projects {
     &__list {
         list-style: none;

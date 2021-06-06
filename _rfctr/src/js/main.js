@@ -1,7 +1,7 @@
 // @ts-ignore
 import gsap from "gsap";
-import CustomSplitText from "./ts/splitText";
-import "../scss/index.scss";
+import CustomSplitText from "./splitText";
+
 class Controller {
     constructor() {
         this.sections = [...document.querySelectorAll("section")];
@@ -11,19 +11,25 @@ class Controller {
         // @ts-ignore
         gsap.registerPlugin(MorphSVGPlugin);
     }
+
     updateCopyrightDate() {
         const date = new Date();
         const year = date.getFullYear();
         document.getElementById("copyright-date").innerText = `${year}`;
     }
+
     splashAnimations() {
         const menuTimeline = gsap.timeline();
-        menuTimeline.from(".splash__logo", {
-            opacity: 0,
-            onComplete: () => {
-                document.querySelector(".splash__logo").classList.add("splash__logo--active");
+        menuTimeline.from(
+            ".splash__logo",
+            {
+                opacity: 0,
+                onComplete: () => {
+                    document.querySelector(".splash__logo").classList.add("splash__logo--active");
+                },
             },
-        }, "+=1");
+            "+=1"
+        );
         const splitHeader = new CustomSplitText(document.querySelector(".splash__header"));
         const titleTimeline = gsap.timeline();
         titleTimeline.from(".morph__svg", { opacity: 0 });
@@ -37,10 +43,12 @@ class Controller {
             },
         });
     }
+
     svgMorphAnimation() {
         const morphingTimeline = gsap.timeline({ repeat: -1 });
         morphingTimeline.to(".morph__path", { morphSVG: "#second", duration: 2, ease: "linear" });
         morphingTimeline.to(".morph__path", { morphSVG: "#first", duration: 2, ease: "linear" });
     }
 }
+
 new Controller();
