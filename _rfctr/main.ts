@@ -1,5 +1,6 @@
 // @ts-ignore
 import gsap from "gsap";
+import CustomSplitText from "./ts/splitText";
 import "../scss/index.scss";
 
 class Controller {
@@ -31,11 +32,10 @@ class Controller {
             },
             "+=1"
         );
-        // @ts-ignore
-        const splitTextTest = new SplitText(document.querySelector(".splash__header"), { type: "chars" });
+        const splitHeader = new CustomSplitText(document.querySelector(".splash__header")! as HTMLElement);
         const titleTimeline = gsap.timeline();
         titleTimeline.from(".morph__svg", { opacity: 0 });
-        titleTimeline.from(splitTextTest.chars, { y: 20, opacity: 0, rotation: 3, force3D: true, stagger: 0.04 });
+        titleTimeline.from(splitHeader.chars, { y: 20, opacity: 0, rotation: 3, force3D: true, stagger: 0.04 });
         titleTimeline.from(".splash__span", {
             opacity: 0,
             y: 10,
