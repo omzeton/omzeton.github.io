@@ -1,17 +1,36 @@
 import gsap from "gsap";
 import CustomSplitText from "./splitText";
 
-const colors = ["#FFC61A", "#663399", "#ffd034", "#34ff82"];
+const colors = ["#ff3434", "#ffd034", "#8067ee", "#34ff82"];
 
 class Controller {
     constructor() {
         this.observer = null;
         this.svgTimeline = null;
         this.sections = [...document.querySelectorAll("section")];
+        this.navButtons = [...document.querySelectorAll(".splash__menu-tab")];
         gsap.registerPlugin(MorphSVGPlugin);
+        this.navigation();
         this.updateCopyrightDate();
         this.splashAnimations();
-        this.createIntersectionObserver();
+        this.morphToNewShape();
+    }
+
+    navigation() {
+        this.navButtons.forEach(button => {
+            button.addEventListener("click", event => {
+                event.preventDefault();
+                const targetPosition = this.sections.find(section => {
+                    if (section.dataset.morph === button.dataset.navTo) {
+                        return section;
+                    }
+                });
+                window.scrollTo({
+                    top: targetPosition.offsetTop,
+                    behavior: "smooth",
+                });
+            });
+        });
     }
 
     updateCopyrightDate() {
@@ -45,35 +64,10 @@ class Controller {
         });
     }
 
-    morphToNewShape(id) {
-        let shape = {};
-        switch (id) {
-            case "splash":
-                shape.color = colors[0];
-                shape.first = "#first";
-                shape.second = "#second";
-                break;
-            case "experience":
-                shape.color = colors[1];
-                shape.first = "#third";
-                shape.second = "#fourth";
-                break;
-        }
-        if (this.svgTimeline) this.svgTimeline = null;
+    morphToNewShape() {
         this.svgTimeline = gsap.timeline({ repeat: -1, yoyo: true });
-        this.svgTimeline.to(".morph__path", { morphSVG: shape.first, fill: shape.color, duration: 1, ease: "linear" });
-        this.svgTimeline.to(".morph__path", { morphSVG: shape.second, fill: shape.color, duration: 1, ease: "linear" });
-    }
-
-    createIntersectionObserver() {
-        this.observer = new IntersectionObserver(elements => {
-            if (elements[0].intersectionRatio !== 0) {
-                this.morphToNewShape(elements[0].target.dataset.morph);
-            }
-        });
-        this.sections.forEach(section => {
-            this.observer.observe(section);
-        });
+        this.svgTimeline.to(".morph__path", { morphSVG: "#first", fill: colors[0], ease: "linear" });
+        this.svgTimeline.to(".morph__path", { morphSVG: "#second", fill: colors[0], ease: "linear" });
     }
 }
 
