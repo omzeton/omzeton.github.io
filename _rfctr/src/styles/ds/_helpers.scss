@@ -1,3 +1,15 @@
 .whitespace {
     white-space: nowrap;
 }
+.underline {
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 90%;
+        left: 10px;
+        width: 95%;
+        height: 3px;
+        background-color: $black;
+    }
+}

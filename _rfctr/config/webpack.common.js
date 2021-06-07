@@ -38,7 +38,7 @@ module.exports = {
         // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
         new HtmlWebpackPlugin({
             title: "Adam Rolczyk || Omzeton",
-            favicon: paths.src + "/images/favicon.png",
+            favicon: paths.src + "/images/favicon.ico",
             template: paths.src + "/template.html", // template file
             filename: "index.html", // output file
         }),
@@ -54,7 +54,9 @@ module.exports = {
             { test: /\.(?:ico|gif|png|jpg|jpeg)$/i, type: "asset/resource" },
 
             // Fonts and SVGs: Inline files
-            { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: "asset/inline" },
+            { test: /\.(woff(2)?|eot|ttf|otf|)$/, type: "asset/inline" },
+
+            { test: /\.svg$/, use: [{ loader: "raw-loader" }] },
         ],
     },
 

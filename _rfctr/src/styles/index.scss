@@ -145,6 +145,24 @@ body {
     }
 }
 
+.contact {
+    &__icon-row {
+        display: grid;
+        grid-template-columns: repeat(4, 50px);
+        column-gap: 10px;
+    }
+    &__icon {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__mail {
+        cursor: pointer;
+    }
+}
+
 footer {
     display: flex;
     align-items: center;
@@ -167,4 +185,15 @@ footer {
     .hidden {
         visibility: hidden;
     }
+}
+
+#progressBar {
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 0%;
+    position: fixed;
+    background: $black;
+    transition: height 0.5s ease-out;
+    z-index: 999;
 }

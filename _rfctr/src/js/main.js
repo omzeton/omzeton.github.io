@@ -14,6 +14,7 @@ class Controller {
         this.updateCopyrightDate();
         this.splashAnimations();
         this.morphToNewShape();
+        this.progressBar();
     }
 
     navigation() {
@@ -68,6 +69,29 @@ class Controller {
         this.svgTimeline = gsap.timeline({ repeat: -1, yoyo: true });
         this.svgTimeline.to(".morph__path", { morphSVG: "#first", fill: colors[0], ease: "linear" });
         this.svgTimeline.to(".morph__path", { morphSVG: "#second", fill: colors[0], ease: "linear" });
+    }
+
+    progressBar() {
+        const progressBar = document.getElementById("progressBar");
+        const updateProgress = () => {
+            let scrollTop = window.pageYOffset,
+                pageHeight =
+                    Math.max(
+                        document.body.scrollHeight,
+                        document.body.offsetHeight,
+                        document.documentElement.clientHeight,
+                        document.documentElement.scrollHeight,
+                        document.documentElement.offsetHeight
+                    ) - document.documentElement.clientHeight,
+                amountScrolled = pageHeight - scrollTop,
+                percentage = Math.floor((amountScrolled / pageHeight) * 100);
+            percentage = 100 - percentage;
+            progressBar.style.height = `${percentage}%`;
+        };
+        updateProgress();
+        window.addEventListener("scroll", () => {
+            updateProgress();
+        });
     }
 }
 
