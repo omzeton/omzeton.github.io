@@ -37,7 +37,7 @@ class Controller {
     splashAnimations() {
         const menuTimeline = gsap.timeline();
         menuTimeline.from(
-            ".splash__menu-tab",
+            ".nav-stagger",
             {
                 opacity: 0,
                 stagger: 0.1,
