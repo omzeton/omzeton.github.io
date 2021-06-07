@@ -33,3 +33,18 @@ $letter-spacing: 7, 6, 3, 2, 1;
         letter-spacing: -(nth($letter-spacing, $i) - 0.5) + px;
     }
 }
+
+@include media-query-prefix {
+    @for $i from 1 through length($font-types) {
+        @for $j from 1 through length($font-sizes) {
+            &\:#{nth($font-types, $i)}-#{nth($font-sizes, $j)} {
+                font-size: nth($font-sizes, $j) + px;
+                @if $i == 1 {
+                    font-family: "Gordita", Arial, sans-serif;
+                } @else {
+                    font-family: "Lato", sans-serif;
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,11 @@
 @import "./ds/index.scss";
 
+h2,
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
 ::selection {
     background-color: $black;
     color: $white;
@@ -22,17 +28,31 @@ body {
         top: 50%;
         transform: translateY(-50%);
         display: grid;
-        grid-template-rows: 220px 1fr;
+        grid-template-rows: 1fr 1fr;
+        @include desktop-min {
+            grid-template-rows: 150px 1fr;
+        }
+    }
+    &__header {
+        font-size: 9.9vw;
+        letter-spacing: -0.8vw;
+        @include desktop-min {
+            letter-spacing: -7px;
+            margin-left: -7px;
+            font-size: 96px;
+        }
     }
     &__subtext {
-        line-height: 28px;
-        width: 400px;
+        line-height: 3.7vw;
+        font-size: 2.5vw;
+        @include desktop-min {
+            width: 400px;
+            font-size: 12px;
+            line-height: 16px;
+        }
     }
     &__span {
         display: block;
-    }
-    &__header {
-        margin-left: -7px;
     }
     &__underline {
         width: 0px;
@@ -44,13 +64,19 @@ body {
     }
     &__menu {
         position: absolute;
-        top: 64px;
-        left: 64px;
+        top: 32px;
+        left: 32px;
         box-sizing: border-box;
         z-index: 9;
         display: grid;
-        width: calc(100% - 128px);
-        grid-template-columns: 120px 1fr 150px 150px;
+        width: calc(100% - 64px);
+        grid-template-columns: repeat(3, 1fr);
+        @include desktop-min {
+            top: 64px;
+            left: 64px;
+            width: calc(100% - 128px);
+            grid-template-columns: 120px 1fr 150px 150px;
+        }
         &-separator {
             width: 100%;
             height: 1px;
@@ -62,6 +88,12 @@ body {
             display: flex;
             align-items: center;
             justify-content: flex-end;
+            &--separator {
+                display: none;
+                @include desktop-min {
+                    display: flex;
+                }
+            }
             &--logo {
                 justify-content: start;
             }
@@ -107,7 +139,7 @@ body {
         width: 0;
     }
     to {
-        width: 200px;
+        width: 100px;
     }
 }
 @keyframes logoUnderline {
@@ -121,7 +153,12 @@ body {
     }
 }
 
+.experience {
+    display: none;
+}
+
 .projects {
+    display: none;
     &__list {
         list-style: none;
         display: grid;
@@ -146,6 +183,7 @@ body {
 }
 
 .contact {
+    display: none;
     &__icon-row {
         display: grid;
         grid-template-columns: repeat(4, 50px);

@@ -76,3 +76,93 @@ $size-values: 0, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 112, 128;
         }
     }
 }
+
+@include media-query-prefix {
+    &\:mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &\:ml-auto {
+        margin-left: auto;
+    }
+    &\:mr-auto {
+        margin-right: auto;
+    }
+    @each $size in $size-values {
+        &\:mt-#{$size} {
+            &#{&} {
+                margin-top: #{$size}px;
+            }
+        }
+        &\:mr-#{$size} {
+            &#{&} {
+                margin-right: #{$size}px;
+            }
+        }
+        &\:mb-#{$size} {
+            &#{&} {
+                margin-bottom: #{$size}px;
+            }
+        }
+        &\:ml-#{$size} {
+            &#{&} {
+                margin-left: #{$size}px;
+            }
+        }
+        &\:mx-#{$size} {
+            &#{&} {
+                margin-left: #{$size}px;
+                margin-right: #{$size}px;
+            }
+        }
+        &\:my-#{$size} {
+            &#{&} {
+                margin-top: #{$size}px;
+                margin-bottom: #{$size}px;
+            }
+        }
+        &\:m-#{$size} {
+            &#{&} {
+                margin: #{$size}px;
+            }
+        }
+
+        &\:pt-#{$size} {
+            &#{&} {
+                padding-top: #{$size}px;
+            }
+        }
+        &\:pr-#{$size} {
+            &#{&} {
+                padding-right: #{$size}px;
+            }
+        }
+        &\:pb-#{$size} {
+            &#{&} {
+                padding-bottom: #{$size}px;
+            }
+        }
+        &\:pl-#{$size} {
+            &#{&} {
+                padding-left: #{$size}px;
+            }
+        }
+        &\:px-#{$size} {
+            &#{&} {
+                padding-left: #{$size}px;
+                padding-right: #{$size}px;
+            }
+        }
+        &\:py-#{$size} {
+            &#{&} {
+                padding-top: #{$size}px;
+                padding-bottom: #{$size}px;
+            }
+        }
+        &\:p-#{$size} {
+            &#{&} {
+                padding: #{$size}px;
+            }
+        }
+    }
+}

@@ -1,5 +1,6 @@
 export default class CustomSplitText {
     constructor(target) {
+        this.isMobile = window.screen.width < 1024;
         this.target = target;
         this._chars = [];
         this.sliceElements();
@@ -9,10 +10,11 @@ export default class CustomSplitText {
         // Wrap every letter inside word in div with these styles
         // position: relative; display: inline-block;
         const targetText = this.target.innerText;
+        const space = this.isMobile ? 8 : 16;
         const HTMLToInject = targetText
             .split("")
             .map(letter => {
-                const width = letter === " " ? "width: 16px;" : "";
+                const width = letter === " " ? `width: ${space}px;` : "";
                 return `<div style='position: relative; display: inline-block; ${width}'>${letter}</div>`;
             })
             .join("");

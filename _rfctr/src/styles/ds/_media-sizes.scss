@@ -1,0 +1,61 @@
+$size-mobile-middle: 375px; // sm
+$size-tablet-min: 768px; // md
+$size-desktop-min: 1024px; // lg
+$size-basic-desktop: 1280px; // xlg
+$size-desktop-air: 1440px; // xl
+$size-desktop-xl2: 1920px; // xl2
+
+$media-names: "sm", "md", "lg", "xlg", "xl", "xl2";
+$media-sizes: $size-mobile-middle, $size-tablet-min, $size-desktop-min, $size-basic-desktop, $size-desktop-air, $size-desktop-xl2;
+
+@mixin media-query-prefix($prefix: $media-names, $sizes: $media-sizes) {
+    @for $i from 1 through length($prefix) {
+        @media only screen and (min-width: #{nth($sizes, $i)}) {
+            .#{nth($prefix, $i)} {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin mobile-middle {
+    @media only screen and (min-width: #{$size-mobile-middle}) {
+        @content;
+    }
+}
+
+@mixin tablet-min {
+    @media only screen and (min-width: #{$size-tablet-min}) {
+        @content;
+    }
+}
+
+@mixin desktop-min {
+    @media only screen and (min-width: #{$size-desktop-min}) {
+        @content;
+    }
+}
+
+@mixin basic-desktop-min {
+    @media only screen and (min-width: #{$size-basic-desktop}) {
+        @content;
+    }
+}
+
+@mixin desktop-air {
+    @media only screen and (min-width: #{$size-desktop-air}) {
+        @content;
+    }
+}
+
+@mixin desktop-xl {
+    @media only screen and (min-width: #{$size-desktop-xl}) {
+        @content;
+    }
+}
+
+@mixin desktop-xl2 {
+    @media only screen and (min-width: #{$size-desktop-xl2}) {
+        @content;
+    }
+}

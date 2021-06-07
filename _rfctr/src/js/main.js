@@ -5,6 +5,7 @@ const colors = ["#ff3434", "#ffd034", "#8067ee", "#34ff82"];
 
 class Controller {
     constructor() {
+        this.isMobile = window.screen.width < 1024;
         this.observer = null;
         this.svgTimeline = null;
         this.sections = [...document.querySelectorAll("section")];
