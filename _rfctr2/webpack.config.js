@@ -35,6 +35,13 @@ module.exports = {
                     loader: "babel-loader",
                 },
             },
+            {
+                test: /\.ts$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "ts-loader",
+                },
+            },
         ],
     },
     plugins: [
@@ -51,7 +58,7 @@ module.exports = {
         hot: true,
     },
     resolve: {
-        extensions: [".js", ".json"],
+        extensions: [".js", ".ts", ".json"],
         alias: {
             "@": path.resolve(__dirname, "src"),
         },
