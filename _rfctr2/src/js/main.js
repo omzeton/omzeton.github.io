@@ -10,7 +10,6 @@ class Controller {
         this.svgTimeline = null;
         this.sections = [...document.querySelectorAll("section")];
         this.navButtons = [...document.querySelectorAll(".splash__menu-tab")];
-        gsap.registerPlugin(MorphSVGPlugin);
         this.navigation();
         this.updateCopyrightDate();
         this.splashAnimations();

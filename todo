@@ -1,7 +1,4 @@
-✔ Parcel -> Snowpack
-✔ DS in SCSS
-✔ BEM classes
-✔ remove reset.css 🤮
-- Separate personal projects from work experience
-- OOP for vanilla JS
-- Add social media icons in right corner
+- redesign projects section (make more space to write about them)
+- morph svg based on viewed section
+- mobile media queries
+- alternative to morphSVG plugin (anime || own rewrite)
