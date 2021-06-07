@@ -12,7 +12,6 @@ class Controller {
         this.navButtons = [...document.querySelectorAll(".splash__menu-tab")];
         gsap.registerPlugin(MorphSVGPlugin);
         this.navigation();
-        this.updateCopyrightDate();
         this.splashAnimations();
         this.morphToNewShape();
         this.progressBar();
@@ -33,12 +32,6 @@ class Controller {
                 });
             });
         });
-    }
-
-    updateCopyrightDate() {
-        const date = new Date();
-        const year = date.getFullYear();
-        document.getElementById("copyright-date").innerText = `${year}`;
     }
 
     splashAnimations() {
@@ -67,9 +60,9 @@ class Controller {
     }
 
     morphToNewShape() {
-        this.svgTimeline = gsap.timeline({ repeat: -1, yoyo: true });
-        this.svgTimeline.to(".morph__path", { morphSVG: "#first", fill: colors[0], ease: "linear" });
-        this.svgTimeline.to(".morph__path", { morphSVG: "#second", fill: colors[0], ease: "linear" });
+        const morphingTimeline = gsap.timeline({ repeat: -1 });
+        morphingTimeline.to(".morph__path", { morphSVG: "#second", duration: 2, ease: "linear" });
+        morphingTimeline.to(".morph__path", { morphSVG: "#first", duration: 2, ease: "linear" });
     }
 
     progressBar() {

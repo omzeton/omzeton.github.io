@@ -20,6 +20,14 @@ body {
     padding: 0;
 }
 
+main {
+    width: 100vw;
+    height: calc(100vh - 70px);
+    display: grid;
+    grid-template-rows: 1fr 200px;
+    overflow: hidden;
+}
+
 .splash {
     height: 100vh;
     position: relative;
@@ -183,12 +191,6 @@ body {
 }
 
 .contact {
-    display: none;
-    &__icon-row {
-        display: grid;
-        grid-template-columns: repeat(4, 50px);
-        column-gap: 10px;
-    }
     &__icon {
         width: 30px;
         height: 30px;
@@ -201,10 +203,37 @@ body {
     }
 }
 
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.footer {
+    height: 70px;
+    width: 100vw;
+    position: relative;
+    &__row {
+        position: absolute;
+        top: 0%;
+        right: 64px;
+        transform: translateY(-50%);
+        display: grid;
+        grid-template-columns: repeat(4, 30px);
+        column-gap: 15px;
+    }
+    &__icon {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__sign {
+        position: absolute;
+        top: 0%;
+        left: 64px;
+        transform: translateY(-50%);
+        svg {
+            width: 50px;
+            height: 50px;
+            margin-left: -10px;
+        }
+    }
 }
 
 .morph {
