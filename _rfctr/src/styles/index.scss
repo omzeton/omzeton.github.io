@@ -73,7 +73,6 @@
 }
 
 .projects {
-    display: none;
     &__list {
         list-style: none;
         display: grid;
@@ -98,7 +97,6 @@
 }
 
 .contact {
-    display: none;
     &__icon-row {
         display: grid;
         grid-template-columns: repeat(4, 50px);
