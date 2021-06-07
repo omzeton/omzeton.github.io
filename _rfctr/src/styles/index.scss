@@ -1,28 +1,38 @@
 @import "./ds/index.scss";
-
-h2,
-p {
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
+@import "resets";
 
 ::selection {
     background-color: $black;
     color: $white;
 }
-
 ::-webkit-scrollbar {
     width: 0;
-}
-
-body {
-    margin: 0;
-    padding: 0;
 }
 
 .splash {
     height: 100vh;
     position: relative;
+
+    // Menu
+    &__menu {
+        position: absolute;
+        top: 32px;
+        left: 32px;
+        z-index: 9;
+        @include desktop-min {
+            top: 64px;
+            left: 64px;
+        }
+        &-tab {
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+    }
+    // End menu
+
     &__text-wrapper {
         position: absolute;
         top: 50%;
@@ -34,127 +44,32 @@ body {
         }
     }
     &__header {
-        font-size: 9.9vw;
-        letter-spacing: -0.8vw;
-        @include desktop-min {
-            letter-spacing: -7px;
-            margin-left: -7px;
-            font-size: 96px;
-        }
+        margin-left: -7px;
     }
-    &__subtext {
-        line-height: 3.7vw;
-        font-size: 2.5vw;
-        @include desktop-min {
-            width: 400px;
-            font-size: 12px;
-            line-height: 16px;
-        }
-    }
-    &__span {
-        display: block;
-    }
-    &__underline {
+    &__line {
         width: 0px;
         height: 1px;
         background-color: $black;
     }
-    &__underline--active {
+    &__line--active {
         animation: underline 1s ease-in-out forwards;
     }
-    &__menu {
-        position: absolute;
-        top: 32px;
-        left: 32px;
-        box-sizing: border-box;
-        z-index: 9;
-        display: grid;
-        width: calc(100% - 64px);
-        grid-template-columns: repeat(3, 1fr);
-        @include desktop-min {
-            top: 64px;
-            left: 64px;
-            width: calc(100% - 128px);
-            grid-template-columns: 120px 1fr 150px 150px;
-        }
-        &-separator {
-            width: 100%;
-            height: 1px;
-            background-color: $black;
-        }
-        &-tab {
-            position: relative;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            &--separator {
-                display: none;
-                @include desktop-min {
-                    display: flex;
-                }
-            }
-            &--logo {
-                justify-content: start;
-            }
-            &--active p {
-                position: relative;
-                &:after {
-                    content: "";
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    background-color: $black;
-                    width: 100%;
-                    height: 1px;
-                }
-            }
-        }
-    }
-    &__button {
-        display: flex;
-        align-items: center;
-        justify-content: end;
-    }
-    &__logo {
-        line-height: 0;
-        position: relative;
-        &:after {
-            content: "";
-            position: absolute;
-            left: calc(100% + 32px);
-            top: 50%;
-            transform: translateY(-50%);
+    @keyframes underline {
+        from {
             width: 0;
-            background-color: $black;
-            height: 1px;
+        }
+        to {
+            width: 100px;
         }
     }
-    &__logo--active:after {
-        animation: logoUnderline 1.2s ease-in-out forwards;
+    @keyframes logoUnderline {
+        from {
+            width: 0;
+        }
+        to {
+            width: calc(100vw - 197px - 96px);
+        }
     }
-}
-@keyframes underline {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100px;
-    }
-}
-@keyframes logoUnderline {
-    from {
-        width: 0;
-    }
-    to {
-        width: calc(100vw - 197px - 96px);
-        // 197px = width of the paragraph
-        // 64px - margin
-    }
-}
-
-.experience {
-    display: none;
 }
 
 .projects {

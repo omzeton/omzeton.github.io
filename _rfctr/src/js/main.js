@@ -56,20 +56,20 @@ class Controller {
         const titleTimeline = gsap.timeline();
         titleTimeline.from(".morph__svg", { opacity: 0 });
         titleTimeline.from(splitHeader.chars, { y: 20, opacity: 0, rotation: 3, force3D: true, stagger: 0.04 });
-        titleTimeline.from(".splash__span", {
+        titleTimeline.from(".splash__subtext", {
             opacity: 0,
             y: 10,
             stagger: 0.1,
             onComplete: () => {
-                document.querySelector(".splash__underline").classList.add("splash__underline--active");
+                document.querySelector(".splash__line").classList.add("splash__line--active");
             },
         });
     }
 
     morphToNewShape() {
-        this.svgTimeline = gsap.timeline({ repeat: -1, yoyo: true });
-        this.svgTimeline.to(".morph__path", { morphSVG: "#first", fill: colors[0], ease: "linear" });
-        this.svgTimeline.to(".morph__path", { morphSVG: "#second", fill: colors[0], ease: "linear" });
+        const morphingTimeline = gsap.timeline({ repeat: -1 });
+        morphingTimeline.to(".morph__path", { morphSVG: "#second", duration: 2, ease: "linear" });
+        morphingTimeline.to(".morph__path", { morphSVG: "#first", duration: 2, ease: "linear" });
     }
 
     progressBar() {

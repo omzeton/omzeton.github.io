@@ -10,7 +10,7 @@
 $font-sizes: 1, 2, 4, 8, 12, 16, 18, 24, 32, 40, 48, 64, 80, 96, 112, 128;
 $font-types: "bold", "light";
 
-$letter-spacing: 7, 6, 3, 2, 1;
+$letter-spacing: 7, 6, 5, 3, 2, 1;
 
 @for $i from 1 through length($font-types) {
     @for $j from 1 through length($font-sizes) {
@@ -45,6 +45,14 @@ $letter-spacing: 7, 6, 3, 2, 1;
                     font-family: "Lato", sans-serif;
                 }
             }
+        }
+    }
+    @for $i from 1 through length($letter-spacing) {
+        &\:spacing-#{nth($letter-spacing, $i)} {
+            letter-spacing: -(nth($letter-spacing, $i)) + px;
+        }
+        &\:spacing-#{nth($letter-spacing, $i)}\.5 {
+            letter-spacing: -(nth($letter-spacing, $i) - 0.5) + px;
         }
     }
 }
