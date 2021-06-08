@@ -1,4 +1,4 @@
-export default class CustomSplitText {
+export default class Splitter {
     constructor(target) {
         this.isMobile = window.screen.width < 1024;
         this.target = target;

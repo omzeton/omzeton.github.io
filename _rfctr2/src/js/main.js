@@ -1,5 +1,5 @@
-import gsap from "gsap";
-import CustomSplitText from "./splitText";
+import anime from "animejs";
+import Splitter from "./splitText";
 
 const colors = ["#ff3434", "#ffd034", "#8067ee", "#34ff82"];
 
@@ -13,7 +13,7 @@ class Controller {
         this.navigation();
         this.updateCopyrightDate();
         this.splashAnimations();
-        // this.morphToNewShape();
+        this.morphToNewShape();
         this.progressBar();
     }
 
@@ -41,34 +41,45 @@ class Controller {
     }
 
     splashAnimations() {
-        const menuTimeline = gsap.timeline();
-        menuTimeline.from(
-            ".splash__menu-tab",
-            {
-                opacity: 0,
-                stagger: 0.1,
-                delay: 1.5,
-            },
-            "+=1"
-        );
-        const splitHeader = new CustomSplitText(document.querySelector(".splash__header"));
-        const titleTimeline = gsap.timeline();
-        titleTimeline.from(".morph__svg", { opacity: 0 });
-        titleTimeline.from(splitHeader.chars, { y: 20, opacity: 0, rotation: 3, force3D: true, stagger: 0.04 });
-        titleTimeline.from(".splash__subtext", {
-            opacity: 0,
-            y: 10,
-            stagger: 0.1,
-            onComplete: () => {
+        const headerLetters = new Splitter(document.querySelector(".splash__header"));
+
+        const splashAnimationsTimeline = anime.timeline();
+        splashAnimationsTimeline.add({
+            targets: ".morph__svg",
+            opacity: [0, 1],
+            duration: 1000,
+            easing: "easeInQuad",
+        });
+        splashAnimationsTimeline.add({
+            targets: headerLetters.chars,
+            translateY: [20, 0],
+            opacity: [0, 1],
+            rotate: [3, 0],
+            delay: anime.stagger(40),
+            duration: 1000,
+            easing: "spring(1, 80, 10, 0)",
+        });
+        splashAnimationsTimeline.add({
+            targets: ".splash__subtext",
+            translateY: [10, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(100),
+            easing: "easeOutCubic",
+            complete() {
                 document.querySelector(".splash__line").classList.add("splash__line--active");
             },
+        });
+        splashAnimationsTimeline.add({
+            targets: ".splash__menu-tab",
+            opacity: [0, 1],
+            duration: 1000,
         });
     }
 
     morphToNewShape() {
-        const morphingTimeline = gsap.timeline({ repeat: -1 });
-        morphingTimeline.to(".morph__path", { morphSVG: "#second", duration: 2, ease: "linear" });
-        morphingTimeline.to(".morph__path", { morphSVG: "#first", duration: 2, ease: "linear" });
+        // const morphingTimeline = gsap.timeline({ repeat: -1 });
+        // morphingTimeline.to(".morph__path", { morphSVG: "#second", duration: 2, ease: "linear" });
+        // morphingTimeline.to(".morph__path", { morphSVG: "#first", duration: 2, ease: "linear" });
     }
 
     progressBar() {

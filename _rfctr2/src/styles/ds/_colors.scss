@@ -1,5 +1,10 @@
-$white: #f9f5f1;
-$black: #282828;
+// Production variables
+// $white: #f9f5f1;
+// $black: #282828;
+
+// Developmet variables
+$white: #282828;
+$black: #f9f5f1;
 
 $color-names: "white", "black";
 $colors: $white, $black;
