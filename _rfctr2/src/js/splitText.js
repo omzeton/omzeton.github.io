@@ -7,8 +7,6 @@ export default class Splitter {
     }
 
     sliceElements() {
-        // Wrap every letter inside word in div with these styles
-        // position: relative; display: inline-block;
         const targetText = this.target.innerText;
         const space = this.isMobile ? 8 : 16;
         const HTMLToInject = targetText

@@ -100,6 +100,8 @@ class Controller {
             updateProgress();
         });
     }
+
+    startIntersectionObserver() {}
 }
 
 new Controller();
