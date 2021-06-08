@@ -108,6 +108,21 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 25px;
+        &:nth-child(1) {
+            background-image: url("../images/github.svg");
+        }
+        &:nth-child(2) {
+            background-image: url("../images/linkedin.svg");
+        }
+        &:nth-child(3) {
+            background-image: url("../images/twitter.svg");
+        }
+        &:nth-child(4) {
+            background-image: url("../images/facebook.svg");
+        }
     }
     &__mail {
         cursor: pointer;

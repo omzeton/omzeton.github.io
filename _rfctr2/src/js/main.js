@@ -13,7 +13,7 @@ class Controller {
         this.navigation();
         this.updateCopyrightDate();
         this.splashAnimations();
-        this.morphToNewShape();
+        // this.morphToNewShape();
         this.progressBar();
     }
 
