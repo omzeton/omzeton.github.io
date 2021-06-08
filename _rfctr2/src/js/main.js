@@ -1,46 +1,24 @@
 import anime from "animejs";
 import Splitter from "./splitText";
-
-const colors = ["#ff3434", "#ffd034", "#8067ee", "#34ff82"];
+import shapes from "./SVGShapesData";
 
 class Controller {
     constructor() {
-        this.isMobile = window.screen.width < 1024;
-        this.observer = null;
-        this.svgTimeline = null;
         this.sections = [...document.querySelectorAll("section")];
         this.navButtons = [...document.querySelectorAll(".splash__menu-tab")];
-        this.navigation();
-        this.updateCopyrightDate();
-        this.splashAnimations();
-        this.morphToNewShape();
-        this.progressBar();
+        this.svg = document.querySelector(".morph__svg");
+        this.svgPath = document.querySelector(".morph__path");
+        this.init();
     }
 
-    navigation() {
-        this.navButtons.forEach(button => {
-            button.addEventListener("click", event => {
-                event.preventDefault();
-                const targetPosition = this.sections.find(section => {
-                    if (section.dataset.morph === button.dataset.navTo) {
-                        return section;
-                    }
-                });
-                window.scrollTo({
-                    top: targetPosition.offsetTop,
-                    behavior: "smooth",
-                });
-            });
-        });
+    init() {
+        this.onLoadAnimations();
+        this.initSVGMorphingLoop();
+        this.setProgressBarListener();
+        this.startIntersectionObserver();
     }
 
-    updateCopyrightDate() {
-        const date = new Date();
-        const year = date.getFullYear();
-        document.getElementById("copyright-date").innerText = `${year}`;
-    }
-
-    splashAnimations() {
+    onLoadAnimations() {
         const headerLetters = new Splitter(document.querySelector(".splash__header"));
 
         const splashAnimationsTimeline = anime.timeline();
@@ -50,25 +28,30 @@ class Controller {
             duration: 1000,
             easing: "easeInQuad",
         });
-        splashAnimationsTimeline.add({
-            targets: headerLetters.chars,
-            translateY: [20, 0],
-            opacity: [0, 1],
-            rotate: [3, 0],
-            delay: anime.stagger(40),
-            duration: 1000,
-            easing: "spring(1, 80, 10, 0)",
-        });
-        splashAnimationsTimeline.add({
-            targets: ".splash__subtext",
-            translateY: [10, 0],
-            opacity: [0, 1],
-            delay: anime.stagger(100),
-            easing: "easeOutCubic",
-            complete() {
-                document.querySelector(".splash__line").classList.add("splash__line--active");
+        splashAnimationsTimeline.add(
+            {
+                targets: headerLetters.chars,
+                translateY: [20, 0],
+                opacity: [0, 1],
+                rotate: [3, 0],
+                delay: anime.stagger(40),
+                easing: "easeInOutCirc",
             },
-        });
+            "-=400"
+        );
+        splashAnimationsTimeline.add(
+            {
+                targets: ".splash__subtext",
+                translateY: [10, 0],
+                opacity: [0, 1],
+                delay: anime.stagger(100),
+                easing: "easeInOutCirc",
+                complete() {
+                    document.querySelector(".splash__line").classList.add("splash__line--active");
+                },
+            },
+            "-=600"
+        );
         splashAnimationsTimeline.add({
             targets: ".splash__menu-tab",
             opacity: [0, 1],
@@ -76,13 +59,26 @@ class Controller {
         });
     }
 
-    morphToNewShape() {
-        // const morphingTimeline = gsap.timeline({ repeat: -1 });
-        // morphingTimeline.to(".morph__path", { morphSVG: "#second", duration: 2, ease: "linear" });
-        // morphingTimeline.to(".morph__path", { morphSVG: "#first", duration: 2, ease: "linear" });
+    initSVGMorphingLoop() {
+        anime.remove(this.svgPath);
+        anime({
+            targets: this.svgPath,
+            easing: "linear",
+            d: [
+                { value: shapes[0].pathAlt, duration: 3500 },
+                { value: shapes[0].path, duration: 3500 },
+            ],
+            loop: true,
+            fill: {
+                value: shapes[0].fill.color,
+                duration: shapes[0].fill.duration,
+                easing: shapes[0].fill.easing,
+            },
+            direction: "alternate",
+        });
     }
 
-    progressBar() {
+    setProgressBarListener() {
         const progressBar = document.getElementById("progressBar");
         const updateProgress = () => {
             let scrollTop = window.pageYOffset,

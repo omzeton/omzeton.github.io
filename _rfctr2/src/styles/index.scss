@@ -13,9 +13,9 @@
 .morph {
     position: fixed;
     top: 0;
-    left: -50%;
-    width: 200%;
-    height: 100%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -23,8 +23,11 @@
     pointer-events: none;
     z-index: -10;
     opacity: 1;
-    .hidden {
-        visibility: hidden;
+    &__svg {
+        position: relative;
+        height: 100%;
+        fill: #f9f5f1;
+        flex: none;
     }
 }
 
