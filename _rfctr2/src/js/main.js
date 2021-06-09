@@ -1,18 +1,24 @@
 import anime from "animejs";
-import scrollMonitor from "scrollmonitor";
+import * as THREE from "three";
 import Splitter from "./splitText";
-import shapes from "./SVGShapesData";
 
 class Controller {
     constructor() {
-        this.sections = [...document.querySelectorAll("section")];
         this.navButtons = [...document.querySelectorAll(".splash__menu-tab")];
         this.footer = document.querySelector("footer");
+        this.time = 0;
+        this.renderer = null;
+        this.scene = null;
+        this.camera = null;
+        this.material = null;
+        this.width = null;
+        this.height = null;
         this.init();
     }
 
     init() {
         this.onLoadAnimations();
+        // this.noiseBackground();
     }
 
     onLoadAnimations() {
@@ -28,11 +34,11 @@ class Controller {
         splashAnimationsTimeline.add(
             {
                 targets: headerLetters.chars,
-                translateY: [20, 0],
+                translateY: [30, 0],
                 opacity: [0, 1],
                 rotate: [3, 0],
                 delay: anime.stagger(40),
-                easing: "easeInOutCirc",
+                easing: "easeInQuad",
             },
             "-=400"
         );
@@ -49,149 +55,83 @@ class Controller {
             },
             "-=600"
         );
-        splashAnimationsTimeline.add({
-            targets: ".splash-menu",
-            opacity: [0, 1],
-            duration: 1000,
-        });
-    }
-
-    initSVGMorphingLoop(pos = 0) {
-        console.log("initSVGMorphingLoop");
-        anime.remove(this.svg);
-        anime({
-            targets: this.svg,
-            duration: 1,
-            easing: "linear",
-            scaleX: shapes[pos].scaleX,
-            scaleY: shapes[pos].scaleY,
-            translateX: shapes[pos].tx + "px",
-            translateY: shapes[pos].ty + "px",
-            rotate: shapes[pos].rotate + "deg",
-        });
-        this.morphingLoop();
-    }
-
-    morphingLoop(pos = 0) {
-        anime.remove(this.svgPath);
-        anime({
-            targets: this.svgPath,
-            easing: "linear",
-            d: [
-                { value: shapes[pos].pathAlt, duration: 3500 },
-                { value: shapes[pos].path, duration: 3500 },
-            ],
-            loop: true,
-            fill: {
-                value: shapes[pos].fill.color,
-                duration: shapes[pos].fill.duration,
-                easing: shapes[pos].fill.easing,
+        splashAnimationsTimeline.add(
+            {
+                targets: ".splash-menu",
+                opacity: [0, 1],
+                duration: 1000,
             },
-            direction: "alternate",
-        });
+            "+=600"
+        );
     }
 
-    setProgressBarListener() {
-        const progressBar = document.getElementById("progressBar");
-        const updateProgress = () => {
-            let scrollTop = window.pageYOffset,
-                pageHeight =
-                    Math.max(
-                        document.body.scrollHeight,
-                        document.body.offsetHeight,
-                        document.documentElement.clientHeight,
-                        document.documentElement.scrollHeight,
-                        document.documentElement.offsetHeight
-                    ) - document.documentElement.clientHeight,
-                amountScrolled = pageHeight - scrollTop,
-                percentage = Math.floor((amountScrolled / pageHeight) * 100);
-            percentage = 100 - percentage;
-            progressBar.style.height = `${percentage}%`;
-        };
-        updateProgress();
-        window.addEventListener("scroll", () => {
-            updateProgress();
+    noiseBackground() {
+        const sceneWrapper = document.getElementById("scene");
+        this.scene = new THREE.Scene();
+        this.camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.001, 1000);
+        this.camera.position.set(0, 0, 2);
+        this.renderer = new THREE.WebGLRenderer();
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        sceneWrapper.appendChild(this.renderer.domElement);
+
+        const vertexShader = document.getElementById("vertexShader").textContent;
+        const fragmentShader = document.getElementById("fragmentShader").textContent;
+        this.material = new THREE.ShaderMaterial({
+            side: THREE.DoubleSide,
+            uniforms: {
+                time: {
+                    type: "f",
+                    value: 0,
+                },
+                tDiffuse: {
+                    type: "sampler2d",
+                    value: 0,
+                },
+                resolution: {
+                    type: "v4",
+                    value: new THREE.Vector4(),
+                },
+            },
+            vertexShader,
+            fragmentShader,
         });
+        this.material.needsUpdate = true;
+        const geometry = new THREE.PlaneGeometry(1, 1, 1);
+        this.plane = new THREE.Mesh(geometry, this.material);
+        this.scene.add(this.plane);
+
+        this.camera.updateProjectionMatrix();
+        this.resize();
+        this.render();
+        window.addEventListener("resize", this.resize.bind(this));
     }
 
-    createScrollWatchers() {
-        let step;
-        this.sections.forEach((_, pos = 0) => {
-            const scrollElemToWatch = pos ? this.sections[pos] : this.footer;
-            pos = pos ? pos : this.sections.length;
-            const watcher = scrollMonitor.create(scrollElemToWatch, -300);
+    resize() {
+        this.width = window.innerWidth;
+        this.height = window.innerHeight;
+        this.renderer.setSize(this.width, this.height);
+        this.camera.aspect = this.width / this.height;
+        this.camera.fov = 2 * (180 / Math.PI) * Math.atan(1 / (2 * this.camera.position.z));
 
-            watcher.enterViewport(() => {
-                console.log({ pos, shapes });
-                step = pos;
-                anime.remove(this.svgPath);
-                anime({
-                    targets: this.svgPath,
-                    duration: shapes[pos].animation.path.duration,
-                    easing: shapes[pos].animation.path.easing,
-                    elasticity: shapes[pos].animation.path.elasticity || 0,
-                    d: shapes[pos].path,
-                    fill: {
-                        value: shapes[pos].fill.color,
-                        duration: shapes[pos].fill.duration,
-                        easing: shapes[pos].fill.easing,
-                    },
-                    complete: () => {
-                        this.morphingLoop(pos);
-                    },
-                });
+        if (this.width / this.height > 1) {
+            this.plane.scale.x = this.camera.aspect;
+        } else {
+            this.plane.scale.y = 1 / this.camera.aspect;
+        }
 
-                anime.remove(this.svg);
-                anime({
-                    targets: this.svg,
-                    duration: shapes[pos].animation.svg.duration,
-                    easing: shapes[pos].animation.svg.easing,
-                    elasticity: shapes[pos].animation.svg.elasticity || 0,
-                    scaleX: shapes[pos].scaleX,
-                    scaleY: shapes[pos].scaleY,
-                    translateX: shapes[pos].tx + "px",
-                    translateY: shapes[pos].ty + "px",
-                    rotate: shapes[pos].rotate + "deg",
-                });
-            });
+        this.material.uniforms.resolution.value.x = this.width;
+        this.material.uniforms.resolution.value.y = this.height;
+        this.material.uniforms.resolution.value.z = 1;
+        this.material.uniforms.resolution.value.w = 1;
 
-            watcher.exitViewport(() => {
-                const idx = !watcher.isAboveViewport ? pos - 1 : pos + 1;
+        this.camera.updateProjectionMatrix();
+    }
 
-                if (idx <= this.sections.length && step !== idx) {
-                    step = idx;
-                    anime.remove(this.svgPath);
-                    anime({
-                        targets: this.svgPath,
-                        duration: shapes[idx].animation.path.duration,
-                        easing: shapes[idx].animation.path.easing,
-                        elasticity: shapes[idx].animation.path.elasticity || 0,
-                        d: shapes[idx].path,
-                        fill: {
-                            value: shapes[idx].fill.color,
-                            duration: shapes[idx].fill.duration,
-                            easing: shapes[idx].fill.easing,
-                        },
-                        complete: () => {
-                            this.morphingLoop(idx);
-                        },
-                    });
-
-                    anime.remove(this.svg);
-                    anime({
-                        targets: this.svg,
-                        duration: shapes[idx].animation.svg.duration,
-                        easing: shapes[idx].animation.svg.easing,
-                        elasticity: shapes[idx].animation.svg.elasticity || 0,
-                        scaleX: shapes[idx].scaleX,
-                        scaleY: shapes[idx].scaleY,
-                        translateX: shapes[idx].tx + "px",
-                        translateY: shapes[idx].ty + "px",
-                        rotate: shapes[idx].rotate + "deg",
-                    });
-                }
-            });
-        });
+    render() {
+        this.time += 0.01;
+        this.material.uniforms.time.value = this.time;
+        requestAnimationFrame(this.render.bind(this));
+        this.renderer.render(this.scene, this.camera);
     }
 }
 

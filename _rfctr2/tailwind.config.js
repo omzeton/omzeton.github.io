@@ -35,6 +35,7 @@ module.exports = {
             "xl2-max": { max: "1920px" },
         },
         fontSize: {
+            8: "8px",
             9: "9px",
             10: "10px",
             12: "12px",
@@ -120,6 +121,8 @@ module.exports = {
         },
         width: {
             5: "5px",
+            250: "250px",
+            screen: "100vw",
             full: "100%",
         },
         height: {

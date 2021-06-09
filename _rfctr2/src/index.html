@@ -10,38 +10,69 @@
     </head>
     <body class="bg-white box-border border-24 border-solid border-black">
         <main>
-            <section class="h-screen-plus relative" data-section="0">
+            <section class="h-screen-plus relative">
                 <div class="absolute top-32 left-32 lg:top-64 lg:left-64 z-1">
-                    <div class="relative cursor-pointer flex items-center justify-center splash-menu">
+                    <div class="relative flex items-center justify-center splash-menu">
                         <p class="font-bold text-20 text-black tracking-1_5">omzeton.</p>
                     </div>
                 </div>
                 <div class="ml-32 lg:ml-64 absolute top-2/4 transform -translate-y-2/4 splash__text-wrapper">
                     <h2 class="font-bold text-42 md:text-80 lg:text-96 text-black tracking-5 md:tracking-7 -ml-8 splash-header">Hi there.</h2>
                     <p class="font-light text-8 md:text-16 text-black tracking-0_5 mt-12 lg:mt-0">
-                        <span class="splash-subtext inline-block">I'm Adam, frontend developer, wanna-be fullstack</span>
+                        <span class="splash-subtext inline-block">I'm Adam, I'm a frontend dev from Poland with passion</span>
                         <br />
-                        <span class="splash-subtext inline-block">and nerd from Poland. I'm passionate about creating</span>
+                        <span class="splash-subtext inline-block">for creating nice things on the web.</span>
                         <br />
-                        <span class="splash-subtext inline-block">beautiful and functional websites and apps.</span>
+                        <span class="splash-subtext inline-block">Glad to see you here.</span>
                     </p>
                     <div class="splash-line w-0 bg-black mt-16 lg:mt-24"></div>
                 </div>
             </section>
-            <section class="contact mx-64 my-128" data-morph="contact" data-section="2">
-                <h2 class="font-bold text-96 text-black tracking-7 mb-24">
-                    Want to work together?<br />Send me an <span class="contact__mail underline" onclick="window.location.href = 'mailto:omzeton@gmail.com?subject=Work'">email.</span>
+            <section class="mx-32 lg:mx-64 my-64 lg:my-128">
+                <h2 class="font-bold text-42 md:text-80 lg:text-96 text-black tracking-3 md:tracking-7 mb-24 leading-1_2">
+                    Want to work together?<br />Send me an <span class="contact__mail underline cursor-pointer" onclick="window.location.href = 'mailto:omzeton@gmail.com?subject=Work'">email.</span>
                 </h2>
-                <div class="contact__icon-row">
-                    <a href="https://github.com/omzeton" class="contact__icon"> </a>
-                    <a href="https://www.linkedin.com/in/adam-rolczyk-a513a118a/" class="contact__icon"> </a>
-                    <a href="https://twitter.com/omzeton" class="contact__icon"> </a>
-                    <a href="https://pl-pl.facebook.com/people/Adam-Rolczyk/100007092697135" class="contact__icon"> </a>
+                <div class="mt-32 grid grid-rows-4 lg:grid-rows-1 lg:grid-cols-4 gap-y-8 lg:gap-x-8 w-250">
+                    <a href="https://github.com/omzeton" class="contact__icon"></a>
+                    <a href="https://www.linkedin.com/in/adam-rolczyk-a513a118a/" class="contact__icon"></a>
+                    <a href="https://twitter.com/omzeton" class="contact__icon"></a>
+                    <a href="https://pl-pl.facebook.com/people/Adam-Rolczyk/100007092697135" class="contact__icon"></a>
                 </div>
             </section>
         </main>
-        <footer class="flex items-center justify-center">
-            <p class="font-light text-12 text-black my-32">&copy; <span id="copyright-date">2021</span> - Made with &hearts; by Adam Rolczyk.</p>
+        <footer class="flex items-center">
+            <p class="ml-32 lg:ml-64 font-bold text-12 text-black my-32">Made with &hearts; by Adam Rolczyk</p>
         </footer>
+
+        <div id="scene" class="fixed -z-10 w-screen h-screen top-0 left-0"></div>
+        <script id="vertexShader" type="x-shader/x-vertex">
+            varying vec2 vUv;
+
+            void main() {
+              vUv = uv;
+              gl_Position = projectionMatrix
+                * modelViewMatrix
+                * vec4( position, 1.0 );
+            }
+        </script>
+        <script id="fragmentShader" type="x-shader/x-fragment">
+            uniform float time;
+            uniform sampler2D tDiffuse;
+            varying vec2 vUv;
+
+            float random( vec2 p )
+            {
+                vec2 K1 = vec2(23.14069263277926, 2.665144142690225);
+                return fract( cos( dot(p,K1) ) * 12345.6789 );
+            }
+
+            void main() {
+                vec4 color = texture2D(tDiffuse, vUv);
+                vec2 uvRandom = vUv;
+                uvRandom.y *= random(vec2(uvRandom.y, time));
+                color.rgb += random(uvRandom)*0.1;
+                gl_FragColor = vec4(color);
+            }
+        </script>
     </body>
 </html>
