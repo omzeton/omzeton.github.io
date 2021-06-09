@@ -1,4 +1,5 @@
-- redesign projects section (make more space to write about them)
+- tailwind
 - morph svg based on viewed section
-- mobile media queries
-- alternative to morphSVG plugin (anime || own rewrite)
+- mobile
+
+hover styles https://tympanus.net/Development/LineHoverStyles/
