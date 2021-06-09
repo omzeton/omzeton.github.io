@@ -46,6 +46,7 @@ module.exports = {
             32: "32px",
             42: "42px",
             46: "46px",
+            64: "64px",
             54: "54px",
             72: "72px",
             80: "80px",
@@ -120,6 +121,14 @@ module.exports = {
         width: {
             5: "5px",
             full: "100%",
+        },
+        height: {
+            "screen-plus": "101vh",
+            screen: "100vh",
+            full: "100%",
+        },
+        borderWidth: {
+            24: "24px",
         },
     },
     variants: {

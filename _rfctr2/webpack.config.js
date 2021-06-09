@@ -42,6 +42,10 @@ module.exports = {
                     loader: "ts-loader",
                 },
             },
+            {
+                test: /\.html$/i,
+                loader: "html-loader",
+            },
         ],
     },
     plugins: [
