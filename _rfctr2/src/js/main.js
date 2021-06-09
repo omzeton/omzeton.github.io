@@ -19,7 +19,7 @@ class Controller {
     }
 
     onLoadAnimations() {
-        const headerLetters = new Splitter(document.querySelector(".splash__header"));
+        const headerLetters = new Splitter(document.querySelector(".splash-header"));
 
         const splashAnimationsTimeline = anime.timeline();
         splashAnimationsTimeline.add({
@@ -41,19 +41,19 @@ class Controller {
         );
         splashAnimationsTimeline.add(
             {
-                targets: ".splash__subtext",
+                targets: ".splash-subtext",
                 translateY: [10, 0],
                 opacity: [0, 1],
                 delay: anime.stagger(100),
                 easing: "easeInOutCirc",
                 complete() {
-                    document.querySelector(".splash__line").classList.add("splash__line--active");
+                    document.querySelector(".splash-line").classList.add("active-line");
                 },
             },
             "-=600"
         );
         splashAnimationsTimeline.add({
-            targets: ".splash__menu-tab",
+            targets: ".splash-menu",
             opacity: [0, 1],
             duration: 1000,
         });

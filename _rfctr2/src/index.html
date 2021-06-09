@@ -10,22 +10,22 @@
     </head>
     <body class="bg-white">
         <main>
-            <section class="splash">
-                <div class="splash__menu">
-                    <div class="splash__menu-tab">
-                        <p class="bold-16 text-black spacing-1.5">omzeton.</p>
+            <section class="h-screen relative">
+                <div class="absolute top-32 left-32 lg:top-64 lg:left-64 z-1">
+                    <div class="relative cursor-pointer flex items-center justify-center splash-menu">
+                        <p class="font-bold text-20 text-black tracking-1_5">omzeton.</p>
                     </div>
                 </div>
-                <div class="ml-32 lg:ml-64 splash__text-wrapper">
-                    <h2 class="bold-40 md:bold-80 lg:bold-96 text-black spacing-5 md:spacing-7 splash__header">Home grown dev.</h2>
-                    <p class="light-8 md:light-16 text-black spacing-0.5 mt-12 lg:mt-0">
-                        <span class="splash__subtext inline-block">Hi! I'm Adam, frontend developer, wanna-be fullstack</span>
+                <div class="ml-32 lg:ml-64 absolute top-2/4 transform -translate-y-2/4 splash__text-wrapper">
+                    <h2 class="font-bold text-42 md:text-80 lg:text-96 text-black tracking-5 md:tracking-7 -ml-8 splash-header">Home grown dev.</h2>
+                    <p class="font-light text-8 md:text-16 text-black tracking-0_5 mt-12 lg:mt-0">
+                        <span class="splash-subtext inline-block">Hi! I'm Adam, frontend developer, wanna-be fullstack</span>
                         <br />
-                        <span class="splash__subtext inline-block">and nerd from Poland. I'm passionate about creating</span>
+                        <span class="splash-subtext inline-block">and nerd from Poland. I'm passionate about creating</span>
                         <br />
-                        <span class="splash__subtext inline-block">beautiful and functional web programs.</span>
+                        <span class="splash-subtext inline-block">beautiful and functional websites and apps.</span>
                     </p>
-                    <div class="splash__line mt-16 lg:mt-24"></div>
+                    <div class="splash-line w-0 bg-black mt-16 lg:mt-24"></div>
                 </div>
                 <div class="splash__shader-container"></div>
             </section>
@@ -97,7 +97,7 @@
                 </div>
             </section>
             <section class="contact mx-64 my-128" data-morph="contact">
-                <h2 class="bold-96 text-black spacing-7 mb-24">
+                <h2 class="font-bold text-96 text-black tracking-7 mb-24">
                     Want to work together?<br />Send me an <span class="contact__mail underline" onclick="window.location.href = 'mailto:omzeton@gmail.com?subject=Work'">email.</span>
                 </h2>
                 <div class="contact__icon-row">
@@ -108,12 +108,12 @@
                 </div>
             </section>
         </main>
-        <footer>
-            <p class="light-12 text-black my-32">&copy; <span id="copyright-date">2021</span> - Made with &hearts; by Adam Rolczyk.</p>
+        <footer class="flex items-center justify-center">
+            <p class="font-light text-12 text-black my-32">&copy; <span id="copyright-date">2021</span> - Made with &hearts; by Adam Rolczyk.</p>
         </footer>
-        <div id="progressBar"></div>
-        <div class="morph">
-            <svg class="morph__svg" width="1400" height="770" viewBox="0 0 1400 770">
+        <div class="top-0 right-0 w-5 bg-black z-1 fixed transitio-height duration-500 ease-out" id="progressBar"></div>
+        <div class="morph fixed top-0 left-0 bottom-0 w-full overflow-hidden flex items-center justify-center -z-10">
+            <svg class="morph__svg relative h-full flex-none" width="1400" height="770" viewBox="0 0 1400 770">
                 <path
                     class="morph__path"
                     fill="#ff3434"

@@ -11,7 +11,7 @@
             height: calc(100% - 40px);
             width: 2px;
             top: 30px;
-            background-color: $black;
+            @apply bg-black;
             z-index: 10;
         }
     }
@@ -26,7 +26,7 @@
         &:before {
             content: "";
             position: absolute;
-            background-color: $black;
+            @apply bg-black;
             width: 20px;
             height: 20px;
             border-radius: 50%;

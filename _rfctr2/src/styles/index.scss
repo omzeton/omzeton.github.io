@@ -1,43 +1,40 @@
 @import "resets";
-@import "./ds";
 @import "./sections";
 
+@import url("https://fonts.googleapis.com/css?family=Lato:700&display=swap");
+@font-face {
+    font-family: "Gordita";
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+    src: url("@/fonts/gordita.woff") format("woff");
+}
+
 ::selection {
-    background-color: $black;
-    color: $white;
+    background-color: #282828;
+    color: #f9f5f1;
 }
 ::-webkit-scrollbar {
     width: 0;
 }
 
-.morph {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    z-index: -10;
-    opacity: 1;
-    &__svg {
-        position: relative;
-        height: 100%;
-        fill: #f9f5f1;
-        flex: none;
+.active-line {
+    height: 1px;
+    animation: underline 1s ease-in-out forwards;
+}
+@keyframes underline {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100px;
     }
 }
-
-#progressBar {
-    top: 0;
-    right: 0;
-    width: 5px;
-    height: 0%;
-    position: fixed;
-    background: $black;
-    transition: height 0.5s ease-out;
-    z-index: 999;
+@keyframes logoUnderline {
+    from {
+        width: 0;
+    }
+    to {
+        width: calc(100vw - 197px - 96px);
+    }
 }
