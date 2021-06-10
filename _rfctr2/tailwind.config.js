@@ -12,6 +12,11 @@ module.exports = {
             transitionProperty: {
                 color: "color",
             },
+            translate: {
+                10: "10px",
+                19: "19px",
+                22: "22px",
+            },
         },
         colors: {
             white: "#f9f5f1",
@@ -121,12 +126,15 @@ module.exports = {
         },
         width: {
             5: "5px",
+            50: "50px",
             250: "250px",
             screen: "100vw",
             full: "100%",
         },
         height: {
-            "screen-plus": "101vh",
+            5: "5px",
+            50: "50px",
+            250: "250px",
             screen: "100vh",
             full: "100%",
         },
