@@ -1,7 +1,7 @@
+uniform samplerCube iChannel0;
 uniform float iTime;
 uniform vec3 iResolution;
 uniform vec2 iMouse;
-
 varying vec2 vUv;
 varying vec3 vPosition;
 
@@ -9,9 +9,8 @@ varying vec3 vPosition;
 #define MAX_DIST 100.
 #define SURF_DIST .001
 #define S smoothstep
-
-// Shadertoy variable names
 #define fragCoord gl_FragCoord.xy
+#define fragColor gl_FragColor
 
 mat2 Rot(float a) {
     float s=sin(a), c=cos(a);
@@ -26,16 +25,15 @@ float sdBox(vec3 p, vec3 s) {
 
 float GetDist(vec3 p) {
     float d = sdBox(p, vec3(1));
-    
     return d;
 }
 
-float RayMarch(vec3 ro, vec3 rd) {
+float RayMarch(vec3 ro, vec3 rd, float side) {
 	float dO=0.;
     
     for(int i=0; i<MAX_STEPS; i++) {
     	vec3 p = ro + rd*dO;
-        float dS = GetDist(p);
+        float dS = GetDist(p)*side;
         dO += dS;
         if(dO>MAX_DIST || abs(dS)<SURF_DIST) break;
     }
@@ -65,30 +63,44 @@ vec3 GetRayDir(vec2 uv, vec3 p, vec3 l, float z) {
     return d;
 }
 
-void main() {
+void main() 
+{
+    vec2 uv = (fragCoord-.5*iResolution.xy)/iResolution.y;
+	vec2 m = iMouse.xy/iResolution.xy;
 
-    vec2 uv = (fragCoord - 0.5 * iResolution.xy) / iResolution.y;
-    vec2 m = iMouse.xy / iResolution.xy;
-    
     vec3 ro = vec3(0, 3, -3);
     ro.yz *= Rot(-m.y*3.14+1.);
     ro.xz *= Rot(-m.x*6.2831);
     
     vec3 rd = GetRayDir(uv, ro, vec3(0,0.,0), 1.);
-    vec3 col = vec3(0);
+    
+    vec3 col = texture(iChannel0, rd).rgb;
    
-    float d = RayMarch(ro, rd);
-
-    if (d<MAX_DIST) {
-        vec3 p = ro + rd * d;
-        vec3 n = GetNormal(p);
+    float d = RayMarch(ro, rd, 1.); // outside of object
+    
+    float IOR = 1.45; // index of refraction
+    
+    if(d<MAX_DIST) {
+        vec3 p = ro + rd * d; // 3d hit position
+        vec3 n = GetNormal(p); // normal of surface... orientation
         vec3 r = reflect(rd, n);
-
-        float dif = dot(n, normalize(vec3(1,2,3)))*.5+.5;
-        col = vec3(dif);
+        
+        vec3 rdIn = refract(rd, n, 1./IOR); // ray dir when entering
+        
+        vec3 pEnter = p - n*SURF_DIST*3.;
+        float dIn = RayMarch(pEnter, rdIn, -1.); // inside the object
+        
+        vec3 pExit = pEnter + rdIn * dIn; // 3d position of exit
+        vec3 nExit = -GetNormal(pExit); 
+        
+        vec3 rdOut = refract(rdIn, nExit, IOR);
+        if(dot(rdOut, rdOut)==0.) rdOut = reflect(rdIn, nExit);
+        
+        vec3 reflTex = texture(iChannel0, rdOut).rgb;
+        col = vec3(reflTex);
     }
-
-    col = pow(col, vec3(.4545));
-
-    gl_FragColor = vec4(col, 1.0);
+    
+    col = pow(col, vec3(.4545));	// gamma correction
+    
+    fragColor = vec4(col,1.0);
 }

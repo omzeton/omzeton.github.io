@@ -3,6 +3,7 @@ import * as THREE from "three";
 import Splitter from "./splitText";
 import vertexShader from "@/glsl/vertex.glsl";
 import fragmentShader from "@/glsl/fragment.glsl";
+import channelImage from "@/images/ichannel0.png";
 
 class Controller {
     constructor() {
@@ -76,6 +77,9 @@ class Controller {
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         sceneWrapper.appendChild(this.renderer.domElement);
 
+        const urls = [channelImage, channelImage, channelImage, channelImage, channelImage, channelImage];
+        const textureCube = new THREE.CubeTextureLoader().load(urls);
+
         this.material = new THREE.ShaderMaterial({
             side: THREE.DoubleSide,
             uniforms: {
@@ -91,7 +95,11 @@ class Controller {
                     type: "v2",
                     value: new THREE.Vector2(),
                 },
+                iChannel0: {
+                    value: textureCube,
+                },
             },
+            depthWrite: false,
             vertexShader,
             fragmentShader,
         });
