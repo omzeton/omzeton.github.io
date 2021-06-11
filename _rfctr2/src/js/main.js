@@ -79,13 +79,17 @@ class Controller {
         this.material = new THREE.ShaderMaterial({
             side: THREE.DoubleSide,
             uniforms: {
-                time: {
+                iTime: {
                     type: "f",
                     value: 0,
                 },
-                resolution: {
+                iResolution: {
                     type: "v3",
                     value: new THREE.Vector3(),
+                },
+                iMouse: {
+                    type: "v2",
+                    value: new THREE.Vector2(),
                 },
             },
             vertexShader,
@@ -100,6 +104,10 @@ class Controller {
         this.resize();
         this.render();
         window.addEventListener("resize", this.resize.bind(this));
+        window.addEventListener("mousemove", event => {
+            this.material.uniforms.iMouse.value.x = event.clientX;
+            this.material.uniforms.iMouse.value.y = event.clientY;
+        });
     }
 
     resize() {
@@ -115,16 +123,16 @@ class Controller {
             this.plane.scale.y = 1 / this.camera.aspect;
         }
 
-        this.material.uniforms.resolution.value.x = this.width;
-        this.material.uniforms.resolution.value.y = this.height;
-        this.material.uniforms.resolution.value.z = 1;
+        this.material.uniforms.iResolution.value.x = this.width;
+        this.material.uniforms.iResolution.value.y = this.height;
+        this.material.uniforms.iResolution.value.z = 1;
 
         this.camera.updateProjectionMatrix();
     }
 
     render() {
         this.time += 0.01;
-        this.material.uniforms.time.value = this.time;
+        this.material.uniforms.iTime.value = this.time;
         requestAnimationFrame(this.render.bind(this));
         this.renderer.render(this.scene, this.camera);
     }
