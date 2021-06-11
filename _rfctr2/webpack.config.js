@@ -46,6 +46,15 @@ module.exports = {
                 test: /\.html$/i,
                 loader: "html-loader",
             },
+            {
+                test: /\.(frag|vert|glsl)$/,
+                use: [
+                    {
+                        loader: "glsl-shader-loader",
+                        options: {},
+                    },
+                ],
+            },
         ],
     },
     plugins: [

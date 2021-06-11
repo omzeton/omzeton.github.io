@@ -1,6 +1,8 @@
 import anime from "animejs";
 import * as THREE from "three";
 import Splitter from "./splitText";
+import vertexShader from "@/glsl/vertex.glsl";
+import fragmentShader from "@/glsl/fragment.glsl";
 
 class Controller {
     constructor() {
@@ -18,7 +20,7 @@ class Controller {
 
     init() {
         this.onLoadAnimations();
-        // this.noiseBackground();
+        this.noiseBackground();
     }
 
     onLoadAnimations() {
@@ -74,8 +76,6 @@ class Controller {
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         sceneWrapper.appendChild(this.renderer.domElement);
 
-        const vertexShader = document.getElementById("vertexShader").textContent;
-        const fragmentShader = document.getElementById("fragmentShader").textContent;
         this.material = new THREE.ShaderMaterial({
             side: THREE.DoubleSide,
             uniforms: {
@@ -83,13 +83,9 @@ class Controller {
                     type: "f",
                     value: 0,
                 },
-                tDiffuse: {
-                    type: "sampler2d",
-                    value: 0,
-                },
                 resolution: {
-                    type: "v4",
-                    value: new THREE.Vector4(),
+                    type: "v3",
+                    value: new THREE.Vector3(),
                 },
             },
             vertexShader,
@@ -122,7 +118,6 @@ class Controller {
         this.material.uniforms.resolution.value.x = this.width;
         this.material.uniforms.resolution.value.y = this.height;
         this.material.uniforms.resolution.value.z = 1;
-        this.material.uniforms.resolution.value.w = 1;
 
         this.camera.updateProjectionMatrix();
     }
