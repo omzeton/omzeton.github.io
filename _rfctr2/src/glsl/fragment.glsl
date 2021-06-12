@@ -24,7 +24,23 @@ float sdBox(vec3 p, vec3 s) {
 
 
 float GetDist(vec3 p) {
+
     float d = sdBox(p, vec3(1));
+
+    float c = cos(3.1415/5.), s = sqrt(0.75-c*c);
+    vec3 n = vec3(-0.5, -c, s);
+
+    p = abs(p);
+    p -= 2.*min(0., dot(p, n))*n;
+
+    p.xy = abs(p.xy);
+    p -= 2.*min(0., dot(p, n))*n;
+
+    p.xy = abs(p.xy);
+    p -= 2.*min(0., dot(p, n))*n;
+
+    d = p.z-1.;
+
     return d;
 }
 
@@ -43,7 +59,7 @@ float RayMarch(vec3 ro, vec3 rd, float side) {
 
 vec3 GetNormal(vec3 p) {
 	float d = GetDist(p);
-    vec2 e = vec2(.001, 0);
+    vec2 e = vec2(.01, 0);
     
     vec3 n = d - vec3(
         GetDist(p-e.xyy),
@@ -68,7 +84,7 @@ void main()
     vec2 uv = (fragCoord-.5*iResolution.xy)/iResolution.y;
 	vec2 m = iMouse.xy/iResolution.xy;
 
-    vec3 ro = vec3(0, 3, -3);
+    vec3 ro = vec3(0, 3, -3)*.9;
     ro.yz *= Rot(-m.y*3.14+1.);
     ro.xz *= Rot(-m.x*6.2831);
     
@@ -84,6 +100,7 @@ void main()
         vec3 p = ro + rd * d; // 3d hit position
         vec3 n = GetNormal(p); // normal of surface... orientation
         vec3 r = reflect(rd, n);
+        vec3 refOutside = texture(iChannel0, r).rgb;
         
         vec3 rdIn = refract(rd, n, 1./IOR); // ray dir when entering
         
@@ -93,14 +110,36 @@ void main()
         vec3 pExit = pEnter + rdIn * dIn; // 3d position of exit
         vec3 nExit = -GetNormal(pExit); 
         
-        vec3 rdOut = refract(rdIn, nExit, IOR);
+        vec3 reflTex = vec3(0);
+        vec3 rdOut = vec3(0);
+
+        float abb = .01;
+        // red
+        rdOut = refract(rdIn, nExit, IOR-abb);
         if(dot(rdOut, rdOut)==0.) rdOut = reflect(rdIn, nExit);
-        
-        vec3 reflTex = texture(iChannel0, rdOut).rgb;
-        col = vec3(reflTex);
+        reflTex.r = texture(iChannel0, rdOut).r;
+        // green
+        rdOut = refract(rdIn, nExit, IOR);
+        if(dot(rdOut, rdOut)==0.) rdOut = reflect(rdIn, nExit);
+        reflTex.g = texture(iChannel0, rdOut).g;
+        // blue
+        rdOut = refract(rdIn, nExit, IOR+abb);
+        if(dot(rdOut, rdOut)==0.) rdOut = reflect(rdIn, nExit);
+        reflTex.b = texture(iChannel0, rdOut).b;
+
+        float dens = .1;
+        float opticalDistance = exp(-dIn*dens);
+
+        reflTex = reflTex * opticalDistance; // *vec3(1., .05, .2)
+
+        float fresnel = pow(1.+dot(rd, n), 5.);
+
+        col = mix(reflTex, refOutside, fresnel);
+
+        // col = n*.5+.5;
     }
     
-    col = pow(col, vec3(.4545));	// gamma correction
+    col = pow(col, vec3(.4545)); // gamma correction
     
     fragColor = vec4(col,1.0);
 }

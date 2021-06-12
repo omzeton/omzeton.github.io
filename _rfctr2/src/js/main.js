@@ -3,7 +3,11 @@ import * as THREE from "three";
 import Splitter from "./splitText";
 import vertexShader from "@/glsl/vertex.glsl";
 import fragmentShader from "@/glsl/fragment.glsl";
-import channelImage from "@/images/ichannel0.png";
+
+import img1 from "@/images/img.jpg";
+
+const map = (value, x1, y1, x2, y2) => ((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
+const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
 
 class Controller {
     constructor() {
@@ -16,6 +20,8 @@ class Controller {
         this.material = null;
         this.width = null;
         this.height = null;
+        this.mX = null;
+        this.mY = null;
         this.init();
     }
 
@@ -77,7 +83,7 @@ class Controller {
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         sceneWrapper.appendChild(this.renderer.domElement);
 
-        const urls = [channelImage, channelImage, channelImage, channelImage, channelImage, channelImage];
+        const urls = [img1, img1, img1, img1, img1, img1];
         const textureCube = new THREE.CubeTextureLoader().load(urls);
 
         this.material = new THREE.ShaderMaterial({
@@ -113,8 +119,10 @@ class Controller {
         this.render();
         window.addEventListener("resize", this.resize.bind(this));
         window.addEventListener("mousemove", event => {
-            this.material.uniforms.iMouse.value.x = event.clientX;
-            this.material.uniforms.iMouse.value.y = event.clientY;
+            const x = map(event.clientX, this.width, this.height, 0, 50);
+            const y = map(event.clientY, this.width, this.height, 0, 50);
+            this.mX = x;
+            this.mY = y;
         });
     }
 
@@ -141,6 +149,8 @@ class Controller {
     render() {
         this.time += 0.01;
         this.material.uniforms.iTime.value = this.time;
+        this.material.uniforms.iMouse.value.x = lerp(this.material.uniforms.iMouse.value.x, this.mX, 0.08);
+        this.material.uniforms.iMouse.value.y = lerp(this.material.uniforms.iMouse.value.y, this.mY, 0.08);
         requestAnimationFrame(this.render.bind(this));
         this.renderer.render(this.scene, this.camera);
     }
