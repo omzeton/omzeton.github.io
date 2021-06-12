@@ -21,7 +21,7 @@ module.exports = {
         colors: {
             white: "#f9f5f1",
             black: "#282828",
-            red: "#ff3434",
+            accent: "#CFA822",
         },
         fontFamily: {
             light: ["Lato", "sans-serif"],
@@ -130,6 +130,7 @@ module.exports = {
             250: "250px",
             screen: "100vw",
             full: "100%",
+            "1/2": "50%",
         },
         height: {
             5: "5px",
@@ -137,6 +138,7 @@ module.exports = {
             250: "250px",
             screen: "100vh",
             full: "100%",
+            "1/2": "50%",
         },
         borderWidth: {
             24: "24px",

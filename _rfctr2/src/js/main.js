@@ -15,23 +15,25 @@ class Controller {
         const headerLetters = new Splitter(document.querySelector(".splash-header"));
 
         const splashAnimationsTimeline = anime.timeline();
+        // splashAnimationsTimeline.add({
+        //     targets: ".morph__svg",
+        //     opacity: [0, 1],
+        //     duration: 1000,
+        //     easing: "easeInQuad",
+        // });
         splashAnimationsTimeline.add({
-            targets: ".morph__svg",
+            targets: ".image-icon",
             opacity: [0, 1],
-            duration: 1000,
+            translateY: [30, 0],
+        });
+        splashAnimationsTimeline.add({
+            targets: headerLetters.chars,
+            translateY: [30, 0],
+            opacity: [0, 1],
+            rotate: [3, 0],
+            delay: anime.stagger(40),
             easing: "easeInQuad",
         });
-        splashAnimationsTimeline.add(
-            {
-                targets: headerLetters.chars,
-                translateY: [30, 0],
-                opacity: [0, 1],
-                rotate: [3, 0],
-                delay: anime.stagger(40),
-                easing: "easeInQuad",
-            },
-            "-=400"
-        );
         splashAnimationsTimeline.add(
             {
                 targets: ".splash-subtext",

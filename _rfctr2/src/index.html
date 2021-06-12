@@ -10,50 +10,138 @@
     </head>
     <body class="bg-white">
         <main>
-            <section class="h-screen relative p-64 box-border">
+            <section class="h-screen relative p-32 lg:p-64 box-border">
                 <div class="relative w-full menu-header grid">
                     <div class="relative flex items-center menu-button">
                         <p class="font-bold text-20 text-black tracking-1_5">omzeton.</p>
                     </div>
                     <div></div>
-                    <div class="relative flex items-center justify-center menu-button">
+                    <div class="relative flex items-center justify-center menu-button cursor-pointer hidden lg:block">
                         <p class="font-bold text-20 text-black tracking-1_5 link link--leda" data-text="about"><span>about</span></p>
                     </div>
-                    <div class="relative flex items-center justify-center menu-button">
+                    <div class="relative flex items-center justify-center menu-button cursor-pointer hidden lg:block">
                         <p class="font-bold text-20 text-black tracking-1_5 link link--leda" data-text="work"><span>work</span></p>
                     </div>
-                    <div class="relative flex items-center justify-center menu-button">
+                    <div class="relative flex items-center justify-center menu-button cursor-pointer hidden lg:block">
                         <p class="font-bold text-20 text-black tracking-1_5 link link--leda" data-text="contact"><span>contact</span></p>
+                    </div>
+                    <div class="relative flex justify-end menu-button block lg:hidden cursor-pointer">
+                        <svg class="burger" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#282828">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
                     </div>
                 </div>
                 <div class="absolute top-2/4 transform -translate-y-2/4 splash__text-wrapper">
+                    <div class="image-icon">
+                        <img src="./images/selfies/02.jpg" alt="My picture!" />
+                    </div>
                     <h2 class="font-bold text-42 md:text-80 lg:text-96 text-black tracking-4 md:tracking-7 -ml-8 splash-header">Hi there.</h2>
-                    <p class="font-light text-8 md:text-16 text-black tracking-0_5 mt-12 lg:mt-0">
+                    <p class="font-light text-12 lg:text-16 text-black tracking-0_5 mt-12 lg:mt-0">
                         <span class="splash-subtext inline-block">I'm Adam, I'm a frontend dev from Poland</span>
                         <br />
                         <span class="splash-subtext inline-block">with passion for creating nice things on the web.</span>
                         <br />
-                        <span class="splash-subtext inline-block">Glad to see you here.</span>
+                        <span class="splash-subtext inline-block">Let's get to know each other!</span>
                     </p>
                     <div class="splash-line w-0 bg-black mt-16 lg:mt-24"></div>
                 </div>
             </section>
-            <section class="h-250 flex items-center justify-center">
-                <div class="mx-64 grid grid-cols-9 gap-x-8">
-                    <img class="w-50 h-50 block" src="./images/technology/vue.svg" alt="Vue" />
-                    <img class="w-50 h-50 block" src="./images/technology/nuxt.svg" alt="Nuxt" />
-                    <img class="w-50 h-50 block" src="./images/technology/react.svg" alt="React" />
-                    <img class="w-50 h-50 block" src="./images/technology/ts.svg" alt="TypeScript" />
-                    <img class="w-50 h-50 block" src="./images/technology/node.svg" alt="NodeJS" />
-                    <img class="w-50 h-50 block" src="./images/technology/graphql.svg" alt="GraphQL" />
-                    <img class="w-50 h-50 block" src="./images/technology/webpack.svg" alt="Webpack" />
-                    <img class="w-50 h-50 block" src="./images/technology/git.svg" alt="Git" />
-                    <img class="w-50 h-50 block" src="./images/technology/scss.svg" alt="Scss" />
+            <section class="mx-32 lg:mx-64 my-64 lg:my-128">
+                <div class="w-full lg:w-1/2">
+                    <p class="font-bold text-24 md:text-32 lg:text-42 text-black tracking-2_5 leading-1_2">
+                        I have <span id="years">3</span> years of experience working with frontend technologies.
+                        <br />
+                        My knowledge ranges from e-commerce to parametric desgin and creative coding.
+                        <br />
+                        I'm a fast learner and always on the lookout for new a solutions.
+                        <br />
+                        Here's what I've learned so far:
+                    </p>
+                    <div class="grid grid-cols-9 gap-x-8 mt-32">
+                        <img class="w-50 h-50 block" src="./images/technology/vue.svg" alt="Vue" />
+                        <img class="w-50 h-50 block" src="./images/technology/nuxt.svg" alt="Nuxt" />
+                        <img class="w-50 h-50 block" src="./images/technology/react.svg" alt="React" />
+                        <img class="w-50 h-50 block" src="./images/technology/ts.svg" alt="TypeScript" />
+                        <img class="w-50 h-50 block" src="./images/technology/node.svg" alt="NodeJS" />
+                        <img class="w-50 h-50 block" src="./images/technology/graphql.svg" alt="GraphQL" />
+                        <img class="w-50 h-50 block" src="./images/technology/webpack.svg" alt="Webpack" />
+                        <img class="w-50 h-50 block" src="./images/technology/git.svg" alt="Git" />
+                        <img class="w-50 h-50 block" src="./images/technology/scss.svg" alt="Scss" />
+                    </div>
                 </div>
             </section>
             <section class="mx-32 lg:mx-64 my-64 lg:my-128">
+                <h2 class="font-bold text-42 md:text-80 lg:text-96 text-black tracking-4 md:tracking-7 -ml-8 splash-header">Selected works</h2>
+                <ul class="mt-32 w-full lg:w-1/2">
+                    <li class="mb-64">
+                        <div>
+                            <p class="font-light text-10 lg:text-14 text-black">2019 - 2021</p>
+                        </div>
+                        <div class="mb-16">
+                            <h2 class="font-bold text-32 text-black leading-1_2">Tylko</h2>
+                        </div>
+                        <div class="mb-16">
+                            <p class="font-light text-10 lg:text-12 text-accent">#Vue #Django #Three.js #Nuxt #Scss #TonsOfOtherStuff</p>
+                        </div>
+                        <div class="mb-8">
+                            <p class="font-light text-16 text-black">
+                                In the first few months of work at Tylko I was responsible of implementing new e-commerce features like checkout and landing page sections. Later I got involved with
+                                configuration team and maintained the furniture configurator with the help of parametric team
+                            </p>
+                        </div>
+                        <div>
+                            <a class="font-light text-16 text-accent" href="https://tylko.com/">www.tylko.com</a>
+                        </div>
+                    </li>
+
+                    <li class="mb-64">
+                        <div class="mb-16">
+                            <h2 class="font-bold text-32 text-black leading-1_2">Generative coding experiments</h2>
+                        </div>
+                        <div class="mb-16">
+                            <p class="font-light text-10 lg:text-12 text-accent">#p5.js #GenerativeArt #PerilnNoise #Shaders</p>
+                        </div>
+                        <div class="mb-8">
+                            <p class="font-light text-16 text-black">
+                                While at Tylko I got inspired by creative coding and created two side projects that created a lot of interesting results and images.
+                            </p>
+                        </div>
+                        <div>
+                            <a class="font-light text-16 text-accent" href="https://github.com/omzeton/logo-sign-generator">Sign generator</a>
+                            <br />
+                            <a class="font-light text-16 text-accent" href="https://github.com/omzeton/Marching-squares-final">Marching squares</a>
+                        </div>
+                    </li>
+
+                    <li class="mb-64">
+                        <div>
+                            <p class="font-light text-10 lg:text-14 text-black">2015 - 2019</p>
+                        </div>
+                        <div class="mb-16">
+                            <h2 class="font-bold text-32 text-black leading-1_2">Early projects</h2>
+                        </div>
+                        <div class="mb-16">
+                            <p class="font-light text-10 lg:text-12 text-accent">#React #NodeJS #MongoDB #WebSockets #GraphQLf</p>
+                        </div>
+                        <div class="mb-8">
+                            <p class="font-light text-16 text-black">
+                                Before first job I created a number of apps to practice and learn new technologies. Notnik is a minimalistic notebook app. Chatto is a cross-device chatbox. Amarynix is
+                                a verb conjugator for Amharic language.
+                            </p>
+                        </div>
+                        <div>
+                            <a class="font-light text-16 text-accent" href="http://notnik.herokuapp.com/">Nothnik</a><br />
+                            <a class="font-light text-16 text-accent" href="https://chatto--app.herokuapp.com/">Chatto</a><br />
+                            <a class="font-light text-16 text-accent" href="https://amarynix.herokuapp.com/index.html">Amarynix</a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="mx-32 lg:mx-64 my-64 lg:my-128">
                 <h2 class="font-bold text-42 md:text-80 lg:text-96 text-black tracking-3 md:tracking-7 mb-24 leading-1_2">
-                    Want to work together?<br />Send me an
+                    Got an interesting project?
+                    <br />
+                    Send me an
                     <div
                         class="inline-block underline cursor-pointer link link--leda transform translate-y-10 md:translate-y-19 lg:translate-y-22"
                         onclick="window.location.href = 'mailto:omzeton@gmail.com?subject=Work'"
@@ -61,7 +149,7 @@
                     >
                         <span>email</span>
                     </div>
-                    .
+                    !
                 </h2>
                 <div class="mt-32 grid grid-rows-4 lg:grid-rows-1 lg:grid-cols-4 gap-y-8 lg:gap-x-8 w-250">
                     <a href="https://github.com/omzeton" class="contact__icon"></a>
@@ -71,10 +159,5 @@
                 </div>
             </section>
         </main>
-        <footer class="flex items-center">
-            <p class="ml-32 lg:ml-64 font-bold text-12 text-black my-32">Made with &hearts; by Adam Rolczyk</p>
-        </footer>
-
-        <div id="scene" class="fixed -z-10 w-screen h-screen top-0 left-0"></div>
     </body>
 </html>

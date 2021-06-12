@@ -121,6 +121,20 @@
 }
 
 .menu-header {
-    $columnWidth: 150px;
-    grid-template-columns: $columnWidth 1fr $columnWidth $columnWidth $columnWidth;
+    grid-template-columns: 100px 1fr 100px;
+    @screen lg {
+        grid-template-columns: 150px 1fr 150px 150px 150px;
+    }
+}
+
+.image-icon {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.burger {
+    height: 30px;
+    width: auto;
 }
