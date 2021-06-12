@@ -119,3 +119,8 @@
 .link--leda:hover span {
     transform: translate3d(-150%, 0, 0);
 }
+
+.menu-header {
+    $columnWidth: 150px;
+    grid-template-columns: $columnWidth 1fr $columnWidth $columnWidth $columnWidth;
+}
