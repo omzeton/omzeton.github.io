@@ -3,12 +3,12 @@ import Splitter from "./splitText";
 
 class Controller {
     constructor() {
-        this.navButtons = [...document.querySelectorAll(".splash__menu-tab")];
+        this.navButtons = [...document.querySelectorAll(".menu-button")];
         this.init();
     }
 
     init() {
-        // this.onLoadAnimations();
+        this.onLoadAnimations();
     }
 
     onLoadAnimations() {
@@ -47,11 +47,12 @@ class Controller {
         );
         splashAnimationsTimeline.add(
             {
-                targets: ".splash-menu",
+                targets: this.navButtons,
                 opacity: [0, 1],
+                delay: anime.stagger(40),
                 duration: 1000,
             },
-            "+=600"
+            "-=800"
         );
     }
 }
