@@ -1,30 +1,22 @@
 {
+  "author": "Adam Rolczyk",
   "name": "portfo",
-  "version": "1.0.0",
-  "description": "simple portfolio website",
+  "version": "2.0.0",
+  "description": "Portfolio website",
+  "license": "MIT",
   "main": "index.html",
   "scripts": {
-    "start": "parcel ./js/parcel.html --open",
-    "test": "test"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/omzeton/portfo.git"
   },
-  "keywords": [
-    "portfolio"
-  ],
-  "author": "omzeton",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/omzeton/portfo/issues"
-  },
-  "homepage": "https://github.com/omzeton/portfo#readme",
+  "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
-    "parcel-bundler": "^1.12.3"
-  },
-  "dependencies": {}
+    "typescript": "^4.5.5",
+    "vite": "^2.8.0"
+  }
 }
