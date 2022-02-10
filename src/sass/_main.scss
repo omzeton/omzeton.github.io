@@ -1,5 +1,34 @@
 @use "colors" as *;
+@use "font" as *;
+@use "queries" as *;
 
-body {
-  background-color: $white;
+$primary: $white;
+$secondary: $coquelicot;
+
+.main {
+  width: 100%;
+  height: 100vh;
+  background-color: $pewter-blue;
+  box-sizing: border-box;
+  padding: 3em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    @include header-bold;
+    margin: 0.14em 0;
+    color: $primary;
+  }
+
+  &__subtext {
+    @include subheader;
+    margin-top: 1em;
+    width: 50%;
+    color: $secondary;
+
+    @include tablet-landscape-up {
+      width: 20%;
+    }
+  }
 }
