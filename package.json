@@ -1,12 +1,10 @@
 {
+  "author": "omzeton",
   "name": "portfo",
-  "version": "1.0.0",
-  "description": "simple portfolio website",
+  "version": "2.0.0",
+  "description": "My bussiness card",
   "main": "index.html",
-  "scripts": {
-    "start": "parcel ./js/parcel.html --open",
-    "test": "test"
-  },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/omzeton/portfo.git"
@@ -14,17 +12,17 @@
   "keywords": [
     "portfolio"
   ],
-  "author": "omzeton",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/omzeton/portfo/issues"
-  },
   "homepage": "https://github.com/omzeton/portfo#readme",
-  "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
-    "parcel-bundler": "^1.12.3"
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "sass": "^1.49.9",
+    "vite": "^2.8.0"
+  },
+  "dependencies": {
+    "three": "^0.138.0"
+  }
 }
