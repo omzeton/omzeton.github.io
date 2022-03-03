@@ -10,6 +10,24 @@
   height: 100vh;
   padding: 2em;
   background-color: $c1;
+
+  &__heading {
+    font-family: $ff2;
+    font-size: 3.4rem;
+    line-height: 0.9;
+    text-align: right;
+    letter-spacing: -3px;
+  }
+
+  &__paragraph {
+    position: relative;
+    top: -6.2em;
+    left: 0.3em;
+    width: 18em;
+    font-family: $ff1;
+    font-size: 0.7rem;
+    text-align: left;
+  }
 }
 
 .nav {
