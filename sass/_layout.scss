@@ -1,5 +1,17 @@
 @use "variables" as *;
 
-main {
+.main {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 2em;
   background-color: $c1;
+}
+
+.nav {
+  position: fixed;
 }
