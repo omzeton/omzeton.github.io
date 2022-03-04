@@ -137,4 +137,4 @@ class Renderer {
   }
 }
 
-new Renderer(document.getElementById("canvas"));
+// new Renderer(document.getElementById("canvas"));
