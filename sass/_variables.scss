@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:700&display=swap");
-@font-face {
-  font-family: "Gordita";
-  src: url("https://www.omzeton.com/fonts/gordita-bold-webfont.woff") format("woff"), url("https://www.omzeton.com/fonts/gordita-bold-webfont.otf") format("opentype");
-}
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Playfair+Display:wght@800&display=swap");
 
-$ff1: "Lato", sans-serif;
-$ff2: "Gordita";
-$c1: #f9f5f1;
+$f1: "Playfair Display", serif;
+$f2: "Lato", sans-serif;
+
+$c1: #fff8e8;
+$c2: #fcd581;
+$c3: #d52941;
+$c4: #990d35;
+$c5: #0b0033;
