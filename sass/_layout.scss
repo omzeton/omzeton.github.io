@@ -95,8 +95,7 @@ body {
   &__horizontal-line {
     width: 140px;
     margin: 0;
-    border-color: $c1;
-    border-width: 2px;
+    border-color: $c5;
 
     @include desktop-min {
       width: 270px;
