@@ -1,20 +1,29 @@
 @use "sass:list";
 @use "variables" as *;
 
-.main {
-  position: relative;
+body {
   box-sizing: border-box;
-  width: 100%;
   height: 100vh;
   padding: 45px;
-  color: $c5;
+  margin: 0;
   background-color: $c1;
+}
+
+.header {
+  width: 100%;
+
+  &__paragraph {
+    font-family: $f2;
+    font-size: list.nth($fs, 6);
+  }
+}
+
+.main {
+  color: $c5;
 
   &__title-wrapper {
-    position: relative;
-    top: 40%;
-    width: 300px;
-    transform: translateY(-50%);
+    position: absolute;
+    top: 28%;
   }
 
   &__heading {
@@ -37,5 +46,24 @@
     margin: 0;
     border-color: $c1;
     border-width: 2px;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 120px;
+  display: flex;
+  gap: 20px;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    color: $c5;
+    text-decoration: none;
+  }
+
+  &__svg {
+    width: 100%;
+    height: 100%;
   }
 }
