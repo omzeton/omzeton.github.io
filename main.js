@@ -6,25 +6,21 @@ import vertexShader from "./shaders/vertex.glsl?raw";
 import fragmentShader from "./shaders/fragment.glsl?raw";
 
 class Renderer {
-  constructor(container) {
+  constructor() {
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.setClearColor(0xeeeeee, 1);
     this.renderer.physicallyCorrectLights = true;
     this.renderer.outputEncoding = THREE.sRGBEncoding;
-
-    this.container = container;
+    this.container = document.getElementById("canvas");
     this.container.appendChild(this.renderer.domElement);
-
     this.aspect = window.innerWidth / window.innerHeight;
     this.camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.001, 1000);
     this.camera.position.set(0, 0, 2);
     this.scene = new THREE.Scene();
-
     this.urls = [];
     this.textures = this.urls.map(url => new THREE.TextureLoader().load(url));
-
     this.u_time = 0;
     this.paused = false;
 
@@ -138,4 +134,4 @@ class Renderer {
   }
 }
 
-new Renderer(document.getElementById("canvas"));
+new Renderer();
