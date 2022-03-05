@@ -3,6 +3,7 @@
 @use "media" as *;
 
 body {
+  position: relative;
   box-sizing: border-box;
   height: 100vh;
   padding: 45px;
@@ -19,7 +20,19 @@ body {
 }
 
 .header {
-  width: 100%;
+  position: absolute;
+  top: 45px;
+  left: 45px;
+
+  @include desktop-min {
+    top: 80px;
+    left: 80px;
+  }
+
+  @include desktop-air {
+    top: 100px;
+    left: 100px;
+  }
 
   &__paragraph {
     margin: 0;
@@ -98,7 +111,6 @@ body {
   gap: 20px;
 
   @include desktop-min {
-    bottom: 80px;
   }
 
   @include desktop-air {
