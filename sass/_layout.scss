@@ -1,5 +1,6 @@
 @use "sass:list";
 @use "variables" as *;
+@use "media" as *;
 
 body {
   box-sizing: border-box;
@@ -7,14 +8,27 @@ body {
   padding: 45px;
   margin: 0;
   background-color: $c1;
+
+  @include desktop-min {
+    padding: 80px;
+  }
+
+  @include desktop-air {
+    padding: 100px;
+  }
 }
 
 .header {
   width: 100%;
 
   &__paragraph {
+    margin: 0;
     font-family: $f2;
     font-size: list.nth($fs, 6);
+
+    @include desktop-min {
+      font-size: list.nth($fs, 7);
+    }
   }
 }
 
@@ -23,14 +37,28 @@ body {
 
   &__title-wrapper {
     position: absolute;
-    top: 28%;
+    top: 45%;
+    transform: translateY(-50%);
   }
 
   &__heading {
+    width: 50%;
     font-family: $f1;
     font-size: list.nth($fs, 10);
     line-height: 1;
     letter-spacing: -3px;
+
+    @include desktop-min {
+      font-size: list.nth($fs, 13);
+      line-height: 0.9;
+      letter-spacing: -6px;
+    }
+
+    @include desktop-air {
+      font-size: list.nth($fs, 14);
+      line-height: 0.9;
+      letter-spacing: -8px;
+    }
   }
 
   &__paragraph {
@@ -39,6 +67,16 @@ body {
     width: 250px;
     font-family: $f2;
     font-size: list.nth($fs, 6);
+
+    @include desktop-min {
+      width: 400px;
+      margin-top: -20px;
+      font-size: list.nth($fs, 8);
+    }
+
+    @include desktop-air {
+      width: 500px;
+    }
   }
 
   &__horizontal-line {
@@ -46,20 +84,42 @@ body {
     margin: 0;
     border-color: $c1;
     border-width: 2px;
+
+    @include desktop-min {
+      width: 270px;
+    }
   }
 }
 
 .footer {
   position: absolute;
-  bottom: 120px;
+  bottom: 45px;
   display: flex;
   gap: 20px;
+
+  @include desktop-min {
+    bottom: 80px;
+  }
+
+  @include desktop-air {
+    bottom: 100px;
+  }
 
   &__icon {
     width: 16px;
     height: 16px;
     color: $c5;
     text-decoration: none;
+
+    @include desktop-min {
+      width: 20px;
+      height: 20px;
+    }
+
+    @include desktop-air {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   &__svg {
