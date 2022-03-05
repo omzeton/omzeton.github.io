@@ -17,9 +17,6 @@ class Renderer {
     this.container = container;
     this.container.appendChild(this.renderer.domElement);
 
-    this.width = this.container.offsetWidth;
-    this.height = this.container.offsetHeight;
-
     this.aspect = window.innerWidth / window.innerHeight;
     this.camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.001, 1000);
     this.camera.position.set(0, 0, 2);
@@ -31,7 +28,11 @@ class Renderer {
     this.u_time = 0;
     this.paused = false;
 
-    this.init();
+    window.onload = () => {
+      this.width = this.container.offsetWidth;
+      this.height = this.container.offsetHeight;
+      this.init();
+    };
   }
 
   init() {
@@ -48,8 +49,8 @@ class Renderer {
   }
 
   resize() {
-    this.width = window.innerWidth;
-    this.height = window.innerHeight;
+    this.width = this.container.offsetWidth;
+    this.height = this.container.offsetHeight;
     this.renderer.setSize(this.width, this.height);
     this.camera.aspect = this.width / this.height;
     this.camera.fov = 2 * (180 / Math.PI) * Math.atan(1 / (2 * this.camera.position.z));
@@ -137,4 +138,4 @@ class Renderer {
   }
 }
 
-// new Renderer(document.getElementById("canvas"));
+new Renderer(document.getElementById("canvas"));
