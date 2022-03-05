@@ -111,6 +111,7 @@ body {
   gap: 20px;
 
   @include desktop-min {
+    bottom: 80px;
   }
 
   @include desktop-air {
